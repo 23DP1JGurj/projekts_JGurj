@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Servisa centrs</title>
+  <link rel="stylesheet" href="src/css/main.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Pārlēkt uz galveno saturu</a>
+
+  <header>
+    <div class="brand" onclick="scrollToTop()">
+      <h1>Servisa centrs</h1>
+    </div>
+
+    <button class="burger-menu" aria-label="Atvērt izvēlni">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav aria-label="Galvenā navigācija" role="navigation">
+      <div class="nav-links">
+      <a href="#" onclick="event.preventDefault(); scrollToSection('sakums')">Sākums</a>
+      <a href="#" onclick="event.preventDefault(); scrollToSection('par-mums')">Par mums</a>
+        <div class="dropdown">
+          <button class="dropbtn">Sadaļas</button>
+          <div class="dropdown-content">
+            <a href="#" onclick="showPage('servisa-centrs')">Servisa centrs</a>
+            <a href="#" onclick="showPage('karte')">Preču karte</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <button
+      id="theme-toggle"
+      class="theme-toggle"
+      aria-pressed="false"
+      aria-label="Pārslēgt tēmu"
+      title="Pārslēgt tēmu"
+    >
+      <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"></circle>
+      </svg>
+      <span id="theme-label">Tēma</span>
+    </button>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="close-menu" aria-label="Aizvērt izvēlni">x</button>
+      <a href="#" onclick="event.preventDefault(); scrollToSection('sakums'); closeMobileMenu();">Sākums</a>
+      <a href="#" onclick="event.preventDefault(); scrollToSection('par-mums'); closeMobileMenu();">Par mums</a>
+      <div class="mobile-dropdown">
+        <button class="mobile-dropbtn" onclick="toggleMobileDropdown(this)">Sadaļas <span>▼</span></button>
+        <div class="mobile-dropdown-content">
+          <a href="#" onclick="showPage('servisa-centrs'); closeMobileMenu();">Servisa centrs</a>
+          <a href="#" onclick="showPage('karte'); closeMobileMenu();">Preču karte</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="servisa-centrs" class="page-content active">
+    <main id="main-content" role="main">
+      <section id="sakums" class="dashboard" aria-label="Statistika">
+        <div class="card scroll-animate" onclick="showPage('vesture')">
+          <h3>Vēsture</h3>
+          <div class="value">12 gadi</div>
+          <div class="more-link">Uzzināt vairāk...</div>
+        </div>
+
+        <div class="card scroll-animate" onclick="showPage('komanda')">
+          <h3>Komanda</h3>
+          <div class="value">8 speciālisti</div>
+          <div class="more-link">Uzzināt vairāk...</div>
+        </div>
+
+        <div class="card scroll-animate" onclick="showPage('partneri')">
+          <h3>Partneri</h3>
+          <div class="value">15+</div>
+          <div class="more-link">Uzzināt vairāk...</div>
+        </div>
+
+        <div class="card scroll-animate" onclick="showPage('kontakti')">
+          <h3>Kontakti</h3>
+          <div class="value">5 filiāles</div>
+          <div class="more-link">Uzzināt vairāk...</div>
+        </div>
+      </section>
+
+      <div id="par-mums" class="section-card scroll-animate" style="min-height:160px">
+          <h2>Par programmu — Priekšrocības</h2>
+          <p>Vienkāršs interfeiss un spēcīga datubāzes loģika: atskaites, trigeri un transakcijas nodrošina drošu un precīzu datu apstrādi.</p>
+          <ul>
+            <li>Analītika un atskaites</li>
+            <li>Automatizētas rezervācijas</li>
+            <li>Ērta lietošanai un demonstrēšanai</li>
+          </ul>
+        </div>
+
+        <div class="about-group">
+          <div class="section-card scroll-animate" style="min-height:160px">
+            <h2>Par programmu — Funkcijas</h2>
+            <p>Programma nodrošina visu remontdarbu ciklu: klientu reģistrāciju, ierīču uzskaiti, pasūtījumu vadību un noliktavas kontroli.</p>
+            <ul>
+              <li>CRUD klientiem un ierīcēm</li>
+              <li>Pasūtījumu un statusu vēsture</li>
+              <li>Noliktavas un rezervāciju pārvaldība</li>
+            </ul>
+          </div>
+        </div>
+        
+      <section class="sections" aria-label="Pakalpojumu sadaļas">
+        <div class="section-card scroll-animate">
+          <h2>Klienti</h2>
+          <p>Pievieno, rediģē un meklē klientu datus. Saglabā klienta kontaktinformāciju un pasūtījumu vēsturi.</p>
+          <ul>
+            <li>Kontaktinformācija</li>
+            <li>Pasūtījumu vēsture</li>
+            <li>Ātra meklēšana</li>
+          </ul>
+        </div>
+
+        <div class="section-card scroll-animate">
+          <h2>Ierīces</h2>
+          <p>Reģistrē ierīces ar marku, modeli un sērijas numuru. Pievieno problēmu aprakstu un piezīmes.</p>
+          <ul>
+            <li>Marka un modelis</li>
+            <li>Sērijas numurs / IMEI</li>
+            <li>Problēmas apraksts</li>
+          </ul>
+        </div>
+
+        <div class="section-card scroll-animate">
+          <h2>Pasūtījumi</h2>
+          <p>Izveido jaunus pasūtījumi, piešķir tehniķis un seko līdzi statusiem līdz pabeigšanai.</p>
+          <ul>
+            <li>Statusu pārvaldība</li>
+            <li>Tehniķu piešķiršana</li>
+            <li>Rēķinu izveide</li>
+          </ul>
+        </div>
+
+        <div class="section-card scroll-animate">
+          <h2>Krājumi</h2>
+          <p>Pārvalda rezerves daļas: pievieno, rezervē un noraksta detaļas; redz atlikumus un trūkuma brīdinājumus.</p>
+          <ul>
+            <li>Uzskaites atlikumi</li>
+            <li>Rezervācijas pasūtījumiem</li>
+            <li>Automātiska trūkuma atzīme</li>
+          </ul>
+        </div>
+
+        <div class="section-card scroll-animate">
+          <h2>Atskaites</h2>
+          <p>Ērti ģenerē pārskatus par ieņēmumiem, populārākajām detaļām un tehniķu produktivitāti.</p>
+          <ul>
+            <li>Ieņēmumu pārskati</li>
+            <li>TOP detaļas un pakalpojumi</li>
+            <li>Tehniķu slodze</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="karte" class="page-content">
+    <div class="page">
+      <button onclick="showPage('servisa-centrs')" class="back-btn">← Atpakaļ</button>
+      <h1>Kartes ar hover efektiem</h1>
+
+      <div class="cards-grid">
+        <article class="product-card scroll-animate" tabindex="0">
+          <div class="extra">
+            <div class="pill">Jauns</div>
+          </div>
+          <figure class="card-img">
+            <img src="src/image/rtx5090.png" alt="RTX 5090 attēls">
+          </figure>
+          <div class="card-body">
+            <h3>NVIDIA RTX 5090</h3>
+            <p class="desc">Nākamās paaudzes grafiskais akselerators ar ekstrēmu veiktspēju spēlēm un radošiem darbiem. Izcils ray-tracing un AI iespējas.</p>
+          </div>
+          <div class="card-meta">
+            <div>
+              <div class="price">€1,499</div>
+            </div>
+            <button class="btn" aria-label="Skatīt detaļas" onclick="showPage('rtx5090')">Skatīt</button>
+          </div>
+        </article>
+
+        <article class="product-card scroll-animate" tabindex="0">
+          <div class="extra">
+            <div class="pill">Ekskluzīvs</div>
+          </div>
+          <figure class="card-img">
+            <img src="src/image/Dimants.png" alt="Pink Star dimants">
+          </figure>
+          <div class="card-body">
+            <h3>Pink Star dimants</h3>
+            <p class="desc">Retākais rozā dimants pasaulē, 59.6 karāti — izsmalcināts, vērtīgs un unikāls. Lielisks kolekcionārs gabals.</p>
+          </div>
+          <div class="card-meta">
+            <div>
+              <div class="price">€71.2m+ </div>
+            </div>
+            <button class="btn" aria-label="Skatīt detaļas" onclick="showPage('pink-star')">Skatīt</button>
+          </div>
+        </article>
+
+        <article class="product-card scroll-animate" tabindex="0">
+          <div class="extra">
+            <div class="pill">Ierobežota sērija</div>
+          </div>
+          <figure class="card-img">
+              <img src="src/image/Bugatti.png" alt="Bugatti Tourbillon">
+          </figure>
+          <div class="card-body">
+              <h3>Bugatti Tourbillon</h3>
+              <p class="desc">Vispirms elektriskais hipērauto ar mehānisko pulksteņa Tourbillon sirieni, 1800 ZS, un no 0 līdz 100 km/h 2.0 sekundēs.</p>
+          </div>
+          <div class="card-meta">
+              <div>
+                  <div class="price">€3.8m+</div>
+              </div>
+              <button class="btn" aria-label="Skatīt detaļas" onclick="showPage('bugatti')">Skatīt</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div id="vesture" class="page-content">
+    <div class="page">
+      <button onclick="showPage('servisa-centrs')" class="back-btn">← Atpakaļ</button>
+      <h1>Mūsu vēsture</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Kopš 2012. gada</h2>
+        <p>Servisa centrs tika dibināts 2012. gadā ar mērķi nodrošināt augstas kvalitātes remonta pakalpojumus iedzīvotājiem un uzņēmumiem. Mūsu ceļš sākās kā neliels darbnīca Rīgas centrā, bet jau pirmajos darbības gados mēs pierādījām, ka esam uzticams un profesionāls pakalpojumu sniedzējs.</p>
+        
+        <h2>Attīstības posmi</h2>
+        <ul>
+          <li><strong>2012</strong> - Dibināts servisa centrs Rīgā, Brīvības ielā 25</li>
+          <li><strong>2014</strong> - Paplašināts pakalpojumu klāsts ar jaunākās tehnoloģijas iekārtu remontu</li>
+          <li><strong>2016</strong> - Atvērtas pirmās filiāles Liepājā un Jelgavā</li>
+          <li><strong>2018</strong> - Iegūts ISO 9001 kvalitātes vadības sistēmas sertifikāts</li>
+          <li><strong>2020</strong> - Implementēta digitālā pārvaldības sistēma un klientu portāls</li>
+          <li><strong>2023</strong> - Atvērta jauna filiāle Ventspilī un paplašināts komandas līdz 8 speciālistiem</li>
+        </ul>
+        
+        <h2>Mūsu misija</h2>
+        <p>Mēs ticam, ka kvalitatīvs un ātrs remonta serviss ir pamats ilgtspējīgai tehnoloģiju lietošanai. Mūsu misija ir nodrošināt, lai katra klienta tehnika strādātu optimāli, palīdzot ietaupīt gan laiku, gan resursus.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="komanda" class="page-content">
+    <div class="page">
+      <button onclick="showPage('servisa-centrs')" class="back-btn">← Atpakaļ</button>
+      <h1>Mūsu komanda</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Profesionāļi jūsu pakalpojumā</h2>
+        <p>Mūsu komandā strādā 8 augsti kvalificēti speciālisti ar pieredzi dažādu tehnoloģiju remontā. Katrs komandas loceklis ir specializējies konkrētā jomā, nodrošinot visaptverošu pakalpojumu klāstu.</p>
+        
+        <div class="team-grid">
+          <div class="team-member scroll-animate">
+            <h3>Jānis Bērziņš</h3>
+            <p>Vecākais tehniķis</p>
+            <p>12+ gadu pieredze</p>
+          </div>
+          <div class="team-member scroll-animate">
+            <h3>Līga Ozoliņa</h3>
+            <p>Klientu apkalpošanas vadītāja</p>
+            <p>8+ gadu pieredze</p>
+          </div>
+          <div class="team-member scroll-animate">
+            <h3>Māris Liepiņš</h3>
+            <p>Elektronikas inženieris</p>
+            <p>10+ gadu pieredze</p>
+          </div>
+          <div class="team-member scroll-animate">
+            <h3>Anna Kalniņa</h3>
+            <p>Datu atkopšanas speciāliste</p>
+            <p>6+ gadu pieredze</p>
+          </div>
+          <div class="team-member scroll-animate">
+            <h3>Andris Zariņš</h3>
+            <p>Tīklu speciālists</p>
+            <p>9+ gadu pieredze</p>
+          </div>
+          <div class="team-member scroll-animate">
+            <h3>Kristīne Briede</h3>
+            <p>Mobilās ierīces tehniķe</p>
+            <p>7+ gadu pieredze</p>
+          </div>
+          <div class="team-member scroll-animate">
+            <h3>Guntis Vītols</h3>
+            <p>Programmatūras tehniķis</p>
+            <p>5+ gadu pieredze</p>
+          </div>
+          <div class="team-member scroll-animate">
+            <h3>Dace Krūmiņa</h3>
+            <p>Kvalitātes kontroles speciāliste</p>
+            <p>8+ gadu pieredze</p>
+          </div>
+        </div>
+        
+        <h2>Komandas pieredze</h2>
+        <p>Kopējā komandas pieredze pārsniedz 65 darba gadus dažādos tehnoloģiju nozares segmentos. Mēs pastāvīgi pilnveidojam savas prasmes, apmeklējot specializētus seminārus un apmācības.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="partneri" class="page-content">
+    <div class="page">
+      <button onclick="showPage('servisa-centrs')" class="back-btn">← Atpakaļ</button>
+      <h1>Mūsu partneri</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Sadarbība ar vadošajiem ražotājiem</h2>
+        <p>Mēs sadarbojamies ar vadošajiem tehnoloģiju ražotājiem un piegādātājiem, lai nodrošinātu autentiskas rezerves daļas un profesionālu atbalstu mūsu klientiem.</p>
+        
+        <div class="partners-grid">
+          <div class="partner scroll-animate">
+            <h3>Dell</h3>
+          </div>
+          <div class="partner scroll-animate">
+            <h3>HP</h3>
+          </div>
+          <div class="partner scroll-animate">
+            <h3>Lenovo</h3>
+          </div>
+          <div class="partner scroll-animate">
+            <h3>Apple</h3>
+          </div>
+          <div class="partner scroll-animate">
+            <h3>Samsung</h3>
+          </div>
+          <div class="partner scroll-animate">
+            <h3>ASUS</h3>
+          </div>
+          <div class="partner scroll-animate">
+            <h3>Acer</h3>
+          </div>
+          <div class="partner scroll-animate">
+            <h3>Microsoft</h3>
+          </div>
+          <div class="partner scroll-animate">
+            <h3>Intel</h3>
+          </div>
+          <div class="partner scroll-animate">
+            <h3>Seagate</h3>
+          </div>
+          <div class="partner scroll-animate">
+            <h3>Western Digital</h3>
+          </div>
+          <div class="partner scroll-animate">
+            <h3>Canon</h3>
+          </div>
+        </div>
+        
+        <h2>Partnerības priekšrocības</h2>
+        <ul>
+          <li><strong>Oficiālas rezerves daļas</strong> - visas detaļas ir autentiskas un ar ražotāja garantiju</li>
+          <li><strong>Tehniskā atbalsta</strong> - tieša saite ar ražotāju tehniskiem speciālistiem sarežģītu problēmu gadījumā</li>
+          <li><strong>Apgādes ķēde</strong> - regulāras rezerves daļu piegādes, minimizējot gaidīšanas laiku</li>
+          <li><strong>Apmācības</strong> - regulāras apmācības par jaunākajām tehnoloģijām un remonta metodēm</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="kontakti" class="page-content">
+    <div class="page">
+      <button onclick="showPage('servisa-centrs')" class="back-btn">← Atpakaļ</button>
+      <h1>Kontakti</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Mūsu filiāles</h2>
+        
+        <div class="content-section scroll-animate">
+          <h3>Rīgas centrālā filiāle</h3>
+          <p><strong>Adrese:</strong> Brīvības iela 25, Rīga, LV-1010</p>
+          <p><strong>Darba laiks:</strong> P.-P. 9:00-18:00, S. 10:00-16:00</p>
+          <p><strong>Tālrunis:</strong> +371 67000001</p>
+          <p><strong>E-pasts:</strong> riga@servisacentrs.lv</p>
+        </div>
+        
+        <div class="content-section scroll-animate">
+          <h3>Liepājas filiāle</h3>
+          <p><strong>Adrese:</strong> Kūrmājas prospekts 45, Liepāja, LV-3401</p>
+          <p><strong>Darba laiks:</strong> P.-P. 9:00-17:00, S. 10:00-14:00</p>
+          <p><strong>Tālrunis:</strong> +371 63400002</p>
+          <p><strong>E-pasts:</strong> liepaja@servisacentrs.lv</p>
+        </div>
+        
+        <div class="content-section scroll-animate">
+          <h3>Jelgavas filiāle</h3>
+          <p><strong>Adrese:</strong> Akademijas iela 12, Jelgava, LV-3001</p>
+          <p><strong>Darba laiks:</strong> P.-P. 9:00-17:00, S. 10:00-14:00</p>
+          <p><strong>Tālrunis:</strong> +371 63000003</p>
+          <p><strong>E-pasts:</strong> jelgava@servisacentrs.lv</p>
+        </div>
+        
+        <div class="content-section scroll-animate">
+          <h3>Ventspils filiāle</h3>
+          <p><strong>Adrese:</strong> Kuldīgas iela 8, Ventspils, LV-3601</p>
+          <p><strong>Darba laiks:</strong> P.-P. 9:00-17:00, S. 10:00-14:00</p>
+          <p><strong>Tālrunis:</strong> +371 63600004</p>
+          <p><strong>E-pasts:</strong> ventspils@servisacentrs.lv</p>
+        </div>
+        
+        <div class="content-section scroll-animate">
+          <h3>Daugavpils filiāle</h3>
+          <p><strong>Adrese:</strong> Cietokšņa iela 38, Daugavpils, LV-5401</p>
+          <p><strong>Darba laiks:</strong> P.-P. 9:00-17:00, S. 10:00-14:00</p>
+          <p><strong>Tālrunis:</strong> +371 65400005</p>
+          <p><strong>E-pasts:</strong> daugavpils@servisacentrs.lv</p>
+        </div>
+        
+        <h2>Kontaktu forma</h2>
+        <p>Vai jums ir jautājumi? Sazinieties ar mums, un mēs atbildēsim 24 stundu laikā:</p>
+        <p><strong>Vispārīgie jautājumi:</strong> info@servisacentrs.lv</p>
+        <p><strong>Tehniskais atbalsts:</strong> support@servisacentrs.lv</p>
+        <p><strong>Sadarbības piedāvājumi:</strong> partnership@servisacentrs.lv</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="rtx5090" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>NVIDIA RTX 5090</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Nākamās paaudzes grafiskais akselerators ar ekstrēmu veiktspēju spēlēm un radošiem darbiem. Izcils ray-tracing un AI iespējas.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>GPU:</strong> NVIDIA Ada Lovelace arhitektūra</li>
+          <li><strong>Video atmiņa:</strong> 24 GB GDDR6X</li>
+          <li><strong>Atmiņas frekvence:</strong> 24 Gbps</li>
+          <li><strong>CUDA kodoli:</strong> 18,432</li>
+          <li><strong>Paātrinātās takts frekvences:</strong> līdz 2.8 GHz</li>
+          <li><strong>Barošana:</strong> 1x 16-pin savienotājs</li>
+          <li><strong>Ieteicamā barošanas bloka jauda:</strong> 1000W</li>
+        </ul>
+        
+        <h2>Priekšrocības</h2>
+        <p>RTX 5090 piedāvā revolucionāru veiktspēju spēlēs, radošajos darbos un AI lietojumos. Ar jaunāko DLSS 3.5 tehnoloģiju, jūs varat gūt līdz 4x augstāku kadru ātrumu, saglabājot augstu attēla kvalitāti.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="pink-star" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>Pink Star dimants</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Retākais rozā dimants pasaulē, 59.6 karāti — izsmalcināts, vērtīgs un unikāls. Lielisks kolekcionārs gabals.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Svars:</strong> 59.60 karāti (11.92 g)</li>
+          <li><strong>Krāsa:</strong> Spilgti rozā (Fancy Vivid Pink)</li>
+          <li><strong>Šķirne:</strong> IIa (Bez slāpekļa piemaisījumiem)</li>
+          <li><strong>Izcelsme:</strong> Dienvidāfrika</li>
+          <li><strong>Izgriezums:</strong> Ovāls ar 69 brillantām fasetēm</li>
+          <li><strong>Apdare:</strong> Internally Flawless (IF)</li>
+        </ul>
+        
+        <h2>Vēsture</h2>
+        <p>Pink Star dimants tika atklāts 1999. gadā Dienvidāfrikas De Birs raktuvēs. Sākotnējais neapstrādātais akmens svēra 132.5 karātus. Pēc gandrīz divu gadu rūpīgas apstrādes, tas tika pārveidots par šo apbrīnojamo 59.6 karātu akmeni. 2013. gadā tas tika pārdots Sotbijas izsolē par rekordaugstu 83 miljonu ASV dolāru apmērā.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="bugatti" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>Bugatti Tourbillon</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Vispirms elektriskais hipērauto ar mehānisko pulksteņa Tourbillon sirieni, 1800 ZS, un no 0 līdz 100 km/h 2.0 sekundēs.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Jauda:</strong> 1800 ZS (1342 kW)</li>
+          <li><strong>Griezes moments:</strong> 2300 Nm</li>
+          <li><strong>Paātrinājums 0-100 km/h:</strong> 2.0 sekundes</li>
+          <li><strong>Maksimālais ātrums:</strong> 445 km/h</li>
+          <li><strong>Piedziņa:</strong> Visritenis elektriska</li>
+          <li><strong>Akumulatora jauda:</strong> 100 kWh</li>
+          <li><strong>Darbības rādiuss:</strong> 600 km</li>
+          <li><strong>Svars:</strong> 1995 kg</li>
+        </ul>
+        
+        <h2>Inovācijas</h2>
+        <p>Bugatti Tourbillon ir revolucionārs hipērauto, kas apvieno elektrisko piedziņu ar mehānisko pulksteņa mehānismu. Šis auto ir radīts, lai apvienotu Bugatti tradicionālo kvalitāti ar nākotnes tehnoloģijām. Instrumentu panelis ir izgatavots no pulksteņa mehānisma detaļām, kas simbolizē precizitāti un ilgmūžību.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Servisa centrs |
+    <a href="#">Facebook</a>
+    <a href="#">Instagram</a>
+    <a href="#">LinkedIn</a>
+  </footer>
+
+  <script src="src/js/main.js" defer></script>
+</body>
+</html>
