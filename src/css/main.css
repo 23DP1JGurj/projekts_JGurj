@@ -110,7 +110,6 @@
       transition: transform 0.3s ease;
     }
     
-    /* Удалено скрытие navbar при скролле */
     
     header .brand{
       display:flex;
@@ -153,7 +152,6 @@
       position: relative;
     }
 
-    /* Удалено постоянное подсвечивание активных ссылок */
     nav a:hover {
       background: rgba(255,255,255,0.1);
       transform: translateY(-2px);
@@ -260,7 +258,6 @@
       transform: scale(1.1);
     }
 
-    /* Добавлен выпадающий список для мобильного меню */
     .mobile-dropdown {
       position: relative;
       width: 200px;
