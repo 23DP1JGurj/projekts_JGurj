@@ -9,6 +9,8 @@
 <body>
   <a href="#main-content" class="skip-link">Pārlēkt uz galveno saturu</a>
 
+    <div class="loading-bar" id="loadingBar"></div>
+
   <header>
     <div class="brand" onclick="scrollToTop()">
       <h1>Servisa centrs</h1>
@@ -33,6 +35,7 @@
         </div>
       </div>
     </nav>
+
     <button
       id="theme-toggle"
       class="theme-toggle"
@@ -47,7 +50,7 @@
     </button>
 
     <div class="mobile-menu" id="mobileMenu">
-      <button class="close-menu" aria-label="Aizvērt izvēlni">x</button>
+      <button class="close-menu" aria-label="Aizvērt izvēlni">×</button>
       <a href="#" onclick="event.preventDefault(); scrollToSection('sakums'); closeMobileMenu();">Sākums</a>
       <a href="#" onclick="event.preventDefault(); scrollToSection('par-mums'); closeMobileMenu();">Par mums</a>
       <div class="mobile-dropdown">
@@ -164,71 +167,58 @@
     </main>
   </div>
 
-  <div id="karte" class="page-content">
-    <div class="page">
-      <button onclick="showPage('servisa-centrs')" class="back-btn">← Atpakaļ</button>
-      <h1>Kartes ar hover efektiem</h1>
-
-      <div class="cards-grid">
-        <article class="product-card scroll-animate" tabindex="0">
-          <div class="extra">
-            <div class="pill">Jauns</div>
+      <div id="karte" class="page-content">
+      <div class="page">
+        <button onclick="showPage('servisa-centrs')" class="back-btn">← Atpakaļ</button>
+        <h1>Preču karte</h1>
+        
+        <div class="products-controls">
+          <div class="search-box">
+            <input 
+              type="text" 
+              class="search-input" 
+              placeholder="Meklēt preces..."
+              aria-label="Meklēt preces"
+              id="searchInput"
+            >
+            <div class="search-icon">🔍</div>
           </div>
-          <figure class="card-img">
-            <img src="src/image/rtx5090.png" alt="RTX 5090 attēls">
-          </figure>
-          <div class="card-body">
-            <h3>NVIDIA RTX 5090</h3>
-            <p class="desc">Nākamās paaudzes grafiskais akselerators ar ekstrēmu veiktspēju spēlēm un radošiem darbiem. Izcils ray-tracing un AI iespējas.</p>
-          </div>
-          <div class="card-meta">
-            <div>
-              <div class="price">€1,499</div>
+          
+          <div class="controls-group">
+            <div class="filter-group">
+              <span class="filter-label">Filtrēt:</span>
+              <button class="filter-btn active" data-filter="all">Visas</button>
+              <button class="filter-btn" data-filter="telefoni">Telefoni</button>
+              <button class="filter-btn" data-filter="portatīvie-datori">Portatīvie datori</button>
+              <button class="filter-btn" data-filter="procesori">Procesori</button>
+              <button class="filter-btn" data-filter="videokartes">Videokartes</button>
             </div>
-            <button class="btn" aria-label="Skatīt detaļas" onclick="showPage('rtx5090')">Skatīt</button>
-          </div>
-        </article>
-
-        <article class="product-card scroll-animate" tabindex="0">
-          <div class="extra">
-            <div class="pill">Ekskluzīvs</div>
-          </div>
-          <figure class="card-img">
-            <img src="src/image/Dimants.png" alt="Pink Star dimants">
-          </figure>
-          <div class="card-body">
-            <h3>Pink Star dimants</h3>
-            <p class="desc">Retākais rozā dimants pasaulē, 59.6 karāti — izsmalcināts, vērtīgs un unikāls. Lielisks kolekcionārs gabals.</p>
-          </div>
-          <div class="card-meta">
-            <div>
-              <div class="price">€71.2m+ </div>
+            
+            <div class="sort-group">
+              <span class="sort-label">Kārtot:</span>
+              <button class="sort-btn active" data-sort="default">Noklusējums</button>
+              <button class="sort-btn" data-sort="az">A-Z</button>
+              <button class="sort-btn" data-sort="za">Z-A</button>
+              <button class="sort-btn" data-sort="price-low">Cena ↑</button>
+              <button class="sort-btn" data-sort="price-high">Cena ↓</button>
             </div>
-            <button class="btn" aria-label="Skatīt detaļas" onclick="showPage('pink-star')">Skatīt</button>
           </div>
-        </article>
+          
+          <div class="product-count" id="productCount">Atrasti 25 preces</div>
+        </div>
 
-        <article class="product-card scroll-animate" tabindex="0">
-          <div class="extra">
-            <div class="pill">Ierobežota sērija</div>
+        <div class="cards-grid" id="cardsGrid">
+        </div>
+        
+        <div class="no-products-message" id="noProductsMessage" style="display: none;">
+          <div class="no-products-content">
+            <h3>Preces netika atrastas</h3>
+            <p>Mēģiniet mainīt meklēšanas kritērijus vai filtra iestatījumus</p>
+            <button class="btn" onclick="resetFilters()">Attīrīt filtrus</button>
           </div>
-          <figure class="card-img">
-              <img src="src/image/Bugatti.png" alt="Bugatti Tourbillon">
-          </figure>
-          <div class="card-body">
-              <h3>Bugatti Tourbillon</h3>
-              <p class="desc">Vispirms elektriskais hipērauto ar mehānisko pulksteņa Tourbillon sirieni, 1800 ZS, un no 0 līdz 100 km/h 2.0 sekundēs.</p>
-          </div>
-          <div class="card-meta">
-              <div>
-                  <div class="price">€3.8m+</div>
-              </div>
-              <button class="btn" aria-label="Skatīt detaļas" onclick="showPage('bugatti')">Skatīt</button>
-          </div>
-        </article>
+        </div>
       </div>
     </div>
-  </div>
 
   <div id="vesture" class="page-content">
     <div class="page">
@@ -429,80 +419,615 @@
     </div>
   </div>
 
-  <div id="rtx5090" class="page-content">
+  <div id="iphone-15-pro" class="page-content">
     <div class="page">
       <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>NVIDIA RTX 5090</h1>
+      <h1>Apple iPhone 15 Pro</h1>
       
       <div class="content-section scroll-animate">
         <h2>Apraksts</h2>
-        <p>Nākamās paaudzes grafiskais akselerators ar ekstrēmu veiktspēju spēlēm un radošiem darbiem. Izcils ray-tracing un AI iespējas.</p>
+        <p>Flagship viedtālrunis ar titāna korpusu, A17 Pro čipu un uzlabotām kamerām. Ideāls produktivitātei un kreatīvam darbam.</p>
         
         <h2>Specifikācijas</h2>
         <ul>
-          <li><strong>GPU:</strong> NVIDIA Ada Lovelace arhitektūra</li>
+          <li><strong>Processors:</strong> Apple A17 Pro</li>
+          <li><strong>Displejs:</strong> 6.1" Super Retina XDR</li>
+          <li><strong>Atmiņa:</strong> 128GB/256GB/512GB/1TB</li>
+          <li><strong>Kamera:</strong> 48MP galvenā, 12MP ultrawide, 12MP telephoto</li>
+          <li><strong>Baterija:</strong> Līdz 23 stundām video atskaņošanas</li>
+          <li><strong>Savienojamība:</strong> USB-C, 5G, Wi-Fi 6E</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>Mēs nodrošinām pilnu iPhone remonta pakalpojumu klāstu: ekrāna nomaiņa, baterijas maiņa, kameras remonts, ūdens bojājumu salabōšana.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="samsung-s24" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>Samsung Galaxy S24 Ultra</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Vadošais Android viedtālrunis ar S-Pen, AI funkcijām un spožu displeju. Perfekts daudzuzdevumiem.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Processors:</strong> Snapdragon 8 Gen 3</li>
+          <li><strong>Displejs:</strong> 6.8" Dynamic AMOLED 2X</li>
+          <li><strong>Atmiņa:</strong> 256GB/512GB/1TB</li>
+          <li><strong>Kamera:</strong> 200MP galvenā, 50MP telephoto, 12MP ultrawide</li>
+          <li><strong>Pīlāra:</strong> Iebūvēts S-Pen</li>
+          <li><strong>Baterija:</strong> 5000mAh</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>Specializējamies Samsung ierīču remontā: displeja nomaiņa, lodēšanas darbi, programmatūras atjaunināšana.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="google-pixel-8" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>Google Pixel 8 Pro</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Tīrais Android pieredze ar uzlabotām Google AI kamerām. Labākais foto un video kvalitāte.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Processors:</strong> Google Tensor G3</li>
+          <li><strong>Displejs:</strong> 6.7" OLED 120Hz</li>
+          <li><strong>Atmiņa:</strong> 128GB/256GB/512GB</li>
+          <li><strong>Kamera:</strong> 50MP galvenā, 48MP ultrawide, 48MP telephoto</li>
+          <li><strong>Baterija:</strong> 5050mAh</li>
+          <li><strong>OS:</strong> Android 14</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>Piedāvājam Google Pixel remontu: aparatūras diagnostika, komponentu nomaiņa, programmatūras atjaunināšana.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="oneplus-12" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>OnePlus 12</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Ātrākā uzlāde industrijā, gluds 120Hz displejs un jaudīgs Snapdragon processors.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Processors:</strong> Snapdragon 8 Gen 3</li>
+          <li><strong>Displejs:</strong> 6.82" LTPO AMOLED</li>
+          <li><strong>Atmiņa:</strong> 256GB/512GB</li>
+          <li><strong>Kamera:</strong> 50MP galvenā, 48MP ultrawide, 64MP periskopa telephoto</li>
+          <li><strong>Uzlāde:</strong> 100W wired, 50W wireless</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>Veicam OnePlus ierīču remontu: uzlādes portu remonts, displeja nomaiņa, baterijas maiņa.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="xiaomi-14" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>Xiaomi 14 Pro</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Innovatīvs Leica kameras sistēma, ātrs uzlādes un ilga baterijas dzīve.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Processors:</strong> Snapdragon 8 Gen 3</li>
+          <li><strong>Displejs:</strong> 6.73" LTPO AMOLED</li>
+          <li><strong>Atmiņa:</strong> 256GB/512GB/1TB</li>
+          <li><strong>Kamera:</strong> 50MP Leica galvenā, 50MP ultrawide, 50MP telephoto</li>
+          <li><strong>Baterija:</strong> 4880mAh</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>Xiaomi ierīču remonts: kameras remonts, displeja nomaiņa, loģiskās plates diagnostika.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="iphone-14" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>Apple iPhone 14</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Uzticams viedtālrunis ar izcilu veiktspēju, labu bateriju un iOS ekosistēmu.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Processors:</strong> Apple A15 Bionic</li>
+          <li><strong>Displejs:</strong> 6.1" Super Retina XDR</li>
+          <li><strong>Atmiņa:</strong> 128GB/256GB/512GB</li>
+          <li><strong>Kamera:</strong> 12MP galvenā, 12MP ultrawide</li>
+          <li><strong>Baterija:</strong> Līdz 20 stundām video atskaņošanas</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>iPhone 14 remonta pakalpojumi: ekrāna nomaiņa, baterijas maiņa, ūdens bojājumu novēršana.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="samsung-z-fold5" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>Samsung Z Fold 5</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Saliekamais viedtālrunis ar lielu displeju, perfekts darbam un izklaidei.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Processors:</strong> Snapdragon 8 Gen 2</li>
+          <li><strong>Displejs:</strong> 7.6" iekšējais, 6.2" ārējais</li>
+          <li><strong>Atmiņa:</strong> 256GB/512GB/1TB</li>
+          <li><strong>Kamera:</strong> 50MP galvenā, 12MP ultrawide, 10MP telephoto</li>
+          <li><strong>Noturība:</strong> IPX8 ūdensizturība</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>Specializēts saliekamo ierīču remonts: ekrāna nomaiņa, eņģu mehānisma remonts, lodēšanas darbi.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="nothing-phone2" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>Nothing Phone (2)</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Unikāls dizains ar gaismas interfeisu, tīrs operētājsistēma un laba veiktspēja.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Processors:</strong> Snapdragon 8+ Gen 1</li>
+          <li><strong>Displejs:</strong> 6.7" OLED 120Hz</li>
+          <li><strong>Atmiņa:</strong> 128GB/256GB/512GB</li>
+          <li><strong>Kamera:</strong> 50MP galvenā, 50MP ultrawide</li>
+          <li><strong>Dizains:</strong> Caurspīdīgs korpuss ar Glyph interfeisu</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>Nothing ierīču remonts: gaismas interfeisa remonts, displeja nomaiņa, aparatūras diagnostika.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="macbook-pro-16" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>MacBook Pro 16" M3 Max</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Profesionāls portatīvais dators ar M3 Max čipu, lielisku ekrānu un ilgu baterijas dzīvi.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Processors:</strong> Apple M3 Max (16-core CPU, 40-core GPU)</li>
+          <li><strong>Atmiņa:</strong> 48GB unified memory</li>
+          <li><strong>Krātuve:</strong> 1TB SSD</li>
+          <li><strong>Displejs:</strong> 16.2" Liquid Retina XDR</li>
+          <li><strong>Baterija:</strong> Līdz 22 stundām</li>
+          <li><strong>Porti:</strong> 3x Thunderbolt 4, HDMI, SDXC, MagSafe 3</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>Piedāvājam MacBook remontu: ekrāna nomaiņa, taustiņu remonts, loģiskās plates diagnostika, baterijas maiņa.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="dell-xps-15" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>Dell XPS 15</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Jaudīgs kreatīvais darbstacijas laptops ar 4K displeju un NVIDIA grafikas karti.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Processors:</strong> Intel Core i7-13700H</li>
+          <li><strong>Grafika:</strong> NVIDIA GeForce RTX 4060</li>
+          <li><strong>Atmiņa:</strong> 32GB DDR5</li>
+          <li><strong>Displejs:</strong> 15.6" 4K OLED</li>
+          <li><strong>Krātuve:</strong> 1TB NVMe SSD</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>Dell XPS remonts: grafikas kāršu remonts, displeja nomaiņa, dzesēšanas sistēmas apkope.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="lenovo-thinkpad" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>Lenovo ThinkPad X1</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Uzņēmumu klases laptops ar izcilu taustiņu, MIL-STD testētu un garu baterijas dzīvi.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Processors:</strong> Intel Core i7-1365U</li>
+          <li><strong>Atmiņa:</strong> 16GB LPDDR5</li>
+          <li><strong>Displejs:</strong> 14" WUXGA IPS</li>
+          <li><strong>Krātuve:</strong> 512GB SSD</li>
+          <li><strong>Baterija:</strong> Līdz 15 stundām</li>
+          <li><strong>Noturība:</strong> MIL-STD-810H</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>ThinkPad remonts: taustiņu bloku nomaiņa, displeja remonts, loģiskās plates diagnostika.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="asus-rog-zephyrus" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>ASUS ROG Zephyrus</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Geiminga laptops ar augstākās klases GPU, augstu atsvaidzināšanas frekvenci un RGB apgaismojumu.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Processors:</strong> AMD Ryzen 9 7945HX</li>
+          <li><strong>Grafika:</strong> NVIDIA GeForce RTX 4090</li>
+          <li><strong>Atmiņa:</strong> 32GB DDR5</li>
+          <li><strong>Displejs:</strong> 16" QHD+ 240Hz</li>
+          <li><strong>Krātuve:</strong> 2TB NVMe SSD</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>Gaming laptop remonts: grafikas kāršu remonts, dzesēšanas sistēmas apkope, displeja nomaiņa.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="hp-spectre" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>HP Spectre x360</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Premium 2-in-1 konvertējamais laptops ar OLED displeju un ilgu baterijas dzīvi.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Processors:</strong> Intel Core i7-1355U</li>
+          <li><strong>Atmiņa:</strong> 16GB LPDDR4x</li>
+          <li><strong>Displejs:</strong> 13.5" OLED 3K2K</li>
+          <li><strong>Krātuve:</strong> 1TB NVMe SSD</li>
+          <li><strong>Baterija:</strong> Līdz 17 stundām</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>HP Spectre remonts: eņģu mehānisma remonts, displeja nomaiņa, baterijas maiņa.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="macbook-air-15" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>MacBook Air 15" M2</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Plānais un vieglais laptops ar lielu 15 collu ekrānu, M2 čipu un bezventilatora dizainu.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Processors:</strong> Apple M2 (8-core CPU, 10-core GPU)</li>
+          <li><strong>Atmiņa:</strong> 8GB unified memory</li>
+          <li><strong>Displejs:</strong> 15.3" Liquid Retina</li>
+          <li><strong>Krātuve:</strong> 256GB SSD</li>
+          <li><strong>Baterija:</strong> Līdz 18 stundām</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>MacBook Air remonts: ekrāna nomaiņa, loģiskās plates remonts, baterijas maiņa.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="intel-i9-14900k" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>Intel Core i9-14900K</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Desktop processors ar 24 kodoliem, līdz 6.0 GHz takts frekvenci un uzlabotu veiktspēju spēlēs.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Kodoli:</strong> 8 Performance + 16 Efficient (24 kopā)</li>
+          <li><strong>Pavedieni:</strong> 32</li>
+          <li><strong>Takts frekvence:</strong> Līdz 6.0 GHz</li>
+          <li><strong>Kešatmiņa:</strong> 36MB L3</li>
+          <li><strong>TPD:</strong> 125W (Base), 253W (Turbo)</li>
+          <li><strong>Līdzenis:</strong> LGA 1700</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>Procesoru diagnostika un testēšana, kontaktu tīrīšana, temperatūras uzraudzības sistēmu remonts.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="amd-ryzen-9-7950x" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>AMD Ryzen 9 7950X</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>16-kodolu processors ar Zen 4 arhitektūru, augstu takts frekvenci un zemu enerģijas patēriņu.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Kodoli:</strong> 16</li>
+          <li><strong>Pavedieni:</strong> 32</li>
+          <li><strong>Takts frekvence:</strong> Līdz 5.7 GHz</li>
+          <li><strong>Kešatmiņa:</strong> 80MB (64MB L3 + 16MB L2)</li>
+          <li><strong>TPD:</strong> 170W</li>
+          <li><strong>Līdzenis:</strong> AM5</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>AMD procesoru diagnostika, dzesēšanas sistēmu uzstādīšana un apkope.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="intel-i7-14700k" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>Intel Core i7-14700K</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Jaudīgs processors 20 kodoliem, lielisks izvēle gan spēlēm, gan produktivitātes darbiem.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Kodoli:</strong> 8 Performance + 12 Efficient (20 kopā)</li>
+          <li><strong>Pavedieni:</strong> 28</li>
+          <li><strong>Takts frekvence:</strong> Līdz 5.6 GHz</li>
+          <li><strong>Kešatmiņa:</strong> 33MB L3</li>
+          <li><strong>TPD:</strong> 125W (Base), 253W (Turbo)</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>Procesoru testēšana, dzesētāju uzstādīšana, sistēmu optimizācija.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="amd-ryzen-7-7800x3d" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>AMD Ryzen 7 7800X3D</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Gaming processors ar 3D V-Cache tehnoloģiju, nodrošina izcilu veiktspēju spēlēs.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Kodoli:</strong> 8</li>
+          <li><strong>Pavedieni:</strong> 16</li>
+          <li><strong>Takts frekvence:</strong> Līdz 5.0 GHz</li>
+          <li><strong>Kešatmiņa:</strong> 104MB (96MB L3 + 8MB L2)</li>
+          <li><strong>TPD:</strong> 120W</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>3D V-Cache procesoru diagnostika, dzesēšanas risinājumi, sistēmu konfigurācija.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="intel-i5-14600k" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>Intel Core i5-14600K</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Lieliska cenas un veiktspējas attiecība, 14 kodoli, perfekts vidējas klases sistēmām.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Kodoli:</strong> 6 Performance + 8 Efficient (14 kopā)</li>
+          <li><strong>Pavedieni:</strong> 20</li>
+          <li><strong>Takts frekvence:</strong> Līdz 5.3 GHz</li>
+          <li><strong>Kešatmiņa:</strong> 24MB L3</li>
+          <li><strong>TPD:</strong> 125W (Base), 181W (Turbo)</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>Vidējas klases procesoru remonts, dzesēšanas sistēmu uzstādīšana, BIOS atjaunināšana.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="amd-ryzen-5-7600x" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>AMD Ryzen 5 7600X</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>6-kodolu processors ar augstu takts frekvenci, ideāls budžeta gaming sistēmām.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>Kodoli:</strong> 6</li>
+          <li><strong>Pavedieni:</strong> 12</li>
+          <li><strong>Takts frekvence:</strong> Līdz 5.3 GHz</li>
+          <li><strong>Kešatmiņa:</strong> 38MB (32MB L3 + 6MB L2)</li>
+          <li><strong>TPD:</strong> 105W</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>Budžeta procesoru remonts, sistēmu montāža, dzesētāju izvēle un uzstādīšana.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="nvidia-rtx-4090" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>NVIDIA RTX 4090</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Jaudīgākā gaming videokarte pasaulē ar 24 GB GDDR6X atmiņu un DLSS 3 tehnoloģiju.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>GPU:</strong> NVIDIA Ada Lovelace</li>
           <li><strong>Video atmiņa:</strong> 24 GB GDDR6X</li>
-          <li><strong>Atmiņas frekvence:</strong> 24 Gbps</li>
-          <li><strong>CUDA kodoli:</strong> 18,432</li>
-          <li><strong>Paātrinātās takts frekvences:</strong> līdz 2.8 GHz</li>
-          <li><strong>Barošana:</strong> 1x 16-pin savienotājs</li>
-          <li><strong>Ieteicamā barošanas bloka jauda:</strong> 1000W</li>
+          <li><strong>Atmiņas frekvence:</strong> 21 Gbps</li>
+          <li><strong>CUDA kodoli:</strong> 16,384</li>
+          <li><strong>Boost Clock:</strong> 2.52 GHz</li>
+          <li><strong>Barošana:</strong> 1x 16-pin</li>
+          <li><strong>Ieteicamā PSU:</strong> 850W</li>
         </ul>
         
-        <h2>Priekšrocības</h2>
-        <p>RTX 5090 piedāvā revolucionāru veiktspēju spēlēs, radošajos darbos un AI lietojumos. Ar jaunāko DLSS 3.5 tehnoloģiju, jūs varat gūt līdz 4x augstāku kadru ātrumu, saglabājot augstu attēla kvalitāti.</p>
+        <h2>Remonta pakalpojumi</h2>
+        <p>Veicam videokaršu diagnostiku, dzesēšanas sistēmu remontu, BIOS atjaunināšanu un komponentu nomaiņu.</p>
       </div>
     </div>
   </div>
 
-  <div id="pink-star" class="page-content">
+  <div id="amd-rx-7900xtx" class="page-content">
     <div class="page">
       <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>Pink Star dimants</h1>
+      <h1>AMD Radeon RX 7900 XTX</h1>
       
       <div class="content-section scroll-animate">
         <h2>Apraksts</h2>
-        <p>Retākais rozā dimants pasaulē, 59.6 karāti — izsmalcināts, vērtīgs un unikāls. Lielisks kolekcionārs gabals.</p>
+        <p>Augstākās klases AMD videokarte ar 24 GB GDDR6 atmiņu un uzlabotu ray tracing veiktspēju.</p>
         
         <h2>Specifikācijas</h2>
         <ul>
-          <li><strong>Svars:</strong> 59.60 karāti (11.92 g)</li>
-          <li><strong>Krāsa:</strong> Spilgti rozā (Fancy Vivid Pink)</li>
-          <li><strong>Šķirne:</strong> IIa (Bez slāpekļa piemaisījumiem)</li>
-          <li><strong>Izcelsme:</strong> Dienvidāfrika</li>
-          <li><strong>Izgriezums:</strong> Ovāls ar 69 brillantām fasetēm</li>
-          <li><strong>Apdare:</strong> Internally Flawless (IF)</li>
+          <li><strong>GPU:</strong> AMD RDNA 3</li>
+          <li><strong>Video atmiņa:</strong> 24 GB GDDR6</li>
+          <li><strong>Atmiņas frekvence:</strong> 20 Gbps</li>
+          <li><strong>Stream Processors:</strong> 6,144</li>
+          <li><strong>Game Clock:</strong> 2.3 GHz</li>
+          <li><strong>Barošana:</strong> 2x 8-pin</li>
         </ul>
         
-        <h2>Vēsture</h2>
-        <p>Pink Star dimants tika atklāts 1999. gadā Dienvidāfrikas De Birs raktuvēs. Sākotnējais neapstrādātais akmens svēra 132.5 karātus. Pēc gandrīz divu gadu rūpīgas apstrādes, tas tika pārveidots par šo apbrīnojamo 59.6 karātu akmeni. 2013. gadā tas tika pārdots Sotbijas izsolē par rekordaugstu 83 miljonu ASV dolāru apmērā.</p>
+        <h2>Remonta pakalpojumi</h2>
+        <p>AMD videokaršu remonts: dzesētāju remonts, BIOS atjaunināšana, komponentu nomaiņa.</p>
       </div>
     </div>
   </div>
 
-  <div id="bugatti" class="page-content">
+  <div id="nvidia-rtx-4080" class="page-content">
     <div class="page">
       <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>Bugatti Tourbillon</h1>
+      <h1>NVIDIA RTX 4080</h1>
       
       <div class="content-section scroll-animate">
         <h2>Apraksts</h2>
-        <p>Vispirms elektriskais hipērauto ar mehānisko pulksteņa Tourbillon sirieni, 1800 ZS, un no 0 līdz 100 km/h 2.0 sekundēs.</p>
+        <p>Augstas veiktspējas videokarte ar 16 GB GDDR6X atmiņu, lielisks izvēle 4K gaming.</p>
         
         <h2>Specifikācijas</h2>
         <ul>
-          <li><strong>Jauda:</strong> 1800 ZS (1342 kW)</li>
-          <li><strong>Griezes moments:</strong> 2300 Nm</li>
-          <li><strong>Paātrinājums 0-100 km/h:</strong> 2.0 sekundes</li>
-          <li><strong>Maksimālais ātrums:</strong> 445 km/h</li>
-          <li><strong>Piedziņa:</strong> Visritenis elektriska</li>
-          <li><strong>Akumulatora jauda:</strong> 100 kWh</li>
-          <li><strong>Darbības rādiuss:</strong> 600 km</li>
-          <li><strong>Svars:</strong> 1995 kg</li>
+          <li><strong>GPU:</strong> NVIDIA Ada Lovelace</li>
+          <li><strong>Video atmiņa:</strong> 16 GB GDDR6X</li>
+          <li><strong>Atmiņas frekvence:</strong> 22.4 Gbps</li>
+          <li><strong>CUDA kodoli:</strong> 9,728</li>
+          <li><strong>Boost Clock:</strong> 2.51 GHz</li>
+          <li><strong>Barošana:</strong> 1x 16-pin</li>
         </ul>
         
-        <h2>Inovācijas</h2>
-        <p>Bugatti Tourbillon ir revolucionārs hipērauto, kas apvieno elektrisko piedziņu ar mehānisko pulksteņa mehānismu. Šis auto ir radīts, lai apvienotu Bugatti tradicionālo kvalitāti ar nākotnes tehnoloģijām. Instrumentu panelis ir izgatavots no pulksteņa mehānisma detaļām, kas simbolizē precizitāti un ilgmūžību.</p>
+        <h2>Remonta pakalpojumi</h2>
+        <p>Videokaršu diagnostika, dzesēšanas sistēmu apkope, komponentu remonts.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="amd-rx-7800xt" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>AMD Radeon RX 7800 XT</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Vidējas klases videokarte ar izcilu veiktspēju 1440p izšķirtspējā un labu vērtību.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>GPU:</strong> AMD RDNA 3</li>
+          <li><strong>Video atmiņa:</strong> 16 GB GDDR6</li>
+          <li><strong>Atmiņas frekvence:</strong> 19.5 Gbps</li>
+          <li><strong>Stream Processors:</strong> 3,840</li>
+          <li><strong>Game Clock:</strong> 2.12 GHz</li>
+          <li><strong>Barošana:</strong> 2x 8-pin</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>Vidējas klases videokaršu remonts, dzesētāju tīrīšana, termopasta nomaiņa.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="nvidia-rtx-4070" class="page-content">
+    <div class="page">
+      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+      <h1>NVIDIA RTX 4070</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Apraksts</h2>
+        <p>Enerģijas efektīva videokarte ar DLSS 3 atbalstu, perfekta 1440p gaming un streaming.</p>
+        
+        <h2>Specifikācijas</h2>
+        <ul>
+          <li><strong>GPU:</strong> NVIDIA Ada Lovelace</li>
+          <li><strong>Video atmiņa:</strong> 12 GB GDDR6X</li>
+          <li><strong>Atmiņas frekvence:</strong> 21 Gbps</li>
+          <li><strong>CUDA kodoli:</strong> 5,888</li>
+          <li><strong>Boost Clock:</strong> 2.48 GHz</li>
+          <li><strong>Barošana:</strong> 1x 16-pin</li>
+        </ul>
+        
+        <h2>Remonta pakalpojumi</h2>
+        <p>Enerģijas efektīvu videokaršu remonts, dzesēšanas sistēmu optimizācija.</p>
       </div>
     </div>
   </div>
@@ -514,6 +1039,6 @@
     <a href="#">LinkedIn</a>
   </footer>
 
-  <script src="src/js/main.js" defer></script>
+  <script src="src/js/main.js"></script>
 </body>
 </html>
