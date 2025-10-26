@@ -419,6 +419,7 @@
     </div>
   </div>
 
+  <!-- Существующие товары остаются без изменений -->
   <div id="iphone-15-pro" class="page-content">
     <div class="page">
       <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -429,14 +430,40 @@
         <p>Flagship viedtālrunis ar titāna korpusu, A17 Pro čipu un uzlabotām kamerām. Ideāls produktivitātei un kreatīvam darbam.</p>
         
         <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Processors:</strong> Apple A17 Pro</li>
-          <li><strong>Displejs:</strong> 6.1" Super Retina XDR</li>
-          <li><strong>Atmiņa:</strong> 128GB/256GB/512GB/1TB</li>
-          <li><strong>Kamera:</strong> 48MP galvenā, 12MP ultrawide, 12MP telephoto</li>
-          <li><strong>Baterija:</strong> Līdz 23 stundām video atskaņošanas</li>
-          <li><strong>Savienojamība:</strong> USB-C, 5G, Wi-Fi 6E</li>
-        </ul>
+        <div class="specs-grid">
+          <div class="spec-item-detail">
+            <span class="spec-label">Ražotājs:</span>
+            <span class="spec-value">Apple</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Atmiņa:</span>
+            <span class="spec-value">128GB/256GB/512GB/1TB</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Operatīvā atmiņa:</span>
+            <span class="spec-value">8GB</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Baterija:</span>
+            <span class="spec-value">4441 mAh</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kodoli:</span>
+            <span class="spec-value">6-core CPU, 6-core GPU</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Displejs:</span>
+            <span class="spec-value">6.1" Super Retina XDR</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kamera:</span>
+            <span class="spec-value">48MP + 12MP + 12MP</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Savienojamība:</span>
+            <span class="spec-value">5G, Wi-Fi 6E, Bluetooth 5.3</span>
+          </div>
+        </div>
         
         <h2>Remonta pakalpojumi</h2>
         <p>Mēs nodrošinām pilnu iPhone remonta pakalpojumu klāstu: ekrāna nomaiņa, baterijas maiņa, kameras remonts, ūdens bojājumu salabōšana.</p>
@@ -454,14 +481,40 @@
         <p>Vadošais Android viedtālrunis ar S-Pen, AI funkcijām un spožu displeju. Perfekts daudzuzdevumiem.</p>
         
         <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Processors:</strong> Snapdragon 8 Gen 3</li>
-          <li><strong>Displejs:</strong> 6.8" Dynamic AMOLED 2X</li>
-          <li><strong>Atmiņa:</strong> 256GB/512GB/1TB</li>
-          <li><strong>Kamera:</strong> 200MP galvenā, 50MP telephoto, 12MP ultrawide</li>
-          <li><strong>Pīlāra:</strong> Iebūvēts S-Pen</li>
-          <li><strong>Baterija:</strong> 5000mAh</li>
-        </ul>
+        <div class="specs-grid">
+          <div class="spec-item-detail">
+            <span class="spec-label">Ražotājs:</span>
+            <span class="spec-value">Samsung</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Atmiņa:</span>
+            <span class="spec-value">256GB/512GB/1TB</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Operatīvā atmiņa:</span>
+            <span class="spec-value">12GB</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Baterija:</span>
+            <span class="spec-value">5000 mAh</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kodoli:</span>
+            <span class="spec-value">8-core (1x3.39GHz + 5x3.1GHz + 2x2.2GHz)</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Displejs:</span>
+            <span class="spec-value">6.8" Dynamic AMOLED 2X</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kamera:</span>
+            <span class="spec-value">200MP + 50MP + 12MP + 10MP</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Savienojamība:</span>
+            <span class="spec-value">5G, Wi-Fi 7, Bluetooth 5.3</span>
+          </div>
+        </div>
         
         <h2>Remonta pakalpojumi</h2>
         <p>Specializējamies Samsung ierīču remontā: displeja nomaiņa, lodēšanas darbi, programmatūras atjaunināšana.</p>
@@ -469,364 +522,409 @@
     </div>
   </div>
 
-  <div id="google-pixel-8" class="page-content">
+  <!-- Добавленные новые товары -->
+
+  <div id="samsung-a55" class="page-content">
     <div class="page">
       <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>Google Pixel 8 Pro</h1>
+      <h1>Samsung Galaxy A55</h1>
       
       <div class="content-section scroll-animate">
         <h2>Apraksts</h2>
-        <p>Tīrais Android pieredze ar uzlabotām Google AI kamerām. Labākais foto un video kvalitāte.</p>
+        <p>Vidējas klases viedtālrunis ar izcilu kameru un ilgu baterijas dzīvi.</p>
         
         <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Processors:</strong> Google Tensor G3</li>
-          <li><strong>Displejs:</strong> 6.7" OLED 120Hz</li>
-          <li><strong>Atmiņa:</strong> 128GB/256GB/512GB</li>
-          <li><strong>Kamera:</strong> 50MP galvenā, 48MP ultrawide, 48MP telephoto</li>
-          <li><strong>Baterija:</strong> 5050mAh</li>
-          <li><strong>OS:</strong> Android 14</li>
-        </ul>
+        <div class="specs-grid">
+          <div class="spec-item-detail">
+            <span class="spec-label">Ražotājs:</span>
+            <span class="spec-value">Samsung</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Atmiņa:</span>
+            <span class="spec-value">128GB/256GB</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Operatīvā atmiņa:</span>
+            <span class="spec-value">8GB</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Baterija:</span>
+            <span class="spec-value">5000 mAh</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kodoli:</span>
+            <span class="spec-value">Exynos 1480 (8-core)</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Displejs:</span>
+            <span class="spec-value">6.6" Super AMOLED</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kamera:</span>
+            <span class="spec-value">50MP + 12MP + 5MP</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Savienojamība:</span>
+            <span class="spec-value">5G, Wi-Fi 6, Bluetooth 5.3</span>
+          </div>
+        </div>
         
         <h2>Remonta pakalpojumi</h2>
-        <p>Piedāvājam Google Pixel remontu: aparatūras diagnostika, komponentu nomaiņa, programmatūras atjaunināšana.</p>
+        <p>Samsung ierīču remonts: displeja nomaiņa, baterijas maiņa, lodēšanas darbi, programmatūras atjaunināšana.</p>
       </div>
     </div>
   </div>
 
-  <div id="oneplus-12" class="page-content">
+  <div id="google-pixel-7a" class="page-content">
     <div class="page">
       <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>OnePlus 12</h1>
+      <h1>Google Pixel 7a</h1>
       
       <div class="content-section scroll-animate">
         <h2>Apraksts</h2>
-        <p>Ātrākā uzlāde industrijā, gluds 120Hz displejs un jaudīgs Snapdragon processors.</p>
+        <p>Budžeta Pixel ar lielisku kameru un tīro Android pieredzi.</p>
         
         <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Processors:</strong> Snapdragon 8 Gen 3</li>
-          <li><strong>Displejs:</strong> 6.82" LTPO AMOLED</li>
-          <li><strong>Atmiņa:</strong> 256GB/512GB</li>
-          <li><strong>Kamera:</strong> 50MP galvenā, 48MP ultrawide, 64MP periskopa telephoto</li>
-          <li><strong>Uzlāde:</strong> 100W wired, 50W wireless</li>
-        </ul>
+        <div class="specs-grid">
+          <div class="spec-item-detail">
+            <span class="spec-label">Ražotājs:</span>
+            <span class="spec-value">Google</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Atmiņa:</span>
+            <span class="spec-value">128GB</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Operatīvā atmiņa:</span>
+            <span class="spec-value">8GB</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Baterija:</span>
+            <span class="spec-value">4385 mAh</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kodoli:</span>
+            <span class="spec-value">Google Tensor G2 (8-core)</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Displejs:</span>
+            <span class="spec-value">6.1" OLED 90Hz</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kamera:</span>
+            <span class="spec-value">64MP + 13MP</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Savienojamība:</span>
+            <span class="spec-value">5G, Wi-Fi 6E, Bluetooth 5.3</span>
+          </div>
+        </div>
         
         <h2>Remonta pakalpojumi</h2>
-        <p>Veicam OnePlus ierīču remontu: uzlādes portu remonts, displeja nomaiņa, baterijas maiņa.</p>
+        <p>Google Pixel remonts: kameras remonts, displeja nomaiņa, baterijas maiņa, programmatūras atjaunināšana.</p>
       </div>
     </div>
   </div>
 
-  <div id="xiaomi-14" class="page-content">
+  <div id="oneplus-nord-3" class="page-content">
     <div class="page">
       <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>Xiaomi 14 Pro</h1>
+      <h1>OnePlus Nord 3</h1>
       
       <div class="content-section scroll-animate">
         <h2>Apraksts</h2>
-        <p>Innovatīvs Leica kameras sistēma, ātrs uzlādes un ilga baterijas dzīve.</p>
+        <p>Jaudīgs vidējas klases viedtālrunis ar ātru uzlādi.</p>
         
         <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Processors:</strong> Snapdragon 8 Gen 3</li>
-          <li><strong>Displejs:</strong> 6.73" LTPO AMOLED</li>
-          <li><strong>Atmiņa:</strong> 256GB/512GB/1TB</li>
-          <li><strong>Kamera:</strong> 50MP Leica galvenā, 50MP ultrawide, 50MP telephoto</li>
-          <li><strong>Baterija:</strong> 4880mAh</li>
-        </ul>
+        <div class="specs-grid">
+          <div class="spec-item-detail">
+            <span class="spec-label">Ražotājs:</span>
+            <span class="spec-value">OnePlus</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Atmiņa:</span>
+            <span class="spec-value">128GB/256GB</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Operatīvā atmiņa:</span>
+            <span class="spec-value">8GB/16GB</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Baterija:</span>
+            <span class="spec-value">5000 mAh</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kodoli:</span>
+            <span class="spec-value">MediaTek Dimensity 9000 (8-core)</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Displejs:</span>
+            <span class="spec-value">6.74" Fluid AMOLED</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kamera:</span>
+            <span class="spec-value">50MP + 8MP + 2MP</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Savienojamība:</span>
+            <span class="spec-value">5G, Wi-Fi 6, Bluetooth 5.2</span>
+          </div>
+        </div>
         
         <h2>Remonta pakalpojumi</h2>
-        <p>Xiaomi ierīču remonts: kameras remonts, displeja nomaiņa, loģiskās plates diagnostika.</p>
+        <p>OnePlus ierīču remonts: uzlādes portu remonts, displeja nomaiņa, baterijas maiņa.</p>
       </div>
     </div>
   </div>
 
-  <div id="iphone-14" class="page-content">
+  <div id="lenovo-yoga-9i" class="page-content">
     <div class="page">
       <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>Apple iPhone 14</h1>
+      <h1>Lenovo Yoga 9i</h1>
       
       <div class="content-section scroll-animate">
         <h2>Apraksts</h2>
-        <p>Uzticams viedtālrunis ar izcilu veiktspēju, labu bateriju un iOS ekosistēmu.</p>
+        <p>Premium konvertējamais laptops ar rotējošu skaļruni un OLED displeju.</p>
         
         <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Processors:</strong> Apple A15 Bionic</li>
-          <li><strong>Displejs:</strong> 6.1" Super Retina XDR</li>
-          <li><strong>Atmiņa:</strong> 128GB/256GB/512GB</li>
-          <li><strong>Kamera:</strong> 12MP galvenā, 12MP ultrawide</li>
-          <li><strong>Baterija:</strong> Līdz 20 stundām video atskaņošanas</li>
-        </ul>
+        <div class="specs-grid">
+          <div class="spec-item-detail">
+            <span class="spec-label">Ražotājs:</span>
+            <span class="spec-value">Lenovo</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Krātuve:</span>
+            <span class="spec-value">1TB SSD</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Operatīvā atmiņa:</span>
+            <span class="spec-value">16GB LPDDR5</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Baterija:</span>
+            <span class="spec-value">75 Wh</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kodoli:</span>
+            <span class="spec-value">Intel Core i7-1360P (12-core)</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Displejs:</span>
+            <span class="spec-value">14" OLED 4K</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Svars:</span>
+            <span class="spec-value">1.37 kg</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Porti:</span>
+            <span class="spec-value">2x Thunderbolt 4, USB-A</span>
+          </div>
+        </div>
         
         <h2>Remonta pakalpojumi</h2>
-        <p>iPhone 14 remonta pakalpojumi: ekrāna nomaiņa, baterijas maiņa, ūdens bojājumu novēršana.</p>
+        <p>Lenovo Yoga remonts: eņģu mehānisma remonts, displeja nomaiņa, taustiņu remonts.</p>
       </div>
     </div>
   </div>
 
-  <div id="samsung-z-fold5" class="page-content">
+  <div id="asus-vivobook-pro" class="page-content">
     <div class="page">
       <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>Samsung Z Fold 5</h1>
+      <h1>ASUS VivoBook Pro 16</h1>
       
       <div class="content-section scroll-animate">
         <h2>Apraksts</h2>
-        <p>Saliekamais viedtālrunis ar lielu displeju, perfekts darbam un izklaidei.</p>
+        <p>Kreatīvais laptops NVIDIA Studio sertifikātu un precīzu krāsu reproducēšanu.</p>
         
         <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Processors:</strong> Snapdragon 8 Gen 2</li>
-          <li><strong>Displejs:</strong> 7.6" iekšējais, 6.2" ārējais</li>
-          <li><strong>Atmiņa:</strong> 256GB/512GB/1TB</li>
-          <li><strong>Kamera:</strong> 50MP galvenā, 12MP ultrawide, 10MP telephoto</li>
-          <li><strong>Noturība:</strong> IPX8 ūdensizturība</li>
-        </ul>
+        <div class="specs-grid">
+          <div class="spec-item-detail">
+            <span class="spec-label">Ražotājs:</span>
+            <span class="spec-value">ASUS</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Krātuve:</span>
+            <span class="spec-value">1TB SSD</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Operatīvā atmiņa:</span>
+            <span class="spec-value">16GB DDR4</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Baterija:</span>
+            <span class="spec-value">96 Wh</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kodoli:</span>
+            <span class="spec-value">AMD Ryzen 7 7735HS (8-core)</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Displejs:</span>
+            <span class="spec-value">16" 3.2K 120Hz OLED</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Svars:</span>
+            <span class="spec-value">1.95 kg</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Porti:</span>
+            <span class="spec-value">USB-C, USB-A, HDMI, SD reader</span>
+          </div>
+        </div>
         
         <h2>Remonta pakalpojumi</h2>
-        <p>Specializēts saliekamo ierīču remonts: ekrāna nomaiņa, eņģu mehānisma remonts, lodēšanas darbi.</p>
+        <p>ASUS VivoBook remonts: displeja nomaiņa, dzesēšanas sistēmas apkope, loģiskās plates diagnostika.</p>
       </div>
     </div>
   </div>
 
-  <div id="nothing-phone2" class="page-content">
+  <div id="acer-swift-x" class="page-content">
     <div class="page">
       <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>Nothing Phone (2)</h1>
+      <h1>Acer Swift X</h1>
       
       <div class="content-section scroll-animate">
         <h2>Apraksts</h2>
-        <p>Unikāls dizains ar gaismas interfeisu, tīrs operētājsistēma un laba veiktspēja.</p>
+        <p>Viegls un jaudīgs laptops ar diskrētu grafiku mobilajai produktivitātei.</p>
         
         <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Processors:</strong> Snapdragon 8+ Gen 1</li>
-          <li><strong>Displejs:</strong> 6.7" OLED 120Hz</li>
-          <li><strong>Atmiņa:</strong> 128GB/256GB/512GB</li>
-          <li><strong>Kamera:</strong> 50MP galvenā, 50MP ultrawide</li>
-          <li><strong>Dizains:</strong> Caurspīdīgs korpuss ar Glyph interfeisu</li>
-        </ul>
+        <div class="specs-grid">
+          <div class="spec-item-detail">
+            <span class="spec-label">Ražotājs:</span>
+            <span class="spec-value">Acer</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Krātuve:</span>
+            <span class="spec-value">512GB SSD</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Operatīvā atmiņa:</span>
+            <span class="spec-value">16GB LPDDR5</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Baterija:</span>
+            <span class="spec-value">59 Wh</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kodoli:</span>
+            <span class="spec-value">AMD Ryzen 7 7840U (8-core)</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Displejs:</span>
+            <span class="spec-value">14" 2.8K OLED</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Svars:</span>
+            <span class="spec-value">1.39 kg</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Porti:</span>
+            <span class="spec-value">2x USB-C, USB-A, HDMI</span>
+          </div>
+        </div>
         
         <h2>Remonta pakalpojumi</h2>
-        <p>Nothing ierīču remonts: gaismas interfeisa remonts, displeja nomaiņa, aparatūras diagnostika.</p>
+        <p>Acer Swift remonts: displeja nomaiņa, baterijas maiņa, dzesēšanas sistēmas apkope.</p>
       </div>
     </div>
   </div>
 
-  <div id="macbook-pro-16" class="page-content">
+  <div id="amd-ryzen-3-8300g" class="page-content">
     <div class="page">
       <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>MacBook Pro 16" M3 Max</h1>
+      <h1>AMD Ryzen 3 8300G</h1>
       
       <div class="content-section scroll-animate">
         <h2>Apraksts</h2>
-        <p>Profesionāls portatīvais dators ar M3 Max čipu, lielisku ekrānu un ilgu baterijas dzīvi.</p>
+        <p>Budžeta processors ar integrētu grafiku, ideāls ofisa darbam.</p>
         
         <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Processors:</strong> Apple M3 Max (16-core CPU, 40-core GPU)</li>
-          <li><strong>Atmiņa:</strong> 48GB unified memory</li>
-          <li><strong>Krātuve:</strong> 1TB SSD</li>
-          <li><strong>Displejs:</strong> 16.2" Liquid Retina XDR</li>
-          <li><strong>Baterija:</strong> Līdz 22 stundām</li>
-          <li><strong>Porti:</strong> 3x Thunderbolt 4, HDMI, SDXC, MagSafe 3</li>
-        </ul>
+        <div class="specs-grid">
+          <div class="spec-item-detail">
+            <span class="spec-label">Ražotājs:</span>
+            <span class="spec-value">AMD</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kodoli:</span>
+            <span class="spec-value">4</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Pavedieni:</span>
+            <span class="spec-value">8</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Bāzes frekvence:</span>
+            <span class="spec-value">4.0 GHz</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Boost frekvence:</span>
+            <span class="spec-value">4.9 GHz</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kešatmiņa:</span>
+            <span class="spec-value">12MB</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Līdzenis:</span>
+            <span class="spec-value">AM5</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">TDP:</span>
+            <span class="spec-value">65W</span>
+          </div>
+        </div>
         
         <h2>Remonta pakalpojumi</h2>
-        <p>Piedāvājam MacBook remontu: ekrāna nomaiņa, taustiņu remonts, loģiskās plates diagnostika, baterijas maiņa.</p>
+        <p>Procesoru diagnostika un testēšana, kontaktu tīrīšana, dzesēšanas sistēmu uzstādīšana.</p>
       </div>
     </div>
   </div>
 
-  <div id="dell-xps-15" class="page-content">
+  <div id="intel-core-i3-14100" class="page-content">
     <div class="page">
       <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>Dell XPS 15</h1>
+      <h1>Intel Core i3-14100</h1>
       
       <div class="content-section scroll-animate">
         <h2>Apraksts</h2>
-        <p>Jaudīgs kreatīvais darbstacijas laptops ar 4K displeju un NVIDIA grafikas karti.</p>
+        <p>Iznācīgs entry-level processors ar labu veiktspēju ikdienas uzdevumiem.</p>
         
         <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Processors:</strong> Intel Core i7-13700H</li>
-          <li><strong>Grafika:</strong> NVIDIA GeForce RTX 4060</li>
-          <li><strong>Atmiņa:</strong> 32GB DDR5</li>
-          <li><strong>Displejs:</strong> 15.6" 4K OLED</li>
-          <li><strong>Krātuve:</strong> 1TB NVMe SSD</li>
-        </ul>
-        
-        <h2>Remonta pakalpojumi</h2>
-        <p>Dell XPS remonts: grafikas kāršu remonts, displeja nomaiņa, dzesēšanas sistēmas apkope.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="lenovo-thinkpad" class="page-content">
-    <div class="page">
-      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>Lenovo ThinkPad X1</h1>
-      
-      <div class="content-section scroll-animate">
-        <h2>Apraksts</h2>
-        <p>Uzņēmumu klases laptops ar izcilu taustiņu, MIL-STD testētu un garu baterijas dzīvi.</p>
-        
-        <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Processors:</strong> Intel Core i7-1365U</li>
-          <li><strong>Atmiņa:</strong> 16GB LPDDR5</li>
-          <li><strong>Displejs:</strong> 14" WUXGA IPS</li>
-          <li><strong>Krātuve:</strong> 512GB SSD</li>
-          <li><strong>Baterija:</strong> Līdz 15 stundām</li>
-          <li><strong>Noturība:</strong> MIL-STD-810H</li>
-        </ul>
-        
-        <h2>Remonta pakalpojumi</h2>
-        <p>ThinkPad remonts: taustiņu bloku nomaiņa, displeja remonts, loģiskās plates diagnostika.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="asus-rog-zephyrus" class="page-content">
-    <div class="page">
-      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>ASUS ROG Zephyrus</h1>
-      
-      <div class="content-section scroll-animate">
-        <h2>Apraksts</h2>
-        <p>Geiminga laptops ar augstākās klases GPU, augstu atsvaidzināšanas frekvenci un RGB apgaismojumu.</p>
-        
-        <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Processors:</strong> AMD Ryzen 9 7945HX</li>
-          <li><strong>Grafika:</strong> NVIDIA GeForce RTX 4090</li>
-          <li><strong>Atmiņa:</strong> 32GB DDR5</li>
-          <li><strong>Displejs:</strong> 16" QHD+ 240Hz</li>
-          <li><strong>Krātuve:</strong> 2TB NVMe SSD</li>
-        </ul>
-        
-        <h2>Remonta pakalpojumi</h2>
-        <p>Gaming laptop remonts: grafikas kāršu remonts, dzesēšanas sistēmas apkope, displeja nomaiņa.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="hp-spectre" class="page-content">
-    <div class="page">
-      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>HP Spectre x360</h1>
-      
-      <div class="content-section scroll-animate">
-        <h2>Apraksts</h2>
-        <p>Premium 2-in-1 konvertējamais laptops ar OLED displeju un ilgu baterijas dzīvi.</p>
-        
-        <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Processors:</strong> Intel Core i7-1355U</li>
-          <li><strong>Atmiņa:</strong> 16GB LPDDR4x</li>
-          <li><strong>Displejs:</strong> 13.5" OLED 3K2K</li>
-          <li><strong>Krātuve:</strong> 1TB NVMe SSD</li>
-          <li><strong>Baterija:</strong> Līdz 17 stundām</li>
-        </ul>
-        
-        <h2>Remonta pakalpojumi</h2>
-        <p>HP Spectre remonts: eņģu mehānisma remonts, displeja nomaiņa, baterijas maiņa.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="macbook-air-15" class="page-content">
-    <div class="page">
-      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>MacBook Air 15" M2</h1>
-      
-      <div class="content-section scroll-animate">
-        <h2>Apraksts</h2>
-        <p>Plānais un vieglais laptops ar lielu 15 collu ekrānu, M2 čipu un bezventilatora dizainu.</p>
-        
-        <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Processors:</strong> Apple M2 (8-core CPU, 10-core GPU)</li>
-          <li><strong>Atmiņa:</strong> 8GB unified memory</li>
-          <li><strong>Displejs:</strong> 15.3" Liquid Retina</li>
-          <li><strong>Krātuve:</strong> 256GB SSD</li>
-          <li><strong>Baterija:</strong> Līdz 18 stundām</li>
-        </ul>
-        
-        <h2>Remonta pakalpojumi</h2>
-        <p>MacBook Air remonts: ekrāna nomaiņa, loģiskās plates remonts, baterijas maiņa.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="intel-i9-14900k" class="page-content">
-    <div class="page">
-      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>Intel Core i9-14900K</h1>
-      
-      <div class="content-section scroll-animate">
-        <h2>Apraksts</h2>
-        <p>Desktop processors ar 24 kodoliem, līdz 6.0 GHz takts frekvenci un uzlabotu veiktspēju spēlēs.</p>
-        
-        <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Kodoli:</strong> 8 Performance + 16 Efficient (24 kopā)</li>
-          <li><strong>Pavedieni:</strong> 32</li>
-          <li><strong>Takts frekvence:</strong> Līdz 6.0 GHz</li>
-          <li><strong>Kešatmiņa:</strong> 36MB L3</li>
-          <li><strong>TPD:</strong> 125W (Base), 253W (Turbo)</li>
-          <li><strong>Līdzenis:</strong> LGA 1700</li>
-        </ul>
-        
-        <h2>Remonta pakalpojumi</h2>
-        <p>Procesoru diagnostika un testēšana, kontaktu tīrīšana, temperatūras uzraudzības sistēmu remonts.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="amd-ryzen-9-7950x" class="page-content">
-    <div class="page">
-      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>AMD Ryzen 9 7950X</h1>
-      
-      <div class="content-section scroll-animate">
-        <h2>Apraksts</h2>
-        <p>16-kodolu processors ar Zen 4 arhitektūru, augstu takts frekvenci un zemu enerģijas patēriņu.</p>
-        
-        <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Kodoli:</strong> 16</li>
-          <li><strong>Pavedieni:</strong> 32</li>
-          <li><strong>Takts frekvence:</strong> Līdz 5.7 GHz</li>
-          <li><strong>Kešatmiņa:</strong> 80MB (64MB L3 + 16MB L2)</li>
-          <li><strong>TPD:</strong> 170W</li>
-          <li><strong>Līdzenis:</strong> AM5</li>
-        </ul>
-        
-        <h2>Remonta pakalpojumi</h2>
-        <p>AMD procesoru diagnostika, dzesēšanas sistēmu uzstādīšana un apkope.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="intel-i7-14700k" class="page-content">
-    <div class="page">
-      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>Intel Core i7-14700K</h1>
-      
-      <div class="content-section scroll-animate">
-        <h2>Apraksts</h2>
-        <p>Jaudīgs processors 20 kodoliem, lielisks izvēle gan spēlēm, gan produktivitātes darbiem.</p>
-        
-        <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Kodoli:</strong> 8 Performance + 12 Efficient (20 kopā)</li>
-          <li><strong>Pavedieni:</strong> 28</li>
-          <li><strong>Takts frekvence:</strong> Līdz 5.6 GHz</li>
-          <li><strong>Kešatmiņa:</strong> 33MB L3</li>
-          <li><strong>TPD:</strong> 125W (Base), 253W (Turbo)</li>
-        </ul>
+        <div class="specs-grid">
+          <div class="spec-item-detail">
+            <span class="spec-label">Ražotājs:</span>
+            <span class="spec-value">Intel</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kodoli:</span>
+            <span class="spec-value">4</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Pavedieni:</span>
+            <span class="spec-value">8</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Bāzes frekvence:</span>
+            <span class="spec-value">3.5 GHz</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Boost frekvence:</span>
+            <span class="spec-value">4.7 GHz</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kešatmiņa:</span>
+            <span class="spec-value">12MB L3</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Līdzenis:</span>
+            <span class="spec-value">LGA 1700</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">TDP:</span>
+            <span class="spec-value">60W</span>
+          </div>
+        </div>
         
         <h2>Remonta pakalpojumi</h2>
         <p>Procesoru testēšana, dzesētāju uzstādīšana, sistēmu optimizācija.</p>
@@ -834,122 +932,152 @@
     </div>
   </div>
 
-  <div id="amd-ryzen-7-7800x3d" class="page-content">
+  <div id="amd-ryzen-threadripper-7960x" class="page-content">
     <div class="page">
       <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>AMD Ryzen 7 7800X3D</h1>
+      <h1>AMD Ryzen Threadripper 7960X</h1>
       
       <div class="content-section scroll-animate">
         <h2>Apraksts</h2>
-        <p>Gaming processors ar 3D V-Cache tehnoloģiju, nodrošina izcilu veiktspēju spēlēs.</p>
+        <p>Profesionāls workstations processors ar 24 kodoliem maksimālai produktivitātei.</p>
         
         <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Kodoli:</strong> 8</li>
-          <li><strong>Pavedieni:</strong> 16</li>
-          <li><strong>Takts frekvence:</strong> Līdz 5.0 GHz</li>
-          <li><strong>Kešatmiņa:</strong> 104MB (96MB L3 + 8MB L2)</li>
-          <li><strong>TPD:</strong> 120W</li>
-        </ul>
+        <div class="specs-grid">
+          <div class="spec-item-detail">
+            <span class="spec-label">Ražotājs:</span>
+            <span class="spec-value">AMD</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kodoli:</span>
+            <span class="spec-value">24</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Pavedieni:</span>
+            <span class="spec-value">48</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Bāzes frekvence:</span>
+            <span class="spec-value">4.2 GHz</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Boost frekvence:</span>
+            <span class="spec-value">5.3 GHz</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Kešatmiņa:</span>
+            <span class="spec-value">152MB</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Līdzenis:</span>
+            <span class="spec-value">sTR5</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">TDP:</span>
+            <span class="spec-value">350W</span>
+          </div>
+        </div>
         
         <h2>Remonta pakalpojumi</h2>
-        <p>3D V-Cache procesoru diagnostika, dzesēšanas risinājumi, sistēmu konfigurācija.</p>
+        <p>Profesionālo procesoru diagnostika, dzesēšanas risinājumi, sistēmu konfigurācija.</p>
       </div>
     </div>
   </div>
 
-  <div id="intel-i5-14600k" class="page-content">
+  <div id="nvidia-rtx-4060-ti" class="page-content">
     <div class="page">
       <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>Intel Core i5-14600K</h1>
+      <h1>NVIDIA RTX 4060 Ti</h1>
       
       <div class="content-section scroll-animate">
         <h2>Apraksts</h2>
-        <p>Lieliska cenas un veiktspējas attiecība, 14 kodoli, perfekts vidējas klases sistēmām.</p>
+        <p>Vidējas klases videokarte ar DLSS 3 atbalstu, lieliska 1080p gaming izvēle.</p>
         
         <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Kodoli:</strong> 6 Performance + 8 Efficient (14 kopā)</li>
-          <li><strong>Pavedieni:</strong> 20</li>
-          <li><strong>Takts frekvence:</strong> Līdz 5.3 GHz</li>
-          <li><strong>Kešatmiņa:</strong> 24MB L3</li>
-          <li><strong>TPD:</strong> 125W (Base), 181W (Turbo)</li>
-        </ul>
+        <div class="specs-grid">
+          <div class="spec-item-detail">
+            <span class="spec-label">Ražotājs:</span>
+            <span class="spec-value">NVIDIA</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Video atmiņa:</span>
+            <span class="spec-value">8 GB GDDR6</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Atmiņas tips:</span>
+            <span class="spec-value">GDDR6</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Atmiņas frekvence:</span>
+            <span class="spec-value">18 Gbps</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Izejas porti:</span>
+            <span class="spec-value">3x DisplayPort 1.4a, 1x HDMI 2.1</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Ieteicamā PSU:</span>
+            <span class="spec-value">550W</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Barošanas savienotāji:</span>
+            <span class="spec-value">1x 8-pin</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Garums:</span>
+            <span class="spec-value">245 mm</span>
+          </div>
+        </div>
         
         <h2>Remonta pakalpojumi</h2>
-        <p>Vidējas klases procesoru remonts, dzesēšanas sistēmu uzstādīšana, BIOS atjaunināšana.</p>
+        <p>Videokaršu diagnostika, dzesēšanas sistēmu remonts, BIOS atjaunināšana.</p>
       </div>
     </div>
   </div>
 
-  <div id="amd-ryzen-5-7600x" class="page-content">
+  <div id="amd-rx-7700-xt" class="page-content">
     <div class="page">
       <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>AMD Ryzen 5 7600X</h1>
+      <h1>AMD Radeon RX 7700 XT</h1>
       
       <div class="content-section scroll-animate">
         <h2>Apraksts</h2>
-        <p>6-kodolu processors ar augstu takts frekvenci, ideāls budžeta gaming sistēmām.</p>
+        <p>Budžeta videokarte ar labu veiktspēju 1440p izšķirtspējā un mazu enerģijas patēriņu.</p>
         
         <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>Kodoli:</strong> 6</li>
-          <li><strong>Pavedieni:</strong> 12</li>
-          <li><strong>Takts frekvence:</strong> Līdz 5.3 GHz</li>
-          <li><strong>Kešatmiņa:</strong> 38MB (32MB L3 + 6MB L2)</li>
-          <li><strong>TPD:</strong> 105W</li>
-        </ul>
-        
-        <h2>Remonta pakalpojumi</h2>
-        <p>Budžeta procesoru remonts, sistēmu montāža, dzesētāju izvēle un uzstādīšana.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="nvidia-rtx-4090" class="page-content">
-    <div class="page">
-      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>NVIDIA RTX 4090</h1>
-      
-      <div class="content-section scroll-animate">
-        <h2>Apraksts</h2>
-        <p>Jaudīgākā gaming videokarte pasaulē ar 24 GB GDDR6X atmiņu un DLSS 3 tehnoloģiju.</p>
-        
-        <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>GPU:</strong> NVIDIA Ada Lovelace</li>
-          <li><strong>Video atmiņa:</strong> 24 GB GDDR6X</li>
-          <li><strong>Atmiņas frekvence:</strong> 21 Gbps</li>
-          <li><strong>CUDA kodoli:</strong> 16,384</li>
-          <li><strong>Boost Clock:</strong> 2.52 GHz</li>
-          <li><strong>Barošana:</strong> 1x 16-pin</li>
-          <li><strong>Ieteicamā PSU:</strong> 850W</li>
-        </ul>
-        
-        <h2>Remonta pakalpojumi</h2>
-        <p>Veicam videokaršu diagnostiku, dzesēšanas sistēmu remontu, BIOS atjaunināšanu un komponentu nomaiņu.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="amd-rx-7900xtx" class="page-content">
-    <div class="page">
-      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>AMD Radeon RX 7900 XTX</h1>
-      
-      <div class="content-section scroll-animate">
-        <h2>Apraksts</h2>
-        <p>Augstākās klases AMD videokarte ar 24 GB GDDR6 atmiņu un uzlabotu ray tracing veiktspēju.</p>
-        
-        <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>GPU:</strong> AMD RDNA 3</li>
-          <li><strong>Video atmiņa:</strong> 24 GB GDDR6</li>
-          <li><strong>Atmiņas frekvence:</strong> 20 Gbps</li>
-          <li><strong>Stream Processors:</strong> 6,144</li>
-          <li><strong>Game Clock:</strong> 2.3 GHz</li>
-          <li><strong>Barošana:</strong> 2x 8-pin</li>
-        </ul>
+        <div class="specs-grid">
+          <div class="spec-item-detail">
+            <span class="spec-label">Ražotājs:</span>
+            <span class="spec-value">AMD</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Video atmiņa:</span>
+            <span class="spec-value">12 GB GDDR6</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Atmiņas tips:</span>
+            <span class="spec-value">GDDR6</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Atmiņas frekvence:</span>
+            <span class="spec-value">18 Gbps</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Izejas porti:</span>
+            <span class="spec-value">2x DisplayPort 2.1, 1x HDMI 2.1</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Ieteicamā PSU:</span>
+            <span class="spec-value">600W</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Barošanas savienotāji:</span>
+            <span class="spec-value">1x 8-pin</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Garums:</span>
+            <span class="spec-value">255 mm</span>
+          </div>
+        </div>
         
         <h2>Remonta pakalpojumi</h2>
         <p>AMD videokaršu remonts: dzesētāju remonts, BIOS atjaunināšana, komponentu nomaiņa.</p>
@@ -957,24 +1085,50 @@
     </div>
   </div>
 
-  <div id="nvidia-rtx-4080" class="page-content">
+  <div id="nvidia-rtx-3050" class="page-content">
     <div class="page">
       <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>NVIDIA RTX 4080</h1>
+      <h1>NVIDIA RTX 3050</h1>
       
       <div class="content-section scroll-animate">
         <h2>Apraksts</h2>
-        <p>Augstas veiktspējas videokarte ar 16 GB GDDR6X atmiņu, lielisks izvēle 4K gaming.</p>
+        <p>Entry-level gaming videokarte ar ray tracing atbalstu, ideāla 1080p gaming.</p>
         
         <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>GPU:</strong> NVIDIA Ada Lovelace</li>
-          <li><strong>Video atmiņa:</strong> 16 GB GDDR6X</li>
-          <li><strong>Atmiņas frekvence:</strong> 22.4 Gbps</li>
-          <li><strong>CUDA kodoli:</strong> 9,728</li>
-          <li><strong>Boost Clock:</strong> 2.51 GHz</li>
-          <li><strong>Barošana:</strong> 1x 16-pin</li>
-        </ul>
+        <div class="specs-grid">
+          <div class="spec-item-detail">
+            <span class="spec-label">Ražotājs:</span>
+            <span class="spec-value">NVIDIA</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Video atmiņa:</span>
+            <span class="spec-value">8 GB GDDR6</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Atmiņas tips:</span>
+            <span class="spec-value">GDDR6</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Atmiņas frekvence:</span>
+            <span class="spec-value">14 Gbps</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Izejas porti:</span>
+            <span class="spec-value">2x DisplayPort 1.4a, 1x HDMI 2.1</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Ieteicamā PSU:</span>
+            <span class="spec-value">450W</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Barošanas savienotāji:</span>
+            <span class="spec-value">1x 8-pin</span>
+          </div>
+          <div class="spec-item-detail">
+            <span class="spec-label">Garums:</span>
+            <span class="spec-value">200 mm</span>
+          </div>
+        </div>
         
         <h2>Remonta pakalpojumi</h2>
         <p>Videokaršu diagnostika, dzesēšanas sistēmu apkope, komponentu remonts.</p>
@@ -982,55 +1136,1305 @@
     </div>
   </div>
 
-  <div id="amd-rx-7800xt" class="page-content">
+<!-- Apple iPhone 15 Pro - Обновленная страница -->
+<div id="iphone-15-pro" class="page-content">
     <div class="page">
-      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>AMD Radeon RX 7800 XT</h1>
-      
-      <div class="content-section scroll-animate">
-        <h2>Apraksts</h2>
-        <p>Vidējas klases videokarte ar izcilu veiktspēju 1440p izšķirtspējā un labu vērtību.</p>
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>Apple iPhone 15 Pro</h1>
         
-        <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>GPU:</strong> AMD RDNA 3</li>
-          <li><strong>Video atmiņa:</strong> 16 GB GDDR6</li>
-          <li><strong>Atmiņas frekvence:</strong> 19.5 Gbps</li>
-          <li><strong>Stream Processors:</strong> 3,840</li>
-          <li><strong>Game Clock:</strong> 2.12 GHz</li>
-          <li><strong>Barošana:</strong> 2x 8-pin</li>
-        </ul>
-        
-        <h2>Remonta pakalpojumi</h2>
-        <p>Vidējas klases videokaršu remonts, dzesētāju tīrīšana, termopasta nomaiņa.</p>
-      </div>
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Flagship viedtālrunis ar titāna korpusu, A17 Pro čipu un uzlabotām kamerām. Ideāls produktivitātei un kreatīvam darbam.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">Apple</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņa:</span>
+                    <span class="spec-value">128GB/256GB/512GB/1TB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Operatīvā atmiņa:</span>
+                    <span class="spec-value">8GB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Baterija:</span>
+                    <span class="spec-value">4441 mAh</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">6-core CPU, 6-core GPU</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Displejs:</span>
+                    <span class="spec-value">6.1" Super Retina XDR</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kamera:</span>
+                    <span class="spec-value">48MP + 12MP + 12MP</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Savienojamība:</span>
+                    <span class="spec-value">5G, Wi-Fi 6E, Bluetooth 5.3</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Mēs nodrošinām pilnu iPhone remonta pakalpojumu klāstu: ekrāna nomaiņa, baterijas maiņa, kameras remonts, ūdens bojājumu salabōšana.</p>
+        </div>
     </div>
-  </div>
+</div>
 
-  <div id="nvidia-rtx-4070" class="page-content">
+<!-- Samsung Galaxy S24 Ultra - Обновленная страница -->
+<div id="samsung-s24" class="page-content">
     <div class="page">
-      <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
-      <h1>NVIDIA RTX 4070</h1>
-      
-      <div class="content-section scroll-animate">
-        <h2>Apraksts</h2>
-        <p>Enerģijas efektīva videokarte ar DLSS 3 atbalstu, perfekta 1440p gaming un streaming.</p>
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>Samsung Galaxy S24 Ultra</h1>
         
-        <h2>Specifikācijas</h2>
-        <ul>
-          <li><strong>GPU:</strong> NVIDIA Ada Lovelace</li>
-          <li><strong>Video atmiņa:</strong> 12 GB GDDR6X</li>
-          <li><strong>Atmiņas frekvence:</strong> 21 Gbps</li>
-          <li><strong>CUDA kodoli:</strong> 5,888</li>
-          <li><strong>Boost Clock:</strong> 2.48 GHz</li>
-          <li><strong>Barošana:</strong> 1x 16-pin</li>
-        </ul>
-        
-        <h2>Remonta pakalpojumi</h2>
-        <p>Enerģijas efektīvu videokaršu remonts, dzesēšanas sistēmu optimizācija.</p>
-      </div>
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Vadošais Android viedtālrunis ar S-Pen, AI funkcijām un spožu displeju. Perfekts daudzuzdevumiem.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">Samsung</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņa:</span>
+                    <span class="spec-value">256GB/512GB/1TB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Operatīvā atmiņa:</span>
+                    <span class="spec-value">12GB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Baterija:</span>
+                    <span class="spec-value">5000 mAh</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">8-core (1x3.39GHz + 5x3.1GHz + 2x2.2GHz)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Displejs:</span>
+                    <span class="spec-value">6.8" Dynamic AMOLED 2X</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kamera:</span>
+                    <span class="spec-value">200MP + 50MP + 12MP + 10MP</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Savienojamība:</span>
+                    <span class="spec-value">5G, Wi-Fi 7, Bluetooth 5.3</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Specializējamies Samsung ierīču remontā: displeja nomaiņa, lodēšanas darbi, programmatūras atjaunināšana.</p>
+        </div>
     </div>
-  </div>
+</div>
+
+<!-- Google Pixel 8 Pro - Обновленная страница -->
+<div id="google-pixel-8" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>Google Pixel 8 Pro</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Tīrais Android pieredze ar uzlabotām Google AI kamerām. Labākais foto un video kvalitāte.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">Google</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņa:</span>
+                    <span class="spec-value">128GB/256GB/512GB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Operatīvā atmiņa:</span>
+                    <span class="spec-value">12GB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Baterija:</span>
+                    <span class="spec-value">5050 mAh</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">Google Tensor G3 (9-core)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Displejs:</span>
+                    <span class="spec-value">6.7" OLED 120Hz</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kamera:</span>
+                    <span class="spec-value">50MP + 48MP + 48MP</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Savienojamība:</span>
+                    <span class="spec-value">5G, Wi-Fi 7, Bluetooth 5.3</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Piedāvājam Google Pixel remontu: aparatūras diagnostika, komponentu nomaiņa, programmatūras atjaunināšana.</p>
+        </div>
+    </div>
+</div>
+
+<!-- OnePlus 12 - Обновленная страница -->
+<div id="oneplus-12" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>OnePlus 12</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Ātrākā uzlāde industrijā, gluds 120Hz displejs un jaudīgs Snapdragon processors.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">OnePlus</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņa:</span>
+                    <span class="spec-value">256GB/512GB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Operatīvā atmiņa:</span>
+                    <span class="spec-value">12GB/16GB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Baterija:</span>
+                    <span class="spec-value">5400 mAh</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">Snapdragon 8 Gen 3 (8-core)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Displejs:</span>
+                    <span class="spec-value">6.82" LTPO AMOLED</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kamera:</span>
+                    <span class="spec-value">50MP + 48MP + 64MP</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Savienojamība:</span>
+                    <span class="spec-value">5G, Wi-Fi 7, Bluetooth 5.4</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Veicam OnePlus ierīču remontu: uzlādes portu remonts, displeja nomaiņa, baterijas maiņa.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Xiaomi 14 Pro - Обновленная страница -->
+<div id="xiaomi-14" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>Xiaomi 14 Pro</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Innovatīvs Leica kameras sistēma, ātrs uzlādes un ilga baterijas dzīve.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">Xiaomi</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņa:</span>
+                    <span class="spec-value">256GB/512GB/1TB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Operatīvā atmiņa:</span>
+                    <span class="spec-value">12GB/16GB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Baterija:</span>
+                    <span class="spec-value">4880 mAh</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">Snapdragon 8 Gen 3 (8-core)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Displejs:</span>
+                    <span class="spec-value">6.73" LTPO AMOLED</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kamera:</span>
+                    <span class="spec-value">50MP Leica + 50MP + 50MP</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Savienojamība:</span>
+                    <span class="spec-value">5G, Wi-Fi 7, Bluetooth 5.4</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Xiaomi ierīču remonts: kameras remonts, displeja nomaiņa, loģiskās plates diagnostika.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Apple iPhone 14 - Обновленная страница -->
+<div id="iphone-14" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>Apple iPhone 14</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Uzticams viedtālrunis ar izcilu veiktspēju, labu bateriju un iOS ekosistēmu.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">Apple</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņa:</span>
+                    <span class="spec-value">128GB/256GB/512GB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Operatīvā atmiņa:</span>
+                    <span class="spec-value">6GB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Baterija:</span>
+                    <span class="spec-value">3279 mAh</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">Apple A15 Bionic (6-core)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Displejs:</span>
+                    <span class="spec-value">6.1" Super Retina XDR</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kamera:</span>
+                    <span class="spec-value">12MP + 12MP</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Savienojamība:</span>
+                    <span class="spec-value">5G, Wi-Fi 6, Bluetooth 5.3</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>iPhone 14 remonta pakalpojumi: ekrāna nomaiņa, baterijas maiņa, ūdens bojājumu novēršana.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Samsung Z Fold 5 - Обновленная страница -->
+<div id="samsung-z-fold5" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>Samsung Z Fold 5</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Saliekamais viedtālrunis ar lielu displeju, perfekts darbam un izklaidei.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">Samsung</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņa:</span>
+                    <span class="spec-value">256GB/512GB/1TB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Operatīvā atmiņa:</span>
+                    <span class="spec-value">12GB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Baterija:</span>
+                    <span class="spec-value">4400 mAh</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">Snapdragon 8 Gen 2 (8-core)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Displejs:</span>
+                    <span class="spec-value">7.6" iekšējais, 6.2" ārējais</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kamera:</span>
+                    <span class="spec-value">50MP + 12MP + 10MP</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Savienojamība:</span>
+                    <span class="spec-value">5G, Wi-Fi 6E, Bluetooth 5.3</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Specializēts saliekamo ierīču remonts: ekrāna nomaiņa, eņģu mehānisma remonts, lodēšanas darbi.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Nothing Phone (2) - Обновленная страница -->
+<div id="nothing-phone2" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>Nothing Phone (2)</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Unikāls dizains ar gaismas interfeisu, tīrs operētājsistēma un laba veiktspēja.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">Nothing</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņa:</span>
+                    <span class="spec-value">128GB/256GB/512GB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Operatīvā atmiņa:</span>
+                    <span class="spec-value">8GB/12GB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Baterija:</span>
+                    <span class="spec-value">4700 mAh</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">Snapdragon 8+ Gen 1 (8-core)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Displejs:</span>
+                    <span class="spec-value">6.7" OLED 120Hz</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kamera:</span>
+                    <span class="spec-value">50MP + 50MP</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Savienojamība:</span>
+                    <span class="spec-value">5G, Wi-Fi 6, Bluetooth 5.3</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Nothing ierīču remonts: gaismas interfeisa remonts, displeja nomaiņa, aparatūras diagnostika.</p>
+        </div>
+    </div>
+</div>
+
+<!-- MacBook Pro 16" M3 Max - Обновленная страница -->
+<div id="macbook-pro-16" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>MacBook Pro 16" M3 Max</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Profesionāls portatīvais dators ar M3 Max čipu, lielisku ekrānu un ilgu baterijas dzīvi.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">Apple</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Krātuve:</span>
+                    <span class="spec-value">1TB/2TB/4TB/8TB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Operatīvā atmiņa:</span>
+                    <span class="spec-value">48GB/64GB/128GB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Baterija:</span>
+                    <span class="spec-value">100 Wh</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">M3 Max (16-core CPU, 40-core GPU)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Displejs:</span>
+                    <span class="spec-value">16.2" Liquid Retina XDR</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Svars:</span>
+                    <span class="spec-value">2.15 kg</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Porti:</span>
+                    <span class="spec-value">3x Thunderbolt 4, HDMI, SDXC, MagSafe 3</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Piedāvājam MacBook remontu: ekrāna nomaiņa, taustiņu remonts, loģiskās plates diagnostika, baterijas maiņa.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Dell XPS 15 - Обновленная страница -->
+<div id="dell-xps-15" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>Dell XPS 15</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Jaudīgs kreatīvais darbstacijas laptops ar 4K displeju un NVIDIA grafikas karti.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">Dell</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Krātuve:</span>
+                    <span class="spec-value">1TB NVMe SSD</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Operatīvā atmiņa:</span>
+                    <span class="spec-value">32GB DDR5</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Baterija:</span>
+                    <span class="spec-value">86 Wh</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">Intel Core i7-13700H (14-core)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Displejs:</span>
+                    <span class="spec-value">15.6" 4K OLED</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Svars:</span>
+                    <span class="spec-value">1.83 kg</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Porti:</span>
+                    <span class="spec-value">2x Thunderbolt 4, USB-C, SD card</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Dell XPS remonts: grafikas kāršu remonts, displeja nomaiņa, dzesēšanas sistēmas apkope.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Lenovo ThinkPad X1 - Обновленная страница -->
+<div id="lenovo-thinkpad" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>Lenovo ThinkPad X1</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Uzņēmumu klases laptops ar izcilu taustiņu, MIL-STD testētu un garu baterijas dzīvi.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">Lenovo</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Krātuve:</span>
+                    <span class="spec-value">512GB/1TB SSD</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Operatīvā atmiņa:</span>
+                    <span class="spec-value">16GB LPDDR5</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Baterija:</span>
+                    <span class="spec-value">57 Wh</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">Intel Core i7-1365U (10-core)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Displejs:</span>
+                    <span class="spec-value">14" WUXGA IPS</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Svars:</span>
+                    <span class="spec-value">1.12 kg</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Porti:</span>
+                    <span class="spec-value">2x Thunderbolt 4, USB-A, HDMI</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>ThinkPad remonts: taustiņu bloku nomaiņa, displeja remonts, loģiskās plates diagnostika.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ASUS ROG Zephyrus - Обновленная страница -->
+<div id="asus-rog-zephyrus" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>ASUS ROG Zephyrus</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Geiminga laptops ar augstākās klases GPU, augstu atsvaidzināšanas frekvenci un RGB apgaismojumu.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">ASUS</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Krātuve:</span>
+                    <span class="spec-value">2TB NVMe SSD</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Operatīvā atmiņa:</span>
+                    <span class="spec-value">32GB DDR5</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Baterija:</span>
+                    <span class="spec-value">90 Wh</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">AMD Ryzen 9 7945HX (16-core)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Displejs:</span>
+                    <span class="spec-value">16" QHD+ 240Hz</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Svars:</span>
+                    <span class="spec-value">2.3 kg</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Porti:</span>
+                    <span class="spec-value">2x USB-C, 2x USB-A, HDMI, Ethernet</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Gaming laptop remonts: grafikas kāršu remonts, dzesēšanas sistēmas apkope, displeja nomaiņa.</p>
+        </div>
+    </div>
+</div>
+
+<!-- HP Spectre x360 - Обновленная страница -->
+<div id="hp-spectre" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>HP Spectre x360</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Premium 2-in-1 konvertējamais laptops ar OLED displeju un ilgu baterijas dzīvi.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">HP</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Krātuve:</span>
+                    <span class="spec-value">1TB NVMe SSD</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Operatīvā atmiņa:</span>
+                    <span class="spec-value">16GB LPDDR4x</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Baterija:</span>
+                    <span class="spec-value">66 Wh</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">Intel Core i7-1355U (10-core)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Displejs:</span>
+                    <span class="spec-value">13.5" OLED 3K2K</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Svars:</span>
+                    <span class="spec-value">1.36 kg</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Porti:</span>
+                    <span class="spec-value">2x Thunderbolt 4, USB-A, microSD</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>HP Spectre remonts: eņģu mehānisma remonts, displeja nomaiņa, baterijas maiņa.</p>
+        </div>
+    </div>
+</div>
+
+<!-- MacBook Air 15" M2 - Обновленная страница -->
+<div id="macbook-air-15" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>MacBook Air 15" M2</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Plānais un vieglais laptops ar lielu 15 collu ekrānu, M2 čipu un bezventilatora dizainu.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">Apple</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Krātuve:</span>
+                    <span class="spec-value">256GB/512GB/1TB/2TB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Operatīvā atmiņa:</span>
+                    <span class="spec-value">8GB/16GB/24GB</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Baterija:</span>
+                    <span class="spec-value">66.5 Wh</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">M2 (8-core CPU, 10-core GPU)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Displejs:</span>
+                    <span class="spec-value">15.3" Liquid Retina</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Svars:</span>
+                    <span class="spec-value">1.51 kg</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Porti:</span>
+                    <span class="spec-value">2x Thunderbolt 4, MagSafe 3</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>MacBook Air remonts: ekrāna nomaiņa, loģiskās plates remonts, baterijas maiņa.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Intel Core i9-14900K - Обновленная страница -->
+<div id="intel-i9-14900k" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>Intel Core i9-14900K</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Desktop processors ar 24 kodoliem, līdz 6.0 GHz takts frekvenci un uzlabotu veiktspēju spēlēs.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">Intel</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">24 (8P + 16E)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Pavedieni:</span>
+                    <span class="spec-value">32</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Bāzes frekvence:</span>
+                    <span class="spec-value">3.2 GHz</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Boost frekvence:</span>
+                    <span class="spec-value">6.0 GHz</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kešatmiņa:</span>
+                    <span class="spec-value">36MB L3</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Līdzenis:</span>
+                    <span class="spec-value">LGA 1700</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">TDP:</span>
+                    <span class="spec-value">125W (253W Turbo)</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Procesoru diagnostika un testēšana, kontaktu tīrīšana, temperatūras uzraudzības sistēmu remonts.</p>
+        </div>
+    </div>
+</div>
+
+<!-- AMD Ryzen 9 7950X - Обновленная страница -->
+<div id="amd-ryzen-9-7950x" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>AMD Ryzen 9 7950X</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>16-kodolu processors ar Zen 4 arhitektūru, augstu takts frekvenci un zemu enerģijas patēriņu.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">AMD</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">16</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Pavedieni:</span>
+                    <span class="spec-value">32</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Bāzes frekvence:</span>
+                    <span class="spec-value">4.5 GHz</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Boost frekvence:</span>
+                    <span class="spec-value">5.7 GHz</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kešatmiņa:</span>
+                    <span class="spec-value">80MB (64MB L3 + 16MB L2)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Līdzenis:</span>
+                    <span class="spec-value">AM5</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">TDP:</span>
+                    <span class="spec-value">170W</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>AMD procesoru diagnostika, dzesēšanas sistēmu uzstādīšana un apkope.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Intel Core i7-14700K - Обновленная страница -->
+<div id="intel-i7-14700k" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>Intel Core i7-14700K</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Jaudīgs processors 20 kodoliem, lielisks izvēle gan spēlēm, gan produktivitātes darbiem.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">Intel</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">20 (8P + 12E)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Pavedieni:</span>
+                    <span class="spec-value">28</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Bāzes frekvence:</span>
+                    <span class="spec-value">3.4 GHz</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Boost frekvence:</span>
+                    <span class="spec-value">5.6 GHz</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kešatmiņa:</span>
+                    <span class="spec-value">33MB L3</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Līdzenis:</span>
+                    <span class="spec-value">LGA 1700</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">TDP:</span>
+                    <span class="spec-value">125W (253W Turbo)</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Procesoru testēšana, dzesētāju uzstādīšana, sistēmu optimizācija.</p>
+        </div>
+    </div>
+</div>
+
+<!-- AMD Ryzen 7 7800X3D - Обновленная страница -->
+<div id="amd-ryzen-7-7800x3d" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>AMD Ryzen 7 7800X3D</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Gaming processors ar 3D V-Cache tehnoloģiju, nodrošina izcilu veiktspēju spēlēs.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">AMD</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">8</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Pavedieni:</span>
+                    <span class="spec-value">16</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Bāzes frekvence:</span>
+                    <span class="spec-value">4.2 GHz</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Boost frekvence:</span>
+                    <span class="spec-value">5.0 GHz</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kešatmiņa:</span>
+                    <span class="spec-value">104MB (96MB L3 + 8MB L2)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Līdzenis:</span>
+                    <span class="spec-value">AM5</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">TDP:</span>
+                    <span class="spec-value">120W</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>3D V-Cache procesoru diagnostika, dzesēšanas risinājumi, sistēmu konfigurācija.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Intel Core i5-14600K - Обновленная страница -->
+<div id="intel-i5-14600k" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>Intel Core i5-14600K</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Lieliska cenas un veiktspējas attiecība, 14 kodoli, perfekts vidējas klases sistēmām.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">Intel</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">14 (6P + 8E)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Pavedieni:</span>
+                    <span class="spec-value">20</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Bāzes frekvence:</span>
+                    <span class="spec-value">3.5 GHz</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Boost frekvence:</span>
+                    <span class="spec-value">5.3 GHz</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kešatmiņa:</span>
+                    <span class="spec-value">24MB L3</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Līdzenis:</span>
+                    <span class="spec-value">LGA 1700</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">TDP:</span>
+                    <span class="spec-value">125W (181W Turbo)</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Vidējas klases procesoru remonts, dzesēšanas sistēmu uzstādīšana, BIOS atjaunināšana.</p>
+        </div>
+    </div>
+</div>
+
+<!-- AMD Ryzen 5 7600X - Обновленная страница -->
+<div id="amd-ryzen-5-7600x" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>AMD Ryzen 5 7600X</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>6-kodolu processors ar augstu takts frekvenci, ideāls budžeta gaming sistēmām.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">AMD</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kodoli:</span>
+                    <span class="spec-value">6</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Pavedieni:</span>
+                    <span class="spec-value">12</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Bāzes frekvence:</span>
+                    <span class="spec-value">4.7 GHz</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Boost frekvence:</span>
+                    <span class="spec-value">5.3 GHz</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Kešatmiņa:</span>
+                    <span class="spec-value">38MB (32MB L3 + 6MB L2)</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Līdzenis:</span>
+                    <span class="spec-value">AM5</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">TDP:</span>
+                    <span class="spec-value">105W</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Budžeta procesoru remonts, sistēmu montāža, dzesētāju izvēle un uzstādīšana.</p>
+        </div>
+    </div>
+</div>
+
+<!-- NVIDIA RTX 4090 - Обновленная страница -->
+<div id="nvidia-rtx-4090" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>NVIDIA RTX 4090</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Jaudīgākā gaming videokarte pasaulē ar 24 GB GDDR6X atmiņu un DLSS 3 tehnoloģiju.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">NVIDIA</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Video atmiņa:</span>
+                    <span class="spec-value">24 GB GDDR6X</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņas tips:</span>
+                    <span class="spec-value">GDDR6X</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņas frekvence:</span>
+                    <span class="spec-value">21 Gbps</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Izejas porti:</span>
+                    <span class="spec-value">3x DisplayPort 1.4a, 1x HDMI 2.1</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ieteicamā PSU:</span>
+                    <span class="spec-value">850W</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Barošanas savienotāji:</span>
+                    <span class="spec-value">1x 16-pin</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Garums:</span>
+                    <span class="spec-value">304 mm</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Veicam videokaršu diagnostiku, dzesēšanas sistēmu remontu, BIOS atjaunināšanu un komponentu nomaiņu.</p>
+        </div>
+    </div>
+</div>
+
+<!-- AMD Radeon RX 7900 XTX - Обновленная страница -->
+<div id="amd-rx-7900xtx" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>AMD Radeon RX 7900 XTX</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Augstākās klases AMD videokarte ar 24 GB GDDR6 atmiņu un uzlabotu ray tracing veiktspēju.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">AMD</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Video atmiņa:</span>
+                    <span class="spec-value">24 GB GDDR6</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņas tips:</span>
+                    <span class="spec-value">GDDR6</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņas frekvence:</span>
+                    <span class="spec-value">20 Gbps</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Izejas porti:</span>
+                    <span class="spec-value">2x DisplayPort 2.1, 1x HDMI 2.1, 1x USB-C</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ieteicamā PSU:</span>
+                    <span class="spec-value">800W</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Barošanas savienotāji:</span>
+                    <span class="spec-value">2x 8-pin</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Garums:</span>
+                    <span class="spec-value">287 mm</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>AMD videokaršu remonts: dzesētāju remonts, BIOS atjaunināšana, komponentu nomaiņa.</p>
+        </div>
+    </div>
+</div>
+
+<!-- NVIDIA RTX 4080 - Обновленная страница -->
+<div id="nvidia-rtx-4080" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>NVIDIA RTX 4080</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Augstas veiktspējas videokarte ar 16 GB GDDR6X atmiņu, lielisks izvēle 4K gaming.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">NVIDIA</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Video atmiņa:</span>
+                    <span class="spec-value">16 GB GDDR6X</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņas tips:</span>
+                    <span class="spec-value">GDDR6X</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņas frekvence:</span>
+                    <span class="spec-value">22.4 Gbps</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Izejas porti:</span>
+                    <span class="spec-value">3x DisplayPort 1.4a, 1x HDMI 2.1</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ieteicamā PSU:</span>
+                    <span class="spec-value">750W</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Barošanas savienotāji:</span>
+                    <span class="spec-value">1x 16-pin</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Garums:</span>
+                    <span class="spec-value">304 mm</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Videokaršu diagnostika, dzesēšanas sistēmu apkope, komponentu remonts.</p>
+        </div>
+    </div>
+</div>
+
+<!-- AMD Radeon RX 7800 XT - Обновленная страница -->
+<div id="amd-rx-7800xt" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>AMD Radeon RX 7800 XT</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Vidējas klases videokarte ar izcilu veiktspēju 1440p izšķirtspējā un labu vērtību.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">AMD</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Video atmiņa:</span>
+                    <span class="spec-value">16 GB GDDR6</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņas tips:</span>
+                    <span class="spec-value">GDDR6</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņas frekvence:</span>
+                    <span class="spec-value">19.5 Gbps</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Izejas porti:</span>
+                    <span class="spec-value">2x DisplayPort 2.1, 1x HDMI 2.1, 1x USB-C</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ieteicamā PSU:</span>
+                    <span class="spec-value">650W</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Barošanas savienotāji:</span>
+                    <span class="spec-value">2x 8-pin</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Garums:</span>
+                    <span class="spec-value">267 mm</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Vidējas klases videokaršu remonts, dzesētāju tīrīšana, termopasta nomaiņa.</p>
+        </div>
+    </div>
+</div>
+
+<!-- NVIDIA RTX 4070 - Обновленная страница -->
+<div id="nvidia-rtx-4070" class="page-content">
+    <div class="page">
+        <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
+        <h1>NVIDIA RTX 4070</h1>
+        
+        <div class="content-section scroll-animate">
+            <h2>Apraksts</h2>
+            <p>Enerģijas efektīva videokarte ar DLSS 3 atbalstu, perfekta 1440p gaming un streaming.</p>
+            
+            <h2>Specifikācijas</h2>
+            <div class="specs-grid">
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ražotājs:</span>
+                    <span class="spec-value">NVIDIA</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Video atmiņa:</span>
+                    <span class="spec-value">12 GB GDDR6X</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņas tips:</span>
+                    <span class="spec-value">GDDR6X</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Atmiņas frekvence:</span>
+                    <span class="spec-value">21 Gbps</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Izejas porti:</span>
+                    <span class="spec-value">3x DisplayPort 1.4a, 1x HDMI 2.1</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Ieteicamā PSU:</span>
+                    <span class="spec-value">650W</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Barošanas savienotāji:</span>
+                    <span class="spec-value">1x 16-pin</span>
+                </div>
+                <div class="spec-item-detail">
+                    <span class="spec-label">Garums:</span>
+                    <span class="spec-value">240 mm</span>
+                </div>
+            </div>
+            
+            <h2>Remonta pakalpojumi</h2>
+            <p>Enerģijas efektīvu videokaršu remonts, dzesēšanas sistēmu optimizācija.</p>
+        </div>
+    </div>
+</div>
 
   <footer>
     &copy; 2025 Servisa centrs |

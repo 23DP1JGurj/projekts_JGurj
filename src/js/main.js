@@ -6,7 +6,15 @@ const products = [
     price: '€1199',
     image: 'src/image/iphone15pro.png',
     badge: 'Jauns',
-    category: 'telefoni'
+    category: 'telefoni',
+    manufacturer: 'Apple',
+    storage: '128GB/256GB/512GB/1TB',
+    ram: '8GB',
+    battery: '4441 mAh',
+    cores: '6-core CPU, 6-core GPU',
+    display: '6.1" Super Retina XDR',
+    camera: '48MP + 12MP + 12MP',
+    connectivity: '5G, Wi-Fi 6E, Bluetooth 5.3'
   },
   {
     id: 'samsung-s24',
@@ -15,7 +23,15 @@ const products = [
     price: '€1099',
     image: 'src/image/samsungs24.png',
     badge: 'AI Powered',
-    category: 'telefoni'
+    category: 'telefoni',
+    manufacturer: 'Samsung',
+    storage: '256GB/512GB/1TB',
+    ram: '12GB',
+    battery: '5000 mAh',
+    cores: '8-core (1x3.39GHz + 5x3.1GHz + 2x2.2GHz)',
+    display: '6.8" Dynamic AMOLED 2X',
+    camera: '200MP + 50MP + 12MP + 10MP',
+    connectivity: '5G, Wi-Fi 7, Bluetooth 5.3'
   },
   {
     id: 'google-pixel-8',
@@ -24,7 +40,15 @@ const products = [
     price: '€899',
     image: 'src/image/pixel8.png',
     badge: 'Google AI',
-    category: 'telefoni'
+    category: 'telefoni',
+    manufacturer: 'Google',
+    storage: '128GB/256GB/512GB',
+    ram: '12GB',
+    battery: '5050 mAh',
+    cores: 'Google Tensor G3 (9-core)',
+    display: '6.7" OLED 120Hz',
+    camera: '50MP + 48MP + 48MP',
+    connectivity: '5G, Wi-Fi 7, Bluetooth 5.3'
   },
   {
     id: 'oneplus-12',
@@ -33,7 +57,15 @@ const products = [
     price: '€799',
     image: 'src/image/oneplus12.png',
     badge: 'Fast Charge',
-    category: 'telefoni'
+    category: 'telefoni',
+    manufacturer: 'OnePlus',
+    storage: '256GB/512GB',
+    ram: '12GB/16GB',
+    battery: '5400 mAh',
+    cores: 'Snapdragon 8 Gen 3 (8-core)',
+    display: '6.82" LTPO AMOLED',
+    camera: '50MP + 48MP + 64MP',
+    connectivity: '5G, Wi-Fi 7, Bluetooth 5.4'
   },
   {
     id: 'xiaomi-14',
@@ -42,7 +74,15 @@ const products = [
     price: '€849',
     image: 'src/image/xiaomi14.png',
     badge: 'Leica',
-    category: 'telefoni'
+    category: 'telefoni',
+    manufacturer: 'Xiaomi',
+    storage: '256GB/512GB/1TB',
+    ram: '12GB/16GB',
+    battery: '4880 mAh',
+    cores: 'Snapdragon 8 Gen 3 (8-core)',
+    display: '6.73" LTPO AMOLED',
+    camera: '50MP Leica + 50MP + 50MP',
+    connectivity: '5G, Wi-Fi 7, Bluetooth 5.4'
   },
   {
     id: 'iphone-14',
@@ -51,7 +91,15 @@ const products = [
     price: '€799',
     image: 'src/image/iphone14.png',
     badge: 'Izmēģināts',
-    category: 'telefoni'
+    category: 'telefoni',
+    manufacturer: 'Apple',
+    storage: '128GB/256GB/512GB',
+    ram: '6GB',
+    battery: '3279 mAh',
+    cores: 'Apple A15 Bionic (6-core)',
+    display: '6.1" Super Retina XDR',
+    camera: '12MP + 12MP',
+    connectivity: '5G, Wi-Fi 6, Bluetooth 5.3'
   },
   {
     id: 'samsung-z-fold5',
@@ -60,7 +108,15 @@ const products = [
     price: '€1599',
     image: 'src/image/zfold5.png',
     badge: 'Foldable',
-    category: 'telefoni'
+    category: 'telefoni',
+    manufacturer: 'Samsung',
+    storage: '256GB/512GB/1TB',
+    ram: '12GB',
+    battery: '4400 mAh',
+    cores: 'Snapdragon 8 Gen 2 (8-core)',
+    display: '7.6" iekšējais, 6.2" ārējais',
+    camera: '50MP + 12MP + 10MP',
+    connectivity: '5G, Wi-Fi 6E, Bluetooth 5.3'
   },
   {
     id: 'nothing-phone2',
@@ -69,7 +125,67 @@ const products = [
     price: '€649',
     image: 'src/image/nothing2.png',
     badge: 'Unique',
-    category: 'telefoni'
+    category: 'telefoni',
+    manufacturer: 'Nothing',
+    storage: '128GB/256GB/512GB',
+    ram: '8GB/12GB',
+    battery: '4700 mAh',
+    cores: 'Snapdragon 8+ Gen 1 (8-core)',
+    display: '6.7" OLED 120Hz',
+    camera: '50MP + 50MP',
+    connectivity: '5G, Wi-Fi 6, Bluetooth 5.3'
+  },
+  // Новые телефоны
+  {
+    id: 'samsung-a55',
+    title: 'Samsung Galaxy A55',
+    description: 'Vidējas klases viedtālrunis ar izcilu kameru un ilgu baterijas dzīvi.',
+    price: '€449',
+    image: 'src/image/samsung-a55.png',
+    badge: 'Balanced',
+    category: 'telefoni',
+    manufacturer: 'Samsung',
+    storage: '128GB/256GB',
+    ram: '8GB',
+    battery: '5000 mAh',
+    cores: 'Exynos 1480 (8-core)',
+    display: '6.6" Super AMOLED',
+    camera: '50MP + 12MP + 5MP',
+    connectivity: '5G, Wi-Fi 6, Bluetooth 5.3'
+  },
+  {
+    id: 'google-pixel-7a',
+    title: 'Google Pixel 7a',
+    description: 'Budžeta Pixel ar lielisku kameru un tīro Android pieredzi.',
+    price: '€499',
+    image: 'src/image/pixel7a.png',
+    badge: 'Value',
+    category: 'telefoni',
+    manufacturer: 'Google',
+    storage: '128GB',
+    ram: '8GB',
+    battery: '4385 mAh',
+    cores: 'Google Tensor G2 (8-core)',
+    display: '6.1" OLED 90Hz',
+    camera: '64MP + 13MP',
+    connectivity: '5G, Wi-Fi 6E, Bluetooth 5.3'
+  },
+  {
+    id: 'oneplus-nord-3',
+    title: 'OnePlus Nord 3',
+    description: 'Jaudīgs vidējas klases viedtālrunis ar ātru uzlādi.',
+    price: '€399',
+    image: 'src/image/oneplus-nord3.png',
+    badge: 'Performance',
+    category: 'telefoni',
+    manufacturer: 'OnePlus',
+    storage: '128GB/256GB',
+    ram: '8GB/16GB',
+    battery: '5000 mAh',
+    cores: 'MediaTek Dimensity 9000 (8-core)',
+    display: '6.74" Fluid AMOLED',
+    camera: '50MP + 8MP + 2MP',
+    connectivity: '5G, Wi-Fi 6, Bluetooth 5.2'
   },
 
   {
@@ -79,7 +195,15 @@ const products = [
     price: '€3499',
     image: 'src/image/macbook16.png',
     badge: 'Pro',
-    category: 'portatīvie-datori'
+    category: 'portatīvie-datori',
+    manufacturer: 'Apple',
+    storage: '1TB/2TB/4TB/8TB',
+    ram: '48GB/64GB/128GB',
+    battery: '100 Wh',
+    cores: 'M3 Max (16-core CPU, 40-core GPU)',
+    display: '16.2" Liquid Retina XDR',
+    weight: '2.15 kg',
+    ports: '3x Thunderbolt 4, HDMI, SDXC, MagSafe 3'
   },
   {
     id: 'dell-xps-15',
@@ -88,7 +212,15 @@ const products = [
     price: '€2199',
     image: 'src/image/dellxps15.png',
     badge: '4K Display',
-    category: 'portatīvie-datori'
+    category: 'portatīvie-datori',
+    manufacturer: 'Dell',
+    storage: '1TB NVMe SSD',
+    ram: '32GB DDR5',
+    battery: '86 Wh',
+    cores: 'Intel Core i7-13700H (14-core)',
+    display: '15.6" 4K OLED',
+    weight: '1.83 kg',
+    ports: '2x Thunderbolt 4, USB-C, SD card'
   },
   {
     id: 'lenovo-thinkpad',
@@ -97,7 +229,15 @@ const products = [
     price: '€1899',
     image: 'src/image/thinkpad.png',
     badge: 'Business',
-    category: 'portatīvie-datori'
+    category: 'portatīvie-datori',
+    manufacturer: 'Lenovo',
+    storage: '512GB/1TB SSD',
+    ram: '16GB LPDDR5',
+    battery: '57 Wh',
+    cores: 'Intel Core i7-1365U (10-core)',
+    display: '14" WUXGA IPS',
+    weight: '1.12 kg',
+    ports: '2x Thunderbolt 4, USB-A, HDMI'
   },
   {
     id: 'asus-rog-zephyrus',
@@ -106,7 +246,15 @@ const products = [
     price: '€2799',
     image: 'src/image/asusrog.png',
     badge: 'Gaming',
-    category: 'portatīvie-datori'
+    category: 'portatīvie-datori',
+    manufacturer: 'ASUS',
+    storage: '2TB NVMe SSD',
+    ram: '32GB DDR5',
+    battery: '90 Wh',
+    cores: 'AMD Ryzen 9 7945HX (16-core)',
+    display: '16" QHD+ 240Hz',
+    weight: '2.3 kg',
+    ports: '2x USB-C, 2x USB-A, HDMI, Ethernet'
   },
   {
     id: 'hp-spectre',
@@ -115,7 +263,15 @@ const products = [
     price: '€1599',
     image: 'src/image/hpspectre.png',
     badge: 'Convertible',
-    category: 'portatīvie-datori'
+    category: 'portatīvie-datori',
+    manufacturer: 'HP',
+    storage: '1TB NVMe SSD',
+    ram: '16GB LPDDR4x',
+    battery: '66 Wh',
+    cores: 'Intel Core i7-1355U (10-core)',
+    display: '13.5" OLED 3K2K',
+    weight: '1.36 kg',
+    ports: '2x Thunderbolt 4, USB-A, microSD'
   },
   {
     id: 'macbook-air-15',
@@ -124,7 +280,67 @@ const products = [
     price: '€1499',
     image: 'src/image/macbookair15.png',
     badge: 'Ultra Thin',
-    category: 'portatīvie-datori'
+    category: 'portatīvie-datori',
+    manufacturer: 'Apple',
+    storage: '256GB/512GB/1TB/2TB',
+    ram: '8GB/16GB/24GB',
+    battery: '66.5 Wh',
+    cores: 'M2 (8-core CPU, 10-core GPU)',
+    display: '15.3" Liquid Retina',
+    weight: '1.51 kg',
+    ports: '2x Thunderbolt 4, MagSafe 3'
+  },
+  // Новые ноутбуки
+  {
+    id: 'lenovo-yoga-9i',
+    title: 'Lenovo Yoga 9i',
+    description: 'Premium konvertējamais laptops ar rotējošu skaļruni un OLED displeju.',
+    price: '€1699',
+    image: 'src/image/yoga9i.png',
+    badge: 'Convertible',
+    category: 'portatīvie-datori',
+    manufacturer: 'Lenovo',
+    storage: '1TB SSD',
+    ram: '16GB LPDDR5',
+    battery: '75 Wh',
+    cores: 'Intel Core i7-1360P (12-core)',
+    display: '14" OLED 4K',
+    weight: '1.37 kg',
+    ports: '2x Thunderbolt 4, USB-A'
+  },
+  {
+    id: 'asus-vivobook-pro',
+    title: 'ASUS VivoBook Pro 16',
+    description: 'Kreatīvais laptops NVIDIA Studio sertifikātu un precīzu krāsu reproducēšanu.',
+    price: '€1299',
+    image: 'src/image/vivobook-pro.png',
+    badge: 'Creative',
+    category: 'portatīvie-datori',
+    manufacturer: 'ASUS',
+    storage: '1TB SSD',
+    ram: '16GB DDR4',
+    battery: '96 Wh',
+    cores: 'AMD Ryzen 7 7735HS (8-core)',
+    display: '16" 3.2K 120Hz OLED',
+    weight: '1.95 kg',
+    ports: 'USB-C, USB-A, HDMI, SD reader'
+  },
+  {
+    id: 'acer-swift-x',
+    title: 'Acer Swift X',
+    description: 'Viegls un jaudīgs laptops ar diskrētu grafiku mobilajai produktivitātei.',
+    price: '€999',
+    image: 'src/image/swift-x.png',
+    badge: 'Mobile',
+    category: 'portatīvie-datori',
+    manufacturer: 'Acer',
+    storage: '512GB SSD',
+    ram: '16GB LPDDR5',
+    battery: '59 Wh',
+    cores: 'AMD Ryzen 7 7840U (8-core)',
+    display: '14" 2.8K OLED',
+    weight: '1.39 kg',
+    ports: '2x USB-C, USB-A, HDMI'
   },
 
   {
@@ -134,7 +350,15 @@ const products = [
     price: '€649',
     image: 'src/image/i914900k.png',
     badge: 'Flagship',
-    category: 'procesori'
+    category: 'procesori',
+    manufacturer: 'Intel',
+    cores: '24 (8P + 16E)',
+    threads: '32',
+    baseClock: '3.2 GHz',
+    boostClock: '6.0 GHz',
+    cache: '36MB L3',
+    socket: 'LGA 1700',
+    tdp: '125W (253W Turbo)'
   },
   {
     id: 'amd-ryzen-9-7950x',
@@ -143,7 +367,15 @@ const products = [
     price: '€699',
     image: 'src/image/ryzen7950x.png',
     badge: '16-Core',
-    category: 'procesori'
+    category: 'procesori',
+    manufacturer: 'AMD',
+    cores: '16',
+    threads: '32',
+    baseClock: '4.5 GHz',
+    boostClock: '5.7 GHz',
+    cache: '80MB (64MB L3 + 16MB L2)',
+    socket: 'AM5',
+    tdp: '170W'
   },
   {
     id: 'intel-i7-14700k',
@@ -152,7 +384,15 @@ const products = [
     price: '€449',
     image: 'src/image/i714700k.png',
     badge: 'Performance',
-    category: 'procesori'
+    category: 'procesori',
+    manufacturer: 'Intel',
+    cores: '20 (8P + 12E)',
+    threads: '28',
+    baseClock: '3.4 GHz',
+    boostClock: '5.6 GHz',
+    cache: '33MB L3',
+    socket: 'LGA 1700',
+    tdp: '125W (253W Turbo)'
   },
   {
     id: 'amd-ryzen-7-7800x3d',
@@ -161,7 +401,15 @@ const products = [
     price: '€449',
     image: 'src/image/ryzen7800x3d.png',
     badge: '3D V-Cache',
-    category: 'procesori'
+    category: 'procesori',
+    manufacturer: 'AMD',
+    cores: '8',
+    threads: '16',
+    baseClock: '4.2 GHz',
+    boostClock: '5.0 GHz',
+    cache: '104MB (96MB L3 + 8MB L2)',
+    socket: 'AM5',
+    tdp: '120W'
   },
   {
     id: 'intel-i5-14600k',
@@ -170,7 +418,15 @@ const products = [
     price: '€329',
     image: 'src/image/i514600k.png',
     badge: 'Value',
-    category: 'procesori'
+    category: 'procesori',
+    manufacturer: 'Intel',
+    cores: '14 (6P + 8E)',
+    threads: '20',
+    baseClock: '3.5 GHz',
+    boostClock: '5.3 GHz',
+    cache: '24MB L3',
+    socket: 'LGA 1700',
+    tdp: '125W (181W Turbo)'
   },
   {
     id: 'amd-ryzen-5-7600x',
@@ -179,7 +435,67 @@ const products = [
     price: '€299',
     image: 'src/image/ryzen7600x.png',
     badge: 'Budget King',
-    category: 'procesori'
+    category: 'procesori',
+    manufacturer: 'AMD',
+    cores: '6',
+    threads: '12',
+    baseClock: '4.7 GHz',
+    boostClock: '5.3 GHz',
+    cache: '38MB (32MB L3 + 6MB L2)',
+    socket: 'AM5',
+    tdp: '105W'
+  },
+  // Новые процессоры
+  {
+    id: 'amd-ryzen-3-8300g',
+    title: 'AMD Ryzen 3 8300G',
+    description: 'Budžeta processors ar integrētu grafiku, ideāls ofisa darbam.',
+    price: '€199',
+    image: 'src/image/ryzen3-8300g.png',
+    badge: 'Budget',
+    category: 'procesori',
+    manufacturer: 'AMD',
+    cores: '4',
+    threads: '8',
+    baseClock: '4.0 GHz',
+    boostClock: '4.9 GHz',
+    cache: '12MB',
+    socket: 'AM5',
+    tdp: '65W'
+  },
+  {
+    id: 'intel-core-i3-14100',
+    title: 'Intel Core i3-14100',
+    description: 'Iznācīgs entry-level processors ar labu veiktspēju ikdienas uzdevumiem.',
+    price: '€159',
+    image: 'src/image/i3-14100.png',
+    badge: 'Entry',
+    category: 'procesori',
+    manufacturer: 'Intel',
+    cores: '4',
+    threads: '8',
+    baseClock: '3.5 GHz',
+    boostClock: '4.7 GHz',
+    cache: '12MB L3',
+    socket: 'LGA 1700',
+    tdp: '60W'
+  },
+  {
+    id: 'amd-ryzen-threadripper-7960x',
+    title: 'AMD Ryzen Threadripper 7960X',
+    description: 'Profesionāls workstations processors ar 24 kodoliem maksimālai produktivitātei.',
+    price: '€1499',
+    image: 'src/image/threadripper-7960x.png',
+    badge: 'Workstation',
+    category: 'procesori',
+    manufacturer: 'AMD',
+    cores: '24',
+    threads: '48',
+    baseClock: '4.2 GHz',
+    boostClock: '5.3 GHz',
+    cache: '152MB',
+    socket: 'sTR5',
+    tdp: '350W'
   },
 
   {
@@ -189,7 +505,15 @@ const products = [
     price: '€1799',
     image: 'src/image/rtx4090.png',
     badge: 'Ultimate',
-    category: 'videokartes'
+    category: 'videokartes',
+    manufacturer: 'NVIDIA',
+    vram: '24 GB GDDR6X',
+    memoryType: 'GDDR6X',
+    memorySpeed: '21 Gbps',
+    outputs: '3x DisplayPort 1.4a, 1x HDMI 2.1',
+    recommendedPSU: '850W',
+    powerConnectors: '1x 16-pin',
+    length: '304 mm'
   },
   {
     id: 'amd-rx-7900xtx',
@@ -198,7 +522,15 @@ const products = [
     price: '€999',
     image: 'src/image/rx7900xtx.png',
     badge: 'AMD Flagship',
-    category: 'videokartes'
+    category: 'videokartes',
+    manufacturer: 'AMD',
+    vram: '24 GB GDDR6',
+    memoryType: 'GDDR6',
+    memorySpeed: '20 Gbps',
+    outputs: '2x DisplayPort 2.1, 1x HDMI 2.1, 1x USB-C',
+    recommendedPSU: '800W',
+    powerConnectors: '2x 8-pin',
+    length: '287 mm'
   },
   {
     id: 'nvidia-rtx-4080',
@@ -207,7 +539,15 @@ const products = [
     price: '€1199',
     image: 'src/image/rtx4080.png',
     badge: '4K Ready',
-    category: 'videokartes'
+    category: 'videokartes',
+    manufacturer: 'NVIDIA',
+    vram: '16 GB GDDR6X',
+    memoryType: 'GDDR6X',
+    memorySpeed: '22.4 Gbps',
+    outputs: '3x DisplayPort 1.4a, 1x HDMI 2.1',
+    recommendedPSU: '750W',
+    powerConnectors: '1x 16-pin',
+    length: '304 mm'
   },
   {
     id: 'amd-rx-7800xt',
@@ -216,7 +556,15 @@ const products = [
     price: '€549',
     image: 'src/image/rx7800xt.png',
     badge: '1440p King',
-    category: 'videokartes'
+    category: 'videokartes',
+    manufacturer: 'AMD',
+    vram: '16 GB GDDR6',
+    memoryType: 'GDDR6',
+    memorySpeed: '19.5 Gbps',
+    outputs: '2x DisplayPort 2.1, 1x HDMI 2.1, 1x USB-C',
+    recommendedPSU: '650W',
+    powerConnectors: '2x 8-pin',
+    length: '267 mm'
   },
   {
     id: 'nvidia-rtx-4070',
@@ -225,7 +573,67 @@ const products = [
     price: '€649',
     image: 'src/image/rtx4070.png',
     badge: 'Efficient',
-    category: 'videokartes'
+    category: 'videokartes',
+    manufacturer: 'NVIDIA',
+    vram: '12 GB GDDR6X',
+    memoryType: 'GDDR6X',
+    memorySpeed: '21 Gbps',
+    outputs: '3x DisplayPort 1.4a, 1x HDMI 2.1',
+    recommendedPSU: '650W',
+    powerConnectors: '1x 16-pin',
+    length: '240 mm'
+  },
+  // Новые видеокарты
+  {
+    id: 'nvidia-rtx-4060-ti',
+    title: 'NVIDIA RTX 4060 Ti',
+    description: 'Vidējas klases videokarte ar DLSS 3 atbalstu, lieliska 1080p gaming izvēle.',
+    price: '€449',
+    image: 'src/image/rtx4060ti.png',
+    badge: '1080p Gaming',
+    category: 'videokartes',
+    manufacturer: 'NVIDIA',
+    vram: '8 GB GDDR6',
+    memoryType: 'GDDR6',
+    memorySpeed: '18 Gbps',
+    outputs: '3x DisplayPort 1.4a, 1x HDMI 2.1',
+    recommendedPSU: '550W',
+    powerConnectors: '1x 8-pin',
+    length: '245 mm'
+  },
+  {
+    id: 'amd-rx-7700-xt',
+    title: 'AMD Radeon RX 7700 XT',
+    description: 'Budžeta videokarte ar labu veiktspēju 1440p izšķirtspējā un mazu enerģijas patēriņu.',
+    price: '€399',
+    image: 'src/image/rx7700xt.png',
+    badge: 'Value',
+    category: 'videokartes',
+    manufacturer: 'AMD',
+    vram: '12 GB GDDR6',
+    memoryType: 'GDDR6',
+    memorySpeed: '18 Gbps',
+    outputs: '2x DisplayPort 2.1, 1x HDMI 2.1',
+    recommendedPSU: '600W',
+    powerConnectors: '1x 8-pin',
+    length: '255 mm'
+  },
+  {
+    id: 'nvidia-rtx-3050',
+    title: 'NVIDIA RTX 3050',
+    description: 'Entry-level gaming videokarte ar ray tracing atbalstu, ideāla 1080p gaming.',
+    price: '€299',
+    image: 'src/image/rtx3050.png',
+    badge: 'Entry Gaming',
+    category: 'videokartes',
+    manufacturer: 'NVIDIA',
+    vram: '8 GB GDDR6',
+    memoryType: 'GDDR6',
+    memorySpeed: '14 Gbps',
+    outputs: '2x DisplayPort 1.4a, 1x HDMI 2.1',
+    recommendedPSU: '450W',
+    powerConnectors: '1x 8-pin',
+    length: '200 mm'
   }
 ];
 
@@ -427,6 +835,7 @@ function renderProducts(productsArray = currentProducts) {
             <div class="card-body">
                 <h3>${product.title}</h3>
                 <p class="desc">${product.description}</p>
+                <!-- Убраны технические характеристики из карточки -->
             </div>
             <div class="card-meta">
                 <div class="price">${product.price}</div>
@@ -486,7 +895,9 @@ function filterProducts(searchTerm) {
         currentProducts = products.filter(product => 
             product.title.toLowerCase().includes(searchTerm) ||
             product.description.toLowerCase().includes(searchTerm) ||
-            product.category.toLowerCase().includes(searchTerm)
+            product.category.toLowerCase().includes(searchTerm) ||
+            (product.manufacturer && product.manufacturer.toLowerCase().includes(searchTerm)) ||
+            (product.storage && product.storage.toLowerCase().includes(searchTerm))
         );
     }
     

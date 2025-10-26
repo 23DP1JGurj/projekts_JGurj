@@ -1287,3 +1287,70 @@
         font-size: 14px;
       }
     }
+
+    /* Добавляем эти стили в конец CSS файла */
+
+.product-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.spec-item {
+    background: var(--accent);
+    color: var(--primary);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid var(--border);
+}
+
+/* Улучшаем отображение спецификаций на страницах товаров */
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.spec-item-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.spec-label {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.spec-value {
+    color: var(--muted-text);
+    text-align: right;
+}
+
+/* Адаптивность для новых элементов */
+@media (max-width: 768px) {
+    .product-specs {
+        gap: 6px;
+    }
+    
+    .spec-item {
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+    
+    .specs-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-specs {
+        justify-content: center;
+    }
+}
