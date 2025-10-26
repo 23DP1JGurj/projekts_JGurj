@@ -1,6 +1,4 @@
-// ===== ОБНОВЛЕННЫЕ ДАННЫЕ ДЛЯ СЕРВИСНОГО ЦЕНТРА =====
 const products = [
-  // ===== ТЕЛЕФОНЫ (8 товаров) =====
   {
     id: 'iphone-15-pro',
     title: 'Apple iPhone 15 Pro',
@@ -74,7 +72,6 @@ const products = [
     category: 'telefoni'
   },
 
-  // ===== PORTATĪVIE DATORI (6 товаров) =====
   {
     id: 'macbook-pro-16',
     title: 'MacBook Pro 16" M3 Max',
@@ -130,7 +127,6 @@ const products = [
     category: 'portatīvie-datori'
   },
 
-  // ===== PROCESORI (6 товаров) =====
   {
     id: 'intel-i9-14900k',
     title: 'Intel Core i9-14900K',
@@ -186,7 +182,6 @@ const products = [
     category: 'procesori'
   },
 
-  // ===== VIDEOKARTES (5 товаров) =====
   {
     id: 'nvidia-rtx-4090',
     title: 'NVIDIA RTX 4090',
@@ -234,13 +229,10 @@ const products = [
   }
 ];
 
-
-// ===== ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ =====
 let currentProducts = [...products];
 let currentSort = 'default';
 let currentPageId = 'servisa-centrs';
 
-// ===== УЛУЧШЕННАЯ СИСТЕМА СОХРАНЕНИЯ СОСТОЯНИЯ =====
 class StateManager {
     constructor() {
         this.storageKey = 'servisa-centrs-state';
@@ -248,25 +240,20 @@ class StateManager {
     }
 
     init() {
-        // Отключаем автоматическое восстановление скролла браузера
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
 
-        // Восстанавливаем состояние при загрузке
         this.restoreState();
         
-        // Сохраняем состояние при различных событиях
         window.addEventListener('beforeunload', () => this.saveFullState());
         window.addEventListener('pagehide', () => this.saveFullState());
         document.addEventListener('visibilitychange', () => {
             if (document.hidden) this.saveFullState();
         });
 
-        // Автосохранение скролла
         this.initScrollSaving();
         
-        // Сохраняем состояние при навигации
         this.initNavigationTracking();
     }
 
@@ -292,22 +279,18 @@ class StateManager {
 
     restoreState() {
         try {
-            // Пробуем сначала sessionStorage (для текущей сессии), потом localStorage
             let saved = sessionStorage.getItem(this.storageKey) || localStorage.getItem(this.storageKey);
             
             if (saved) {
                 const state = JSON.parse(saved);
                 
-                // Проверяем актуальность состояния (не старше 1 часа)
                 if (state.timestamp && (Date.now() - state.timestamp) < 3600000) {
                     currentPageId = state.currentPage || 'servisa-centrs';
                     currentProducts = state.products?.current || [...products];
                     currentSort = state.products?.sort || 'default';
                     
-                    // Восстанавливаем фильтры
                     this.restoreFilters(state.filters);
                     
-                    // Восстанавливаем страницу
                     this.restorePage(state.currentPage, state.scrollPosition);
                     
                     return true;
@@ -322,11 +305,9 @@ class StateManager {
 
     restorePage(pageId, scrollPosition) {
         if (pageId && pageId !== 'servisa-centrs') {
-            // Показываем страницу без анимации загрузки
             setTimeout(() => {
                 showPage(pageId, false);
                 
-                // Восстанавливаем скролл после отрисовки страницы
                 setTimeout(() => {
                     if (scrollPosition > 0) {
                         window.scrollTo({ top: scrollPosition, behavior: 'auto' });
@@ -351,13 +332,11 @@ class StateManager {
     restoreFilters(filters) {
         if (!filters) return;
         
-        // Восстанавливаем поиск
         const searchInput = document.getElementById('searchInput');
         if (searchInput && filters.search) {
             searchInput.value = filters.search;
         }
-        
-        // Восстанавливаем фильтры и сортировку
+
         if (filters.category) {
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.filter === filters.category);
@@ -377,8 +356,7 @@ class StateManager {
         
         window.addEventListener('scroll', () => {
             const currentPosition = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // Сохраняем только если скролл изменился значительно
+
             if (Math.abs(currentPosition - lastScrollPosition) > 50) {
                 clearTimeout(scrollTimeout);
                 scrollTimeout = setTimeout(() => {
@@ -390,7 +368,6 @@ class StateManager {
     }
 
     initNavigationTracking() {
-        // Перехватываем клики по ссылкам
         document.addEventListener('click', (e) => {
             const link = e.target.closest('a[href]');
             if (link) {
@@ -398,7 +375,6 @@ class StateManager {
             }
         });
 
-        // Перехватываем клики по кнопкам
         document.addEventListener('click', (e) => {
             const button = e.target.closest('button');
             if (button && (button.onclick || button.getAttribute('onclick'))) {
@@ -407,7 +383,6 @@ class StateManager {
         });
     }
 
-    // Быстрое сохранение только основных данных
     quickSave() {
         try {
             const state = {
@@ -417,15 +392,12 @@ class StateManager {
             };
             sessionStorage.setItem(this.storageKey + '-quick', JSON.stringify(state));
         } catch (e) {
-            // Игнорируем ошибки быстрого сохранения
         }
     }
 }
 
-// Инициализация менеджера состояния
 const stateManager = new StateManager();
 
-// ===== ОСНОВНЫЕ ФУНКЦИИ =====
 function parsePrice(priceStr) {
     const cleanPrice = priceStr.replace(/\D/g, '');
     return parseFloat(cleanPrice) || 0;
@@ -471,7 +443,6 @@ function renderProducts(productsArray = currentProducts) {
     stateManager.quickSave();
 }
 
-// ===== ФИЛЬТРАЦИЯ И ПОИСК =====
 function initSearchAndFilter() {
     const searchInput = document.getElementById('searchInput');
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -596,9 +567,7 @@ function resetFilters() {
     stateManager.saveFullState();
 }
 
-// ===== СИСТЕМА СТРАНИЦ =====
 function showPage(pageId, useLoading = true) {
-    // Сохраняем текущее состояние перед переходом
     stateManager.saveFullState();
     currentPageId = pageId;
     
@@ -616,24 +585,20 @@ function showPage(pageId, useLoading = true) {
 function performPageSwitch(pageId) {
     const allPages = document.querySelectorAll('.page-content');
     
-    // Скрываем все страницы
     allPages.forEach(page => {
         page.classList.remove('active');
     });
 
     const targetPage = document.getElementById(pageId);
     if (targetPage) {
-        // Показываем целевую страницу
         targetPage.classList.add('active');
         currentPageId = pageId;
         
-        // Специфичная инициализация для каждой страницы
         if (pageId === 'karte') {
             setTimeout(() => {
                 renderProducts();
                 initSearchAndFilter();
                 
-                // Восстанавливаем скролл после полной загрузки
                 setTimeout(() => {
                     try {
                         const quickState = sessionStorage.getItem(stateManager.storageKey + '-quick');
@@ -644,18 +609,15 @@ function performPageSwitch(pageId) {
                             }
                         }
                     } catch (e) {
-                        // Игнорируем ошибки восстановления скролла
                     }
                 }, 200);
             }, 50);
         } else {
-            // Для других страниц просто инициализируем анимации
             setTimeout(() => {
                 initScrollAnimations();
             }, 50);
         }
         
-        // Быстрое сохранение после переключения страницы
         setTimeout(() => stateManager.quickSave(), 100);
     }
 }
@@ -693,7 +655,6 @@ function hideLoadingBar() {
     }
 }
 
-// ===== АНИМАЦИИ =====
 function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.05,
@@ -715,7 +676,6 @@ function initScrollAnimations() {
     });
 }
 
-// ===== НАВИГАЦИЯ И МЕНЮ =====
 function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
     const burger = document.querySelector('.burger-menu');
@@ -762,7 +722,6 @@ function toggleMobileDropdown(button) {
     stateManager.quickSave();
 }
 
-// ===== ТЕМНАЯ ТЕМА =====
 (function () {
     const storageKey = 'site-theme'; 
     const themeToggle = document.getElementById('theme-toggle');
@@ -814,9 +773,7 @@ function toggleMobileDropdown(button) {
     }
 })();
 
-// ===== ИНИЦИАЛИЗАЦИЯ =====
 document.addEventListener('DOMContentLoaded', function() {
-    // Инициализация dropdown меню
     const dropdowns = document.querySelectorAll('.dropdown');
     dropdowns.forEach(dropdown => {
         const dropbtn = dropdown.querySelector('.dropbtn');
@@ -834,7 +791,6 @@ document.addEventListener('DOMContentLoaded', function() {
         dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
     });
     
-    // Мобильное меню
     const burgerMenu = document.querySelector('.burger-menu');
     const closeMenu = document.querySelector('.close-menu');
     
@@ -845,25 +801,20 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'Escape') closeMobileMenu();
     });
     
-    // Инициализируем страницу товаров если она активна
     if (document.getElementById('karte').classList.contains('active')) {
         setTimeout(() => {
             renderProducts();
             initSearchAndFilter();
         }, 100);
     } else {
-        // Инициализируем анимации для главной страницы
         initScrollAnimations();
     }
     
-    // Финальное сохранение состояния после полной загрузки
     window.addEventListener('load', () => {
         setTimeout(() => stateManager.saveFullState(), 500);
     });
 });
 
-// ===== РЕЗЕРВНОЕ СОХРАНЕНИЕ =====
-// Дополнительное сохранение каждые 30 секунд на случай сбоев
 setInterval(() => {
     stateManager.quickSave();
 }, 30000);

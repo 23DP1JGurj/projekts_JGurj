@@ -720,7 +720,6 @@
       transition: color 0.3s ease;
     }
 
-    /* ИСПРАВЛЕННАЯ СЕТКА ДЛЯ КАРТОЧЕК ТОВАРОВ */
     .cards-grid{
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -767,7 +766,6 @@
       border-color: rgba(67, 97, 238, 0.25);
     }
 
-    /* ИСПРАВЛЕННЫЙ РАЗМЕР КАРТИНОК */
     .card-img{
       height: 250px;
       overflow:hidden;
@@ -1070,7 +1068,6 @@
       header{padding:14px 20px}
       .theme-toggle{font-size:12px; padding:6px 10px}
       
-      /* Адаптация карточек товаров для мобильных */
       .cards-grid {
         grid-template-columns: 1fr;
         max-width: 400px;
