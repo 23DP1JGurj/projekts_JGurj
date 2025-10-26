@@ -135,7 +135,6 @@ const products = [
     camera: '50MP + 50MP',
     connectivity: '5G, Wi-Fi 6, Bluetooth 5.3'
   },
-  // Новые телефоны
   {
     id: 'samsung-a55',
     title: 'Samsung Galaxy A55',
@@ -290,7 +289,6 @@ const products = [
     weight: '1.51 kg',
     ports: '2x Thunderbolt 4, MagSafe 3'
   },
-  // Новые ноутбуки
   {
     id: 'lenovo-yoga-9i',
     title: 'Lenovo Yoga 9i',
@@ -445,7 +443,6 @@ const products = [
     socket: 'AM5',
     tdp: '105W'
   },
-  // Новые процессоры
   {
     id: 'amd-ryzen-3-8300g',
     title: 'AMD Ryzen 3 8300G',
@@ -583,7 +580,6 @@ const products = [
     powerConnectors: '1x 16-pin',
     length: '240 mm'
   },
-  // Новые видеокарты
   {
     id: 'nvidia-rtx-4060-ti',
     title: 'NVIDIA RTX 4060 Ti',
@@ -661,8 +657,8 @@ class StateManager {
         });
 
         this.initScrollSaving();
-        
         this.initNavigationTracking();
+        this.initScrollToTop();
     }
 
     saveFullState() {
@@ -698,7 +694,6 @@ class StateManager {
                     currentSort = state.products?.sort || 'default';
                     
                     this.restoreFilters(state.filters);
-                    
                     this.restorePage(state.currentPage, state.scrollPosition);
                     
                     return true;
@@ -791,6 +786,27 @@ class StateManager {
         });
     }
 
+    initScrollToTop() {
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        if (!scrollBtn) return;
+
+        function toggleScrollButton() {
+            if (window.pageYOffset > 300) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        }
+
+        window.addEventListener('scroll', toggleScrollButton);
+        
+        scrollBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        toggleScrollButton();
+    }
+
     quickSave() {
         try {
             const state = {
@@ -835,7 +851,6 @@ function renderProducts(productsArray = currentProducts) {
             <div class="card-body">
                 <h3>${product.title}</h3>
                 <p class="desc">${product.description}</p>
-                <!-- Убраны технические характеристики из карточки -->
             </div>
             <div class="card-meta">
                 <div class="price">${product.price}</div>
@@ -1132,6 +1147,33 @@ function toggleMobileDropdown(button) {
     dropdown.classList.toggle('active');
     stateManager.quickSave();
 }
+
+function openImageModal(imageSrc) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    
+    modalImage.src = imageSrc;
+    modal.classList.add('active');
+    document.body.classList.add('no-scroll');
+}
+
+function closeImageModal() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+}
+
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('modal-backdrop')) {
+        closeImageModal();
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeImageModal();
+    }
+});
 
 (function () {
     const storageKey = 'site-theme'; 

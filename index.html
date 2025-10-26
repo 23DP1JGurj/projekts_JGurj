@@ -210,13 +210,18 @@
         <div class="cards-grid" id="cardsGrid">
         </div>
         
-        <div class="no-products-message" id="noProductsMessage" style="display: none;">
-          <div class="no-products-content">
-            <h3>Preces netika atrastas</h3>
-            <p>Mēģiniet mainīt meklēšanas kritērijus vai filtra iestatījumus</p>
-            <button class="btn" onclick="resetFilters()">Attīrīt filtrus</button>
-          </div>
+      <div class="no-products-message" id="noProductsMessage" style="display: none;">
+        <div class="no-products-content">
+          <h3>Preces netika atrastas</h3>
+          <p>Mēģiniet mainīt meklēšanas kritērijus vai filtra iestatījumus</p>
+          <button class="btn" onclick="resetFilters()">Attīrīt filtrus</button>
         </div>
+      </div>
+      <button id="scrollToTopBtn" class="scroll-to-top-btn" aria-label="Atgriezties uz augšu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 15l-6-6-6 6"/>
+        </svg>
+      </button>
       </div>
     </div>
 
@@ -419,7 +424,6 @@
     </div>
   </div>
 
-  <!-- Существующие товары остаются без изменений -->
   <div id="iphone-15-pro" class="page-content">
     <div class="page">
       <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -521,8 +525,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Добавленные новые товары -->
 
   <div id="samsung-a55" class="page-content">
     <div class="page">
@@ -1136,7 +1138,6 @@
     </div>
   </div>
 
-<!-- Apple iPhone 15 Pro - Обновленная страница -->
 <div id="iphone-15-pro" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -1188,7 +1189,6 @@
     </div>
 </div>
 
-<!-- Samsung Galaxy S24 Ultra - Обновленная страница -->
 <div id="samsung-s24" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -1240,7 +1240,6 @@
     </div>
 </div>
 
-<!-- Google Pixel 8 Pro - Обновленная страница -->
 <div id="google-pixel-8" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -1292,7 +1291,6 @@
     </div>
 </div>
 
-<!-- OnePlus 12 - Обновленная страница -->
 <div id="oneplus-12" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -1344,7 +1342,6 @@
     </div>
 </div>
 
-<!-- Xiaomi 14 Pro - Обновленная страница -->
 <div id="xiaomi-14" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -1396,7 +1393,6 @@
     </div>
 </div>
 
-<!-- Apple iPhone 14 - Обновленная страница -->
 <div id="iphone-14" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -1448,7 +1444,6 @@
     </div>
 </div>
 
-<!-- Samsung Z Fold 5 - Обновленная страница -->
 <div id="samsung-z-fold5" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -1500,7 +1495,6 @@
     </div>
 </div>
 
-<!-- Nothing Phone (2) - Обновленная страница -->
 <div id="nothing-phone2" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -1552,7 +1546,6 @@
     </div>
 </div>
 
-<!-- MacBook Pro 16" M3 Max - Обновленная страница -->
 <div id="macbook-pro-16" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -1604,7 +1597,6 @@
     </div>
 </div>
 
-<!-- Dell XPS 15 - Обновленная страница -->
 <div id="dell-xps-15" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -1656,7 +1648,6 @@
     </div>
 </div>
 
-<!-- Lenovo ThinkPad X1 - Обновленная страница -->
 <div id="lenovo-thinkpad" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -1708,7 +1699,6 @@
     </div>
 </div>
 
-<!-- ASUS ROG Zephyrus - Обновленная страница -->
 <div id="asus-rog-zephyrus" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -1760,7 +1750,6 @@
     </div>
 </div>
 
-<!-- HP Spectre x360 - Обновленная страница -->
 <div id="hp-spectre" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -1812,7 +1801,6 @@
     </div>
 </div>
 
-<!-- MacBook Air 15" M2 - Обновленная страница -->
 <div id="macbook-air-15" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -1864,7 +1852,6 @@
     </div>
 </div>
 
-<!-- Intel Core i9-14900K - Обновленная страница -->
 <div id="intel-i9-14900k" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -1916,7 +1903,6 @@
     </div>
 </div>
 
-<!-- AMD Ryzen 9 7950X - Обновленная страница -->
 <div id="amd-ryzen-9-7950x" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -1968,7 +1954,6 @@
     </div>
 </div>
 
-<!-- Intel Core i7-14700K - Обновленная страница -->
 <div id="intel-i7-14700k" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -2020,7 +2005,6 @@
     </div>
 </div>
 
-<!-- AMD Ryzen 7 7800X3D - Обновленная страница -->
 <div id="amd-ryzen-7-7800x3d" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -2072,7 +2056,6 @@
     </div>
 </div>
 
-<!-- Intel Core i5-14600K - Обновленная страница -->
 <div id="intel-i5-14600k" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -2124,7 +2107,6 @@
     </div>
 </div>
 
-<!-- AMD Ryzen 5 7600X - Обновленная страница -->
 <div id="amd-ryzen-5-7600x" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -2176,7 +2158,6 @@
     </div>
 </div>
 
-<!-- NVIDIA RTX 4090 - Обновленная страница -->
 <div id="nvidia-rtx-4090" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -2228,7 +2209,6 @@
     </div>
 </div>
 
-<!-- AMD Radeon RX 7900 XTX - Обновленная страница -->
 <div id="amd-rx-7900xtx" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -2280,7 +2260,6 @@
     </div>
 </div>
 
-<!-- NVIDIA RTX 4080 - Обновленная страница -->
 <div id="nvidia-rtx-4080" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -2332,7 +2311,6 @@
     </div>
 </div>
 
-<!-- AMD Radeon RX 7800 XT - Обновленная страница -->
 <div id="amd-rx-7800xt" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
@@ -2384,7 +2362,6 @@
     </div>
 </div>
 
-<!-- NVIDIA RTX 4070 - Обновленная страница -->
 <div id="nvidia-rtx-4070" class="page-content">
     <div class="page">
         <button onclick="showPage('karte')" class="back-btn">← Atpakaļ</button>
