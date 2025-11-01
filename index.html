@@ -414,6 +414,60 @@
           <p><strong>Tālrunis:</strong> +371 65400005</p>
           <p><strong>E-pasts:</strong> daugavpils@servisacentrs.lv</p>
         </div>
+
+         <div class="content-section scroll-animate">
+          <h2>Sazināties ar mums</h2>
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="name">Vārds *</label>
+              <input type="text" id="name" name="name" required>
+              <div class="error-message" id="nameError"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">E-pasts *</label>
+              <input type="email" id="email" name="email" required>
+              <div class="error-message" id="emailError"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Tālrunis</label>
+              <input type="tel" id="phone" name="phone">
+              <div class="error-message" id="phoneError"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Tēma *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Izvēlieties tēmu</option>
+                <option value="remonts">Remonta pakalpojumi</option>
+                <option value="konsultacija">Tehniskā konsultācija</option>
+                <option value="sadarbiba">Sadarbības piedāvājums</option>
+                <option value="cits">Cits jautājums</option>
+              </select>
+              <div class="error-message" id="subjectError"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Ziņojums *</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+              <div class="error-message" id="messageError"></div>
+            </div>
+            
+            <button type="submit" class="btn submit-btn">
+              <span class="btn-text">Sūtīt ziņojumu</span>
+              <div class="btn-loading" style="display: none;">
+                <div class="loading-spinner"></div>
+                Sūta...
+              </div>
+            </button>
+            
+            <div id="formSuccess" class="success-message" style="display: none;">
+              <div class="success-icon">✓</div>
+              <p>Ziņojums veiksmīgi nosūtīts! Mēs ar Jums sazināsimies 24 stundu laikā.</p>
+            </div>
+          </form>
+        </div>
         
         <h2>Kontaktu forma</h2>
         <p>Vai jums ir jautājumi? Sazinieties ar mums, un mēs atbildēsim 24 stundu laikā:</p>

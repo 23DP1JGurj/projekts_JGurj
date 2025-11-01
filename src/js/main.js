@@ -873,11 +873,15 @@ function initSearchAndFilter() {
     const sortButtons = document.querySelectorAll('.sort-btn');
     
     if (searchInput) {
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase().trim();
-            filterProducts(searchTerm);
-            stateManager.saveFullState();
-        });
+        let timeoutId;
+                searchInput.addEventListener('input', (e) => {
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(() => {
+                        const searchTerm = e.target.value.toLowerCase().trim();
+                        filterProducts(searchTerm);
+                        stateManager.saveFullState();
+                    }, 300);
+                });
     }
 
     filterButtons.forEach(btn => {
@@ -1271,3 +1275,184 @@ document.addEventListener('DOMContentLoaded', function() {
 setInterval(() => {
     stateManager.quickSave();
 }, 30000);
+
+function initContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', handleFormSubmit);
+    
+    // Валидация в реальном времени
+    const inputs = contactForm.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('blur', validateField);
+        input.addEventListener('input', clearFieldError);
+    });
+}
+
+function handleFormSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    
+    if (validateForm(form)) {
+        submitForm(form);
+    }
+}
+
+function validateForm(form) {
+    let isValid = true;
+    const fields = form.querySelectorAll('input[required], select[required], textarea[required]');
+    
+    fields.forEach(field => {
+        if (!validateField({ target: field })) {
+            isValid = false;
+        }
+    });
+    
+    return isValid;
+}
+
+function validateField(e) {
+    const field = e.target;
+    const value = field.value.trim();
+    const errorElement = document.getElementById(field.id + 'Error');
+    
+    // Очищаем предыдущие состояния
+    field.classList.remove('error', 'success');
+    if (errorElement) errorElement.classList.remove('show');
+    
+    // Проверка на обязательное поле
+    if (field.hasAttribute('required') && !value) {
+        showError(field, errorElement, 'Šis lauks ir obligāts');
+        return false;
+    }
+    
+    // Специфические проверки для разных типов полей
+    switch(field.type) {
+        case 'email':
+            if (!isValidEmail(value)) {
+                showError(field, errorElement, 'Lūdzu ievadiet derīgu e-pasta adresi');
+                return false;
+            }
+            break;
+        case 'tel':
+            if (value && !isValidPhone(value)) {
+                showError(field, errorElement, 'Lūdzu ievadiet derīgu tālruņa numuru');
+                return false;
+            }
+            break;
+    }
+    
+    // Если все проверки пройдены
+    if (value) {
+        field.classList.add('success');
+    }
+    
+    return true;
+}
+
+function clearFieldError(e) {
+    const field = e.target;
+    const errorElement = document.getElementById(field.id + 'Error');
+    
+    field.classList.remove('error');
+    if (errorElement) errorElement.classList.remove('show');
+}
+
+function showError(field, errorElement, message) {
+    field.classList.add('error');
+    if (errorElement) {
+        errorElement.textContent = message;
+        errorElement.classList.add('show');
+    }
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function isValidPhone(phone) {
+    const phoneRegex = /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,4}[-\s.]?[0-9]{1,9}$/;
+    return phoneRegex.test(phone.replace(/\s/g, ''));
+}
+
+function submitForm(form) {
+    const submitBtn = form.querySelector('.submit-btn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoading = submitBtn.querySelector('.btn-loading');
+    const successMessage = document.getElementById('formSuccess');
+    
+    // Показываем индикатор загрузки
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'flex';
+    submitBtn.disabled = true;
+    
+    // Имитация отправки (в реальном проекте здесь был бы fetch/XMLHttpRequest)
+    setTimeout(() => {
+        // Скрываем индикатор загрузки
+        btnText.style.display = 'block';
+        btnLoading.style.display = 'none';
+        submitBtn.disabled = false;
+        
+        // Показываем сообщение об успехе
+        successMessage.style.display = 'block';
+        form.reset();
+        
+        // Сбрасываем стили полей
+        const fields = form.querySelectorAll('input, select, textarea');
+        fields.forEach(field => {
+            field.classList.remove('success', 'error');
+            const errorElement = document.getElementById(field.id + 'Error');
+            if (errorElement) errorElement.classList.remove('show');
+        });
+        
+        // Прячем сообщение об успехе через 5 секунд
+        setTimeout(() => {
+            successMessage.style.display = 'none';
+        }, 5000);
+        
+    }, 2000);
+}
+
+// Улучшения для поиска и фильтрации
+function enhanceSearchAndFilter() {
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        // Добавляем индикатор загрузки при поиске
+        searchInput.addEventListener('input', function(e) {
+            const container = document.getElementById('cardsGrid');
+            if (container) {
+                container.classList.add('loading');
+                setTimeout(() => {
+                    container.classList.remove('loading');
+                }, 300);
+            }
+        });
+    }
+}
+
+// Инициализация при загрузке DOM
+document.addEventListener('DOMContentLoaded', function() {
+    initContactForm();
+    enhanceSearchAndFilter();
+    
+    // Инициализация формы при переходе на страницу контактов
+    const contactPage = document.getElementById('kontakti');
+    if (contactPage && contactPage.classList.contains('active')) {
+        initContactForm();
+    }
+});
+
+// Обновляем функцию showPage для инициализации формы при переходе
+const originalShowPage = showPage;
+showPage = function(pageId, useLoading = true) {
+    originalShowPage(pageId, useLoading);
+    
+    // Инициализируем форму при переходе на страницу контактов
+    if (pageId === 'kontakti') {
+        setTimeout(() => {
+            initContactForm();
+        }, 100);
+    }
+};
