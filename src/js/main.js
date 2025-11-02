@@ -911,13 +911,33 @@ function filterProducts(searchTerm) {
     if (!searchTerm) {
         currentProducts = [...products];
     } else {
-        currentProducts = products.filter(product => 
-            product.title.toLowerCase().includes(searchTerm) ||
-            product.description.toLowerCase().includes(searchTerm) ||
-            product.category.toLowerCase().includes(searchTerm) ||
-            (product.manufacturer && product.manufacturer.toLowerCase().includes(searchTerm)) ||
-            (product.storage && product.storage.toLowerCase().includes(searchTerm))
-        );
+        const searchLower = searchTerm.toLowerCase().trim();
+        
+        currentProducts = products.filter(product => {
+            const titleMatch = product.title.toLowerCase().includes(searchLower);
+            if (titleMatch) return true;
+            
+            if (product.manufacturer && product.manufacturer.toLowerCase().includes(searchLower)) {
+                return true;
+            }
+            
+            if (product.category.toLowerCase() === searchLower) {
+                return true;
+            }
+            
+            if (product.description) {
+                const descWords = product.description.toLowerCase().split(/\s+/);
+                const searchWords = searchLower.split(/\s+/);
+                
+                const hasWordMatch = searchWords.some(searchWord => 
+                    descWords.some(descWord => descWord === searchWord)
+                );
+                
+                if (hasWordMatch) return true;
+            }
+            
+            return false;
+        });
     }
     
     applyCurrentSort();
