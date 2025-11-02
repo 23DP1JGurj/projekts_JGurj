@@ -1505,7 +1505,6 @@ footer a:hover::after {
   }
 }
 
-/* Стили для формы */
 .contact-form {
   max-width: 600px;
   margin: 0 auto;
@@ -1614,7 +1613,6 @@ footer a:hover::after {
   animation: spin 1s linear infinite;
 }
 
-/* Анимации */
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-5px); }
@@ -1642,12 +1640,10 @@ footer a:hover::after {
   50% { opacity: 0.7; }
 }
 
-/* Анимация для поиска */
 .search-input:focus {
   animation: pulse 2s infinite;
 }
 
-/* Улучшения для существующего поиска */
 .products-controls {
   animation: fadeIn 0.5s ease;
 }
@@ -1657,7 +1653,6 @@ footer a:hover::after {
   to { opacity: 1; }
 }
 
-/* Адаптивность для формы */
 @media (max-width: 768px) {
   .contact-form {
     padding: 0 10px;
@@ -1665,5 +1660,208 @@ footer a:hover::after {
   
   .form-group {
     margin-bottom: 20px;
+  }
+}
+
+.pakalpojumi-section {
+  margin: 40px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 32px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.service-image-frame {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: var(--soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  border: 2px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.card:hover .service-image-frame {
+  transform: scale(1.1);
+  border-color: var(--primary);
+  background: var(--gradient-primary);
+}
+
+.service-image-frame img {
+  width: 40px;
+  height: 40px;
+}
+
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.service-feature {
+  background: var(--soft);
+  padding: 20px;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--primary);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.service-feature:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.price-tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.benefit-item {
+  background: var(--card);
+  padding: 20px;
+  border-radius: var(--radius);
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.benefit-item h4 {
+  margin: 0 0 12px 0;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.cta-section {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 30px;
+  border-radius: var(--radius);
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta-section h3 {
+  margin: 0 0 16px 0;
+  color: white;
+}
+
+.cta-section p {
+  margin: 8px 0;
+  color: rgba(255,255,255,0.9);
+}
+
+.cta-section .btn {
+  background: white;
+  color: var(--primary);
+  margin-top: 16px;
+}
+
+.cta-section .btn:hover {
+  background: var(--soft);
+  transform: translateY(-2px);
+}
+
+.scroll-to-top-btn-products {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.scroll-to-top-btn-products.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top-btn-products:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 25px rgba(67, 97, 238, 0.4);
+}
+
+@media (max-width: 768px) {
+  .service-detail-grid,
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .price-tag {
+    position: static;
+    display: inline-block;
+    margin-top: 12px;
+  }
+  
+  .scroll-to-top-btn-products {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .cta-section {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .service-image-frame {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .service-image-frame img {
+    width: 30px;
+    height: 30px;
   }
 }

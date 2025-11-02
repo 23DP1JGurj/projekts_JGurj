@@ -26,11 +26,21 @@
       <div class="nav-links">
       <a href="#" onclick="event.preventDefault(); scrollToSection('sakums')">Sākums</a>
       <a href="#" onclick="event.preventDefault(); scrollToSection('par-mums')">Par mums</a>
+
         <div class="dropdown">
           <button class="dropbtn">Sadaļas</button>
           <div class="dropdown-content">
             <a href="#" onclick="showPage('servisa-centrs')">Servisa centrs</a>
             <a href="#" onclick="showPage('karte')">Preču karte</a>
+          </div>
+        </div>
+
+                <div class="dropdown">
+          <button class="dropbtn">Pakalpojumi</button>
+          <div class="dropdown-content">
+            <a href="#" onclick="showPage('remonts')">Tehnikas remonts</a>
+            <a href="#" onclick="showPage('diagnostika')">Tehniskā diagnostika</a>
+            <a href="#" onclick="showPage('apkalposana')">IT atbalsts</a>
           </div>
         </div>
       </div>
@@ -49,15 +59,26 @@
       <span id="theme-label">Tēma</span>
     </button>
 
+
     <div class="mobile-menu" id="mobileMenu">
       <button class="close-menu" aria-label="Aizvērt izvēlni">×</button>
       <a href="#" onclick="event.preventDefault(); scrollToSection('sakums'); closeMobileMenu();">Sākums</a>
       <a href="#" onclick="event.preventDefault(); scrollToSection('par-mums'); closeMobileMenu();">Par mums</a>
+      
       <div class="mobile-dropdown">
         <button class="mobile-dropbtn" onclick="toggleMobileDropdown(this)">Sadaļas <span>▼</span></button>
         <div class="mobile-dropdown-content">
           <a href="#" onclick="showPage('servisa-centrs'); closeMobileMenu();">Servisa centrs</a>
           <a href="#" onclick="showPage('karte'); closeMobileMenu();">Preču karte</a>
+        </div>
+      </div>
+      
+      <div class="mobile-dropdown">
+        <button class="mobile-dropbtn" onclick="toggleMobileDropdown(this)">Pakalpojumi <span>▼</span></button>
+        <div class="mobile-dropdown-content">
+          <a href="#" onclick="showPage('remonts'); closeMobileMenu();">Tehnikas remonts</a>
+          <a href="#" onclick="showPage('diagnostika'); closeMobileMenu();">Tehniskā diagnostika</a>
+          <a href="#" onclick="showPage('apkalposana'); closeMobileMenu();">IT atbalsts</a>
         </div>
       </div>
     </div>
@@ -88,6 +109,38 @@
           <h3>Kontakti</h3>
           <div class="value">5 filiāles</div>
           <div class="more-link">Uzzināt vairāk...</div>
+        </div>
+      </section>
+
+       <section class="pakalpojumi-section" aria-label="Pakalpojumi">
+        <h2 class="section-title">Mūsu pakalpojumi</h2>
+        <div class="dashboard">
+          <div class="card scroll-animate" onclick="showPage('remonts')">
+            <div class="service-image-frame">
+              <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTExLjQyIDE1LjE3IDE3LjI1IDIxYTIuNjUyIDIuNjUyIDAgMCAwIDMuNzUtMy43NWwtNS44NzctNS44NzZNMTEuNDIgMTUuMTdsMi40OTYtMy4wM2MuMzE3LS4zODQuNzQtLjYyNiAxLjIwOC0uNzY2TTExLjQyIDE1LjE3bC00LjY1NSA1LjY1M2EyLjU0OCAyLjU0OCAwIDEgMS0zLjU4Ni0zLjU4Nmw2LjgzNy01LjYzbTUuMTA4LS4yMzNjLjU1LS4xNjQgMS4xNjMtLjE4OCAxLjc0My0uMTRhNC41IDQuNSAwIDAgMCA0LjQ4Ni02LjMzNmwtMy4yNzYgMy4yNzdhMy4wMDQgMy4wMDQgMCAwIDEtMi4yNS0yLjI1bDMuMjc2LTMuMjc2YTQuNSA0LjUgMCAwIDAtNi4zMzYgNC40ODZjLjA5MSAxLjA3Ni0uMDcxIDIuMjY0LS45MDQgMi45NWwtLjEwMi4wODVtLTEuNzQ1IDEuNDM3TDUuOTA5IDcuNUg0LjVMMi4yNSAzLjc1bDEuNS0xLjVMNy41IDQuNXYxLjQwOWw0LjI2IDQuMjZtLTEuNzQ1IDEuNDM3IDEuNzQ1LTEuNDM3bTYuNjE1IDguMjA2TDE1Ljc1IDE1Ljc1TTQuODY3IDE5LjEyNWguMDA4di4wMDhoLS4wMDh2LS4wMDhaIiBzdHJva2U9IiM0MzYxZWUiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+" alt="Remonta ikona">
+            </div>
+            <h3>Tehnikas remonts</h3>
+            <div class="value">No €25</div>
+            <div class="more-link">Uzzināt vairāk...</div>
+          </div>
+
+          <div class="card scroll-animate" onclick="showPage('diagnostika')">
+            <div class="service-image-frame">
+              <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkgMTJMMTUgMTJNOSAxNkwxNSAxNk05IDhMMTUuNSA4TTIyIDE5VjdDNjcuMjA1OCA3IDIyIDMuMTM0MDEgMiA3VjE5QzIgMTkuNTUwMyAyLjQ0OTcyIDIwIDMgMjBIMjFDMjEuNTUwMyAyMCAyMiAxOS41NTAzIDIyIDE5WiIgc3Ryb2tlPSIjNDM2MWVlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K" alt="Diagnostikas ikona">
+            </div>
+            <h3>Tehniskā diagnostika</h3>
+            <div class="value">No €15</div>
+            <div class="more-link">Uzzināt vairāk...</div>
+          </div>
+
+          <div class="card scroll-animate" onclick="showPage('apkalposana')">
+            <div class="service-image-frame">
+              <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTggMTZMMTYgMTZNOCAxMkwxNiAxMk04IDhMMTYgOE0yMiAxMkMyMiAxNy41MjI4IDE3LjUyMjggMjIgMTIgMjJDNi40NzcxNSAyMiAyIDE3LjUyMjggMiAxMkMyIDYuNDc3MTUgNi40NzcxNSAyIDEyIDJDMTcuNTIyOCAyIDIyIDYuNDc3MTUgMjIgMTJaIiBzdHJva2U9IiM0MzYxZWUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=" alt="IT atbalsta ikona">
+            </div>
+            <h3>IT atbalsts</h3>
+            <div class="value">No €35/stundā</div>
+            <div class="more-link">Uzzināt vairāk...</div>
+          </div>
         </div>
       </section>
 
@@ -167,6 +220,179 @@
     </main>
   </div>
 
+    <div id="remonts" class="page-content">
+    <div class="page">
+      <button onclick="goBack()" class="back-btn">← Atpakaļ</button>
+      <h1>Tehnikas remonts</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Profesionāls tehnikas remonts</h2>
+        <p>Mēs nodrošinām pilnu tehnikas remonta pakalpojumu klāstu visu veidu elektronikai un sadzīves tehnikai.</p>
+        
+        <div class="service-detail-grid">
+          <div class="service-feature">
+            <h3>✅ Displeju nomaiņa</h3>
+            <p>Ātra un kvalitatīva displeju nomaiņa viedtālruņiem, planšetdatoriem un klēpjdatoriem</p>
+            <span class="price-tag">No €25</span>
+          </div>
+          
+          <div class="service-feature">
+            <h3>🔋 Bateriju maiņa</h3>
+            <p>Origiinālās vai kvalitatīvas aizstājējbaterijas uzstādīšana ar garantiju</p>
+            <span class="price-tag">No €35</span>
+          </div>
+          
+          <div class="service-feature">
+            <h3>💧 Ūdens bojājumu novēršana</h3>
+            <p>Specializēts ūdens bojājumu apstrādes process ar ultraskaņas tīrīšanu</p>
+            <span class="price-tag">No €50</span>
+          </div>
+          
+          <div class="service-feature">
+            <h3>🔧 Lodēšanas darbi</h3>
+            <p>Precīzi lodēšanas darbi mikroshēmu nomaiņai un remontam</p>
+            <span class="price-tag">No €40</span>
+          </div>
+        </div>
+        
+        <h2>Remonta process</h2>
+        <ol>
+          <li><strong>Diagnostika</strong> - Detalizēta ierīces pārbaude un defekta noteikšana</li>
+          <li><strong>Cenas noteikšana</strong> - Skaidrs cenu piedāvājums pirms darbu uzsākšanas</li>
+          <li><strong>Remonts</strong> - Kvalitatīvs remonts ar oriģinālām rezerves daļām</li>
+          <li><strong>Testēšana</strong> - Rūpīga ierīces pārbaude pēc remonta</li>
+          <li><strong>Garantija</strong> - Līdz 12 mēnešu garantija veiktajiem darbiem</li>
+        </ol>
+        
+        <div class="cta-section">
+          <h3>Sazinieties ar mumu remonta pakalpojumiem</h3>
+          <p>☎️ Zvaniet: <strong>+371 67000001</strong></p>
+          <p>📧 Rakstiet: <strong>remonts@servisacentrs.lv</strong></p>
+          <button class="btn" onclick="showPage('kontakti')">Sazināties</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="diagnostika" class="page-content">
+    <div class="page">
+      <button onclick="goBack()" class="back-btn">← Atpakaļ</button>
+      <h1>Tehniskā diagnostika</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Precīza tehnikas diagnostika</h2>
+        <p>Izmantojot modernāko diagnostikas iekārtu, mēs ātri un precīzi identificējam jebkuras tehnikas problēmas.</p>
+        
+        <div class="service-detail-grid">
+          <div class="service-feature">
+            <h3>🔍 Aparatūras diagnostika</h3>
+            <p>Pilnīga elektronisko komponentu un shēmu pārbaude</p>
+            <span class="price-tag">€15</span>
+          </div>
+          
+          <div class="service-feature">
+            <h3>💻 Programmatūras analīze</h3>
+            <p>Operētājsistēmu, draiveru un programmu darbības pārbaude</p>
+            <span class="price-tag">€20</span>
+          </div>
+          
+          <div class="service-feature">
+            <h3>📊 Veiktspējas tests</h3>
+            <p>Detalizēta sistēmas veiktspējas un stabilitātes analīze</p>
+            <span class="price-tag">€25</span>
+          </div>
+          
+          <div class="service-feature">
+            <h3>🌡️ Temperatūras monitorings</h3>
+            <p>Dzesēšanas sistēmas efektivitātes un temperatūru režīma pārbaude</p>
+            <span class="price-tag">€18</span>
+          </div>
+        </div>
+        
+        <h2>Diagnostikas pārskats</h2>
+        <p>Pēc diagnostikas jūs saņemsiet detalizētu pārskatu, kurā iekļauts:</p>
+        <ul>
+          <li>Identificētās problēmas un to ietekme uz ierīces darbību</li>
+          <li>Remonta nepieciešamības novērtējums</li>
+          <li>Paredzamās izmaksas un termiņi</li>
+          <li>Ieteikumi turpmākai ierīces ekspluatācijai</li>
+        </ul>
+        
+        <div class="cta-section">
+          <h3>Vēlaties precīzu savas tehnikas diagnostiku?</h3>
+          <p>☎️ Zvaniet: <strong>+371 67000001</strong></p>
+          <p>📧 Rakstiet: <strong>diagnostika@servisacentrs.lv</strong></p>
+          <button class="btn" onclick="showPage('kontakti')">Pierakstīties diagnostikai</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="apkalposana" class="page-content">
+    <div class="page">
+      <button onclick="goBack()" class="back-btn">← Atpakaļ</button>
+      <h1>IT atbalsts</h1>
+      
+      <div class="content-section scroll-animate">
+        <h2>Profesionāls IT atbalsts mājām un uzņēmumiem</h2>
+        <p>Nodrošinām pilnu IT pakalpojumu klāstu - no mājas tīkla iestatīšanas līdz uzņēmumu infrastruktūras uzturēšanai.</p>
+        
+        <div class="service-detail-grid">
+          <div class="service-feature">
+            <h3>🏠 Mājas tīkla iestatīšana</h3>
+            <p>Wi-Fi routeru, tīkla slēdžu un pieslēguma iestatīšana</p>
+            <span class="price-tag">€35/stundā</span>
+          </div>
+          
+          <div class="service-feature">
+            <h3>💼 Uzņēmumu IT atbalsts</h3>
+            <p>Darbstaciju, serveru un tīkla iekārtu uzturēšana</p>
+            <span class="price-tag">€45/stundā</span>
+          </div>
+          
+          <div class="service-feature">
+            <h3>🛡️ Datu drošība</h3>
+            <p>Datu drošības risinājumi, rezerves kopiju sistēmas</p>
+            <span class="price-tag">€50/stundā</span>
+          </div>
+          
+          <div class="service-feature">
+            <h3>☁️ Mākoņpakalpojumi</h3>
+            <p>Mākoņkrātuves un mākoņaplikāciju iestatīšana</p>
+            <span class="price-tag">€40/stundā</span>
+          </div>
+        </div>
+        
+        <h2>IT atbalsta priekšrocības</h2>
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <h4>⚡ Ātra reakcija</h4>
+            <p>Atbildam uz jūsu pieprasījumu 2 stundu laikā</p>
+          </div>
+          <div class="benefit-item">
+            <h4>🔧 Pieredzējuši speciālisti</h4>
+            <p>Komanda ar 5+ gadu pieredzi IT jomā</p>
+          </div>
+          <div class="benefit-item">
+            <h4>💬 Saprotama komunikācija</h4>
+            <p>Skaidri paskaidrojam risinājumus nespeciālistu valodā</p>
+          </div>
+          <div class="benefit-item">
+            <h4>📞 24/7 atbalsts</h4>
+            <p>Ārkārtas situācijām - atbalsts jebkurā diennakts laikā</p>
+          </div>
+        </div>
+        
+        <div class="cta-section">
+          <h3>Vajag IT atbalstu?</h3>
+          <p>☎️ Zvaniet: <strong>+371 67000001</strong></p>
+          <p>📧 Rakstiet: <strong>it@servisacentrs.lv</strong></p>
+          <button class="btn" onclick="showPage('kontakti')">Pasūtīt IT atbalstu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
       <div id="karte" class="page-content">
       <div class="page">
         <button onclick="showPage('servisa-centrs')" class="back-btn">← Atpakaļ</button>
@@ -217,7 +443,8 @@
           <button class="btn" onclick="resetFilters()">Attīrīt filtrus</button>
         </div>
       </div>
-      <button id="scrollToTopBtn" class="scroll-to-top-btn" aria-label="Atgriezties uz augšu">
+
+      <button id="scrollToTopBtnProducts" class="scroll-to-top-btn-products" aria-label="Atgriezties uz augšu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M18 15l-6-6-6 6"/>
         </svg>

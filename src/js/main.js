@@ -633,9 +633,11 @@ const products = [
   }
 ];
 
+
 let currentProducts = [...products];
 let currentSort = 'default';
 let currentPageId = 'servisa-centrs';
+let previousPageId = 'servisa-centrs';
 
 class StateManager {
     constructor() {
@@ -665,6 +667,7 @@ class StateManager {
         try {
             const state = {
                 currentPage: currentPageId,
+                previousPage: previousPageId, // Сохраняем предыдущую страницу
                 scrollPosition: window.pageYOffset || document.documentElement.scrollTop,
                 products: {
                     current: currentProducts,
@@ -690,6 +693,7 @@ class StateManager {
                 
                 if (state.timestamp && (Date.now() - state.timestamp) < 3600000) {
                     currentPageId = state.currentPage || 'servisa-centrs';
+                    previousPageId = state.previousPage || 'servisa-centrs'; // Восстанавливаем предыдущую страницу
                     currentProducts = state.products?.current || [...products];
                     currentSort = state.products?.sort || 'default';
                     
@@ -707,7 +711,8 @@ class StateManager {
     }
 
     restorePage(pageId, scrollPosition) {
-        if (pageId && pageId !== 'servisa-centrs') {
+        if (pageId && (pageId !== 'servisa-centrs' || 
+            pageId === 'remonts' || pageId === 'diagnostika' || pageId === 'apkalposana')) {
             setTimeout(() => {
                 showPage(pageId, false);
                 
@@ -811,6 +816,7 @@ class StateManager {
         try {
             const state = {
                 currentPage: currentPageId,
+                previousPage: previousPageId,
                 scrollPosition: window.pageYOffset || document.documentElement.scrollTop,
                 timestamp: Date.now()
             };
@@ -821,6 +827,14 @@ class StateManager {
 }
 
 const stateManager = new StateManager();
+
+function goBack() {
+    if (previousPageId && previousPageId !== currentPageId) {
+        showPage(previousPageId);
+    } else {
+        showPage('servisa-centrs');
+    }
+}
 
 function parsePrice(priceStr) {
     const cleanPrice = priceStr.replace(/\D/g, '');
@@ -1018,6 +1032,10 @@ function resetFilters() {
 }
 
 function showPage(pageId, useLoading = true) {
+    if (currentPageId !== pageId) {
+        previousPageId = currentPageId;
+    }
+    
     stateManager.saveFullState();
     currentPageId = pageId;
     
@@ -1302,7 +1320,6 @@ function initContactForm() {
 
     contactForm.addEventListener('submit', handleFormSubmit);
     
-    // Валидация в реальном времени
     const inputs = contactForm.querySelectorAll('input, select, textarea');
     inputs.forEach(input => {
         input.addEventListener('blur', validateField);
@@ -1337,17 +1354,14 @@ function validateField(e) {
     const value = field.value.trim();
     const errorElement = document.getElementById(field.id + 'Error');
     
-    // Очищаем предыдущие состояния
     field.classList.remove('error', 'success');
     if (errorElement) errorElement.classList.remove('show');
     
-    // Проверка на обязательное поле
     if (field.hasAttribute('required') && !value) {
         showError(field, errorElement, 'Šis lauks ir obligāts');
         return false;
     }
     
-    // Специфические проверки для разных типов полей
     switch(field.type) {
         case 'email':
             if (!isValidEmail(value)) {
@@ -1363,7 +1377,6 @@ function validateField(e) {
             break;
     }
     
-    // Если все проверки пройдены
     if (value) {
         field.classList.add('success');
     }
@@ -1403,23 +1416,18 @@ function submitForm(form) {
     const btnLoading = submitBtn.querySelector('.btn-loading');
     const successMessage = document.getElementById('formSuccess');
     
-    // Показываем индикатор загрузки
     btnText.style.display = 'none';
     btnLoading.style.display = 'flex';
     submitBtn.disabled = true;
     
-    // Имитация отправки (в реальном проекте здесь был бы fetch/XMLHttpRequest)
     setTimeout(() => {
-        // Скрываем индикатор загрузки
         btnText.style.display = 'block';
         btnLoading.style.display = 'none';
         submitBtn.disabled = false;
         
-        // Показываем сообщение об успехе
         successMessage.style.display = 'block';
         form.reset();
         
-        // Сбрасываем стили полей
         const fields = form.querySelectorAll('input, select, textarea');
         fields.forEach(field => {
             field.classList.remove('success', 'error');
@@ -1427,7 +1435,6 @@ function submitForm(form) {
             if (errorElement) errorElement.classList.remove('show');
         });
         
-        // Прячем сообщение об успехе через 5 секунд
         setTimeout(() => {
             successMessage.style.display = 'none';
         }, 5000);
@@ -1435,11 +1442,9 @@ function submitForm(form) {
     }, 2000);
 }
 
-// Улучшения для поиска и фильтрации
 function enhanceSearchAndFilter() {
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
-        // Добавляем индикатор загрузки при поиске
         searchInput.addEventListener('input', function(e) {
             const container = document.getElementById('cardsGrid');
             if (container) {
@@ -1452,27 +1457,56 @@ function enhanceSearchAndFilter() {
     }
 }
 
-// Инициализация при загрузке DOM
-document.addEventListener('DOMContentLoaded', function() {
-    initContactForm();
-    enhanceSearchAndFilter();
-    
-    // Инициализация формы при переходе на страницу контактов
-    const contactPage = document.getElementById('kontakti');
-    if (contactPage && contactPage.classList.contains('active')) {
-        initContactForm();
-    }
-});
+function initProductsScrollToTop() {
+    const scrollBtn = document.getElementById('scrollToTopBtnProducts');
+    if (!scrollBtn) return;
 
-// Обновляем функцию showPage для инициализации формы при переходе
+    function toggleScrollButton() {
+        if (window.pageYOffset > 300) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    }
+
+    window.addEventListener('scroll', toggleScrollButton);
+    
+    scrollBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    toggleScrollButton();
+}
+
 const originalShowPage = showPage;
 showPage = function(pageId, useLoading = true) {
     originalShowPage(pageId, useLoading);
     
-    // Инициализируем форму при переходе на страницу контактов
     if (pageId === 'kontakti') {
         setTimeout(() => {
             initContactForm();
         }, 100);
     }
+    
+
+    if (pageId === 'karte') {
+        setTimeout(() => {
+            initProductsScrollToTop();
+        }, 100);
+    }
 };
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    if (document.getElementById('karte').classList.contains('active')) {
+        setTimeout(() => {
+            initProductsScrollToTop();
+        }, 100);
+    }
+    
+    if (document.getElementById('kontakti').classList.contains('active')) {
+        setTimeout(() => {
+            initContactForm();
+        }, 100);
+    }
+});
