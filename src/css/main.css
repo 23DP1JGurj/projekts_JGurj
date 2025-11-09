@@ -1865,3 +1865,31 @@ footer a:hover::after {
     height: 30px;
   }
 }
+
+@media (max-width: 880px) {
+  .product-card {
+    min-height: auto !important;
+    height: auto;
+  }
+  
+  .card-img {
+    height: 200px !important;
+    flex: 0 0 200px !important;
+  }
+  
+  .card-img img {
+    object-fit: contain !important;
+    object-position: center center;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-img {
+    height: 180px !important;
+    flex: 0 0 180px !important;
+  }
+  
+  .product-card {
+    min-height: 420px !important;
+  }
+}
