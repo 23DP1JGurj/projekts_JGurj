@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Servisa centrs</title>
+  <link rel="icon" type="image/png" href="src/image/icon.png">
   <link rel="stylesheet" href="src/css/main.css">
 </head>
 <body>
@@ -12,7 +13,7 @@
     <div class="loading-bar" id="loadingBar"></div>
 
   <header>
-    <div class="brand" onclick="scrollToTop()">
+    <div class="brand" onclick="goToHomePage()">
       <h1>Servisa centrs</h1>
     </div>
 
@@ -25,7 +26,7 @@
     <nav aria-label="Galvenā navigācija" role="navigation">
       <div class="nav-links">
       <a href="#" onclick="event.preventDefault(); scrollToSection('sakums')">Sākums</a>
-      <a href="#" onclick="event.preventDefault(); scrollToSection('par-mums')">Par mums</a>
+      <a href="#" onclick="event.preventDefault(); scrollToSection('par-programmu-funkcijas')">Par mums</a>
 
         <div class="dropdown">
           <button class="dropbtn">Sadaļas</button>
@@ -63,7 +64,7 @@
     <div class="mobile-menu" id="mobileMenu">
       <button class="close-menu" aria-label="Aizvērt izvēlni">×</button>
       <a href="#" onclick="event.preventDefault(); scrollToSection('sakums'); closeMobileMenu();">Sākums</a>
-      <a href="#" onclick="event.preventDefault(); scrollToSection('par-mums'); closeMobileMenu();">Par mums</a>
+      <a href="#" onclick="event.preventDefault(); scrollToSection('par-programmu-funkcijas'); closeMobileMenu();">Par mums</a>
       
       <div class="mobile-dropdown">
         <button class="mobile-dropbtn" onclick="toggleMobileDropdown(this)">Sadaļas <span>▼</span></button>
@@ -144,17 +145,33 @@
         </div>
       </section>
 
-      <div id="par-mums" class="section-card scroll-animate" style="min-height:160px">
-          <h2>Par programmu — Priekšrocības</h2>
-          <p>Vienkāršs interfeiss un spēcīga datubāzes loģika: atskaites, trigeri un transakcijas nodrošina drošu un precīzu datu apstrādi.</p>
-          <ul>
-            <li>Analītika un atskaites</li>
-            <li>Automatizētas rezervācijas</li>
-            <li>Ērta lietošanai un demonstrēšanai</li>
-          </ul>
+      <aside class="sidebar scroll-animate">
+        <h3>Papildus informācija</h3>
+        <div class="sidebar-content">
+          <div class="sidebar-section">
+            <h4>Noderīgi padomi</h4>
+            <ul>
+              <li><a href="#" onclick="showPage('remonts')">Kā pagarināt ierīces kalpošanas laiku</a></li>
+              <li><a href="#" onclick="showPage('diagnostika')">Kad nepieciešama diagnostika</a></li>
+              <li><a href="#" onclick="showPage('apkalposana')">IT drošības padomi</a></li>
+            </ul>
+          </div>
+          
+          <div class="sidebar-section">
+            <h4>Aktualitātes</h4>
+            <div class="news-item">
+              <strong>Jauni remonta pakalpojumi</strong>
+              <p>Tagad piedāvājam arī planšetdatoru remontu</p>
+            </div>
+            <div class="news-item">
+              <strong>Darba laiku paplašināšana</strong>
+              <p>Strādājam arī sestdienās no 10:00-14:00</p>
+            </div>
+          </div>
         </div>
+      </aside>
 
-        <div class="about-group">
+        <div class="about-group" id="par-programmu-funkcijas">
           <div class="section-card scroll-animate" style="min-height:160px">
             <h2>Par programmu — Funkcijas</h2>
             <p>Programma nodrošina visu remontdarbu ciklu: klientu reģistrāciju, ierīču uzskaiti, pasūtījumu vadību un noliktavas kontroli.</p>
@@ -408,6 +425,7 @@
               id="searchInput"
             >
             <div class="search-icon">🔍</div>
+            <button type="button" class="clear-search-btn" aria-label="Notīrīt meklēšanu">x</button>
           </div>
           
           <div class="controls-group">
@@ -443,14 +461,8 @@
           <button class="btn" onclick="resetFilters()">Attīrīt filtrus</button>
         </div>
       </div>
-
-      <button id="scrollToTopBtnProducts" class="scroll-to-top-btn-products" aria-label="Atgriezties uz augšu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 15l-6-6-6 6"/>
-        </svg>
-      </button>
-      </div>
     </div>
+  </div>
 
   <div id="vesture" class="page-content">
     <div class="page">
@@ -2598,6 +2610,12 @@
     <a href="#">Instagram</a>
     <a href="#">LinkedIn</a>
   </footer>
+
+    <button id="scrollToTopBtn" class="scroll-to-top-btn" aria-label="Atgriezties uz augšu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
 
   <script src="src/js/products.js"></script>
   <script src="src/js/main.js"></script>

@@ -24,7 +24,6 @@ class StateManager {
 
         this.initScrollSaving();
         this.initNavigationTracking();
-        this.initScrollToTop();
     }
 
     saveFullState() {
@@ -158,27 +157,6 @@ class StateManager {
         });
     }
 
-    initScrollToTop() {
-        const scrollBtn = document.getElementById('scrollToTopBtn');
-        if (!scrollBtn) return;
-
-        function toggleScrollButton() {
-            if (window.pageYOffset > 300) {
-                scrollBtn.classList.add('visible');
-            } else {
-                scrollBtn.classList.remove('visible');
-            }
-        }
-
-        window.addEventListener('scroll', toggleScrollButton);
-        
-        scrollBtn.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        toggleScrollButton();
-    }
-
     quickSave() {
         try {
             const state = {
@@ -255,24 +233,28 @@ function initSearchAndFilter() {
     const sortButtons = document.querySelectorAll('.sort-btn');
     
     if (searchInput) {
-        let timeoutId;
+        const clearSearchBtn = document.querySelector('.clear-search-btn');
+        
         searchInput.addEventListener('input', (e) => {
             const searchTerm = e.target.value.trim();
             
-            if (searchTerm.length <= 2) {
-                clearTimeout(timeoutId);
-                console.log('Short search, immediate filtering:', searchTerm);
-                filterProducts(searchTerm);
-                stateManager.saveFullState();
-            } else {
-                clearTimeout(timeoutId);
-                timeoutId = setTimeout(() => {
-                    console.log('Long search, delayed filtering:', searchTerm);
-                    filterProducts(searchTerm);
-                    stateManager.saveFullState();
-                }, 300);
+            if (clearSearchBtn) {
+                clearSearchBtn.style.display = searchTerm ? 'block' : 'none';
             }
+            
+            console.log('Searching:', searchTerm);
+            filterProducts(searchTerm);
+            stateManager.saveFullState();
         });
+        
+        if (clearSearchBtn) {
+            clearSearchBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                filterProducts('');
+                clearSearchBtn.style.display = 'none';
+                stateManager.saveFullState();
+            });
+        }
         
         searchInput.addEventListener('change', (e) => {
             const searchTerm = e.target.value.trim();
@@ -314,7 +296,8 @@ function filterProducts(searchTerm) {
         console.log('Searching in lowercase:', searchLower);
         
         currentProducts = products.filter(product => {
-            return product.title.toLowerCase().includes(searchLower);
+            return product.title.toLowerCase().includes(searchLower) ||
+                   product.description.toLowerCase().includes(searchLower);
         });
         console.log('Products after filtering:', currentProducts.length);
     }
@@ -402,6 +385,11 @@ function resetFilters() {
         console.log('Cleared search input');
     }
     
+    const clearSearchBtn = document.querySelector('.clear-search-btn');
+    if (clearSearchBtn) {
+        clearSearchBtn.style.display = 'none';
+    }
+    
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.remove('active');
         if (btn.dataset.filter === 'all') btn.classList.add('active');
@@ -451,7 +439,6 @@ function performPageSwitch(pageId) {
             setTimeout(() => {
                 renderProducts();
                 initSearchAndFilter();
-                initProductsScrollToTop();
                 
                 setTimeout(() => {
                     try {
@@ -475,6 +462,10 @@ function performPageSwitch(pageId) {
         
         setTimeout(() => stateManager.quickSave(), 100);
     }
+    
+    setTimeout(() => {
+        initScrollToTop();
+    }, 100);
 }
 
 function showLoadingBar() {
@@ -558,17 +549,26 @@ function scrollToSection(sectionId) {
         }
     };
 
-    if (document.getElementById('servisa-centrs').classList.contains('active')) {
+    if (currentPageId === 'servisa-centrs') {
         scrollToElement();
     } else {
-        showPage('servisa-centrs', scrollToElement);
+        showPage('servisa-centrs');
+        setTimeout(() => {
+            const checkElement = setInterval(() => {
+                const element = document.getElementById(sectionId);
+                if (element && element.offsetParent !== null) {
+                    clearInterval(checkElement);
+                    scrollToElement();
+                }
+            }, 50);
+            
+            setTimeout(() => clearInterval(checkElement), 1000);
+        }, 400);
     }
 }
 
 function scrollToTop() {
-    showPage('servisa-centrs', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function toggleMobileDropdown(button) {
@@ -655,6 +655,27 @@ document.addEventListener('keydown', function(event) {
     }
 })();
 
+function initScrollToTop() {
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+    if (!scrollBtn) return;
+
+    function toggleScrollButton() {
+        if (window.pageYOffset > 300) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    }
+
+    window.addEventListener('scroll', toggleScrollButton);
+    
+    scrollBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    toggleScrollButton();
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const dropdowns = document.querySelectorAll('.dropdown');
     dropdowns.forEach(dropdown => {
@@ -683,11 +704,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'Escape') closeMobileMenu();
     });
     
+    initScrollToTop();
+    
     if (document.getElementById('karte').classList.contains('active')) {
         setTimeout(() => {
             renderProducts();
             initSearchAndFilter();
-            initProductsScrollToTop();
         }, 100);
     } else {
         initScrollAnimations();
@@ -836,27 +858,6 @@ function submitForm(form) {
     }, 2000);
 }
 
-function initProductsScrollToTop() {
-    const scrollBtn = document.getElementById('scrollToTopBtnProducts');
-    if (!scrollBtn) return;
-
-    function toggleScrollButton() {
-        if (window.pageYOffset > 300) {
-            scrollBtn.classList.add('visible');
-        } else {
-            scrollBtn.classList.remove('visible');
-        }
-    }
-
-    window.addEventListener('scroll', toggleScrollButton);
-    
-    scrollBtn.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    toggleScrollButton();
-}
-
 const originalShowPage = showPage;
 showPage = function(pageId, useLoading = true) {
     originalShowPage(pageId, useLoading);
@@ -866,10 +867,15 @@ showPage = function(pageId, useLoading = true) {
             initContactForm();
         }, 100);
     }
-    
-    if (pageId === 'karte') {
-        setTimeout(() => {
-            initProductsScrollToTop();
-        }, 100);
-    }
 };
+
+function goToHomePage() {
+    if (currentPageId === 'servisa-centrs') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+        showPage('servisa-centrs');
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 400);
+    }
+}

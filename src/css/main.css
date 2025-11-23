@@ -1300,7 +1300,8 @@ footer a:hover::after {
 .scroll-to-top-btn {
   position: fixed;
   bottom: 30px;
-  right: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -1317,17 +1318,16 @@ footer a:hover::after {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(20px);
 }
 
 .scroll-to-top-btn.visible {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 
 .scroll-to-top-btn:hover {
-  transform: translateY(-5px) scale(1.1);
+  transform: translateX(-50%) translateY(-5px) scale(1.1);
   box-shadow: 0 10px 25px rgba(67, 97, 238, 0.4);
 }
 
@@ -1619,6 +1619,13 @@ footer a:hover::after {
   75% { transform: translateX(5px); }
 }
 
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+    border-color: var(--error);
+    animation: shake 0.5s ease-in-out;
+}
+
 @keyframes slideInUp {
   from {
     opacity: 0;
@@ -1792,40 +1799,6 @@ footer a:hover::after {
   transform: translateY(-2px);
 }
 
-.scroll-to-top-btn-products {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: var(--gradient-primary);
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  box-shadow: var(--shadow-lg);
-  transition: all 0.3s ease;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-}
-
-.scroll-to-top-btn-products.visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.scroll-to-top-btn-products:hover {
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 10px 25px rgba(67, 97, 238, 0.4);
-}
-
 @media (max-width: 768px) {
   .service-detail-grid,
   .benefits-grid {
@@ -1892,4 +1865,108 @@ footer a:hover::after {
   .product-card {
     min-height: 420px !important;
   }
+}
+
+.sidebar {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  margin: 20px 0;
+}
+
+.sidebar h3 {
+  margin: 0 0 20px 0;
+  color: var(--text);
+  font-size: 20px;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 10px;
+}
+
+.sidebar-section {
+  margin-bottom: 24px;
+}
+
+.sidebar-section h4 {
+  color: var(--primary);
+  margin: 0 0 12px 0;
+  font-size: 16px;
+}
+
+.sidebar-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-section li {
+  margin-bottom: 8px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.sidebar-section li::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 12px;
+}
+
+.sidebar-section a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sidebar-section a:hover {
+  color: var(--primary);
+}
+
+.news-item {
+  background: var(--soft);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border-left: 3px solid var(--primary);
+}
+
+.news-item strong {
+  color: var(--text);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.news-item p {
+  color: var(--muted-text);
+  margin: 0;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    padding: 16px;
+  }
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--muted-text);
+  display: none;
+}
+
+.clear-search-btn:hover {
+  color: var(--error);
+}
+
+.search-box:has(.search-input:not(:placeholder-shown)) .clear-search-btn {
+  display: block;
 }
