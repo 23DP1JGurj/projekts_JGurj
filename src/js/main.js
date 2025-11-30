@@ -9,6 +9,7 @@ class StateManager {
         this.init();
     }
 
+    // Inicializē stāvokļa pārvaldnieku
     init() {
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
@@ -26,6 +27,7 @@ class StateManager {
         this.initNavigationTracking();
     }
 
+    // Saglabā pilno lietotnes stāvokli
     saveFullState() {
         try {
             const state = {
@@ -43,10 +45,11 @@ class StateManager {
             localStorage.setItem(this.storageKey, JSON.stringify(state));
             sessionStorage.setItem(this.storageKey, JSON.stringify(state));
         } catch (e) {
-            console.warn('Не удалось сохранить состояние:', e);
+            console.warn('Neizdevās saglabāt stāvokli:', e);
         }
     }
 
+    // Atjauno saglabāto stāvokli no localStorage vai sessionStorage
     restoreState() {
         try {
             let saved = sessionStorage.getItem(this.storageKey) || localStorage.getItem(this.storageKey);
@@ -67,12 +70,13 @@ class StateManager {
                 }
             }
         } catch (e) {
-            console.warn('Не удалось восстановить состояние:', e);
+            console.warn('Neizdevās atjaunot stāvokli:', e);
         }
         
         return false;
     }
 
+    // Atjauno konkrētu lapu un ritināšanas pozīciju
     restorePage(pageId, scrollPosition) {
         if (pageId && (pageId !== 'servisa-centrs' || 
             pageId === 'remonts' || pageId === 'diagnostika' || pageId === 'apkalposana')) {
@@ -88,6 +92,7 @@ class StateManager {
         }
     }
 
+    // Iegūst pašreizējos filtru iestatījumus
     getCurrentFilters() {
         const searchInput = document.getElementById('searchInput');
         const activeFilter = document.querySelector('.filter-btn.active');
@@ -100,6 +105,7 @@ class StateManager {
         };
     }
 
+    // Atjauno filtrus no saglabātā stāvokļa
     restoreFilters(filters) {
         if (!filters) return;
         
@@ -124,6 +130,7 @@ class StateManager {
         }
     }
 
+    // Inicializē ritināšanas pozīcijas saglabāšanu
     initScrollSaving() {
         let scrollTimeout;
         let lastScrollPosition = 0;
@@ -141,6 +148,7 @@ class StateManager {
         }, { passive: true });
     }
 
+    // Izseko navigāciju stāvokļa saglabāšanai
     initNavigationTracking() {
         document.addEventListener('click', (e) => {
             const link = e.target.closest('a[href]');
@@ -157,6 +165,7 @@ class StateManager {
         });
     }
 
+    // Ātra stāvokļa saglabāšana
     quickSave() {
         try {
             const state = {
@@ -167,12 +176,14 @@ class StateManager {
             };
             sessionStorage.setItem(this.storageKey + '-quick', JSON.stringify(state));
         } catch (e) {
+            // Tukšs kļūdu apstrādes bloks
         }
     }
 }
 
 const stateManager = new StateManager();
 
+// Atgriežas uz iepriekšējo lapu
 function goBack() {
     if (previousPageId && previousPageId !== currentPageId) {
         showPage(previousPageId);
@@ -181,11 +192,13 @@ function goBack() {
     }
 }
 
+// Parsē cenu no virknes uz skaitli
 function parsePrice(priceStr) {
     const cleanPrice = priceStr.replace(/\D/g, '');
     return parseFloat(cleanPrice) || 0;
 }
 
+// Attēlo produktu sarakstu
 function renderProducts(productsArray = currentProducts) {
     const container = document.getElementById('cardsGrid');
     const noProductsMessage = document.getElementById('noProductsMessage');
@@ -227,6 +240,7 @@ function renderProducts(productsArray = currentProducts) {
     stateManager.quickSave();
 }
 
+// Inicializē meklēšanas un filtrēšanas funkcionalitāti
 function initSearchAndFilter() {
     const searchInput = document.getElementById('searchInput');
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -285,6 +299,7 @@ function initSearchAndFilter() {
     });
 }
 
+// Filtrē produktus pēc meklēšanas vaicājuma
 function filterProducts(searchTerm) {
     console.log('Filtering with search term:', searchTerm);
     
@@ -306,6 +321,7 @@ function filterProducts(searchTerm) {
     renderProducts();
 }
 
+// Filtrē produktus pēc kategorijas
 function filterProductsByCategory(category) {
     console.log('Filtering by category:', category);
     
@@ -320,6 +336,7 @@ function filterProductsByCategory(category) {
     renderProducts();
 }
 
+// Kārto produktus pēc norādītā kritērija
 function sortProducts(sortType) {
     console.log('Sorting by:', sortType);
     currentSort = sortType;
@@ -347,12 +364,14 @@ function sortProducts(sortType) {
     renderProducts();
 }
 
+// Piemēro pašreizējo kārtošanas veidu
 function applyCurrentSort() {
     if (currentSort !== 'default') {
         sortProducts(currentSort);
     }
 }
 
+// Atjaunina produktu skaitītāju
 function updateProductCount() {
     const countElement = document.getElementById('productCount');
     if (countElement) {
@@ -373,6 +392,7 @@ function updateProductCount() {
     }
 }
 
+// Atiestata visus filtrus un kārtošanu
 function resetFilters() {
     console.log('Resetting filters');
     
@@ -404,6 +424,7 @@ function resetFilters() {
     stateManager.saveFullState();
 }
 
+// Rāda norādīto lapu
 function showPage(pageId, useLoading = true) {
     if (currentPageId !== pageId) {
         previousPageId = currentPageId;
@@ -423,6 +444,7 @@ function showPage(pageId, useLoading = true) {
     }
 }
 
+// Veic lapas pārslēgšanu
 function performPageSwitch(pageId) {
     const allPages = document.querySelectorAll('.page-content');
     
@@ -450,7 +472,7 @@ function performPageSwitch(pageId) {
                             }
                         }
                     } catch (e) {
-                        console.warn('Could not restore scroll position:', e);
+                        console.warn('Nevarēja atjaunot ritināšanas pozīciju:', e);
                     }
                 }, 200);
             }, 50);
@@ -468,6 +490,7 @@ function performPageSwitch(pageId) {
     }, 100);
 }
 
+// Rāda ielādes joslu
 function showLoadingBar() {
     let loadingBar = document.getElementById('loadingBar');
     if (!loadingBar) {
@@ -487,6 +510,7 @@ function showLoadingBar() {
     }, 200);
 }
 
+// Paslēpj ielādes joslu
 function hideLoadingBar() {
     const loadingBar = document.getElementById('loadingBar');
     if (loadingBar) {
@@ -501,6 +525,7 @@ function hideLoadingBar() {
     }
 }
 
+// Inicializē animācijas ritināšanas laikā
 function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.05,
@@ -522,6 +547,7 @@ function initScrollAnimations() {
     });
 }
 
+// Pārslēž mobilo izvēlni
 function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
     const burger = document.querySelector('.burger-menu');
@@ -531,6 +557,7 @@ function toggleMobileMenu() {
     stateManager.quickSave();
 }
 
+// Aizver mobilo izvēlni
 function closeMobileMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
     const burger = document.querySelector('.burger-menu');
@@ -540,6 +567,7 @@ function closeMobileMenu() {
     stateManager.quickSave();
 }
 
+// Ritina līdz norādītajai sadaļai
 function scrollToSection(sectionId) {
     const scrollToElement = () => {
         const element = document.getElementById(sectionId);
@@ -567,16 +595,19 @@ function scrollToSection(sectionId) {
     }
 }
 
+// Ritina lapu uz augšu
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// Pārslēž mobilo nolaižamo izvēlni
 function toggleMobileDropdown(button) {
     const dropdown = button.parentElement;
     dropdown.classList.toggle('active');
     stateManager.quickSave();
 }
 
+// Atver attēla modālo logu
 function openImageModal(imageSrc) {
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
@@ -586,12 +617,14 @@ function openImageModal(imageSrc) {
     document.body.classList.add('no-scroll');
 }
 
+// Aizver attēla modālo logu
 function closeImageModal() {
     const modal = document.getElementById('imageModal');
     modal.classList.remove('active');
     document.body.classList.remove('no-scroll');
 }
 
+// Notikumu klausītāji modālajam logam
 document.addEventListener('click', function(event) {
     if (event.target.classList.contains('modal-backdrop')) {
         closeImageModal();
@@ -604,12 +637,14 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
+// Tēmas pārvaldības funkcionalitāte
 (function () {
     const storageKey = 'site-theme'; 
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     const themeLabel = document.getElementById('theme-label');
 
+    // Piemēro izvēlēto tēmu
     function applyTheme(theme) {
         if (theme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
@@ -624,6 +659,7 @@ document.addEventListener('keydown', function(event) {
         }
     }
 
+    // Iegūst sākotnējo tēmu
     function getInitialTheme() {
         const stored = localStorage.getItem(storageKey);
         if (stored === 'dark' || stored === 'light') return stored;
@@ -631,6 +667,7 @@ document.addEventListener('keydown', function(event) {
         return prefersDark ? 'dark' : 'light';
     }
 
+    // Pārslēž tēmu
     function toggleTheme() {
         const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
         const next = current === 'dark' ? 'light' : 'dark';
@@ -645,6 +682,7 @@ document.addEventListener('keydown', function(event) {
         toggleTheme();
     });
 
+    // Sistēmas tēmas izmaiņu klausītājs
     if (window.matchMedia) {
         const mql = window.matchMedia('(prefers-color-scheme: dark)');
         mql.addEventListener && mql.addEventListener('change', (e) => {
@@ -655,6 +693,7 @@ document.addEventListener('keydown', function(event) {
     }
 })();
 
+// Inicializē ritināšanas uz augšu pogu
 function initScrollToTop() {
     const scrollBtn = document.getElementById('scrollToTopBtn');
     if (!scrollBtn) return;
@@ -676,6 +715,7 @@ function initScrollToTop() {
     toggleScrollButton();
 }
 
+// DOM ielādes inicializācija
 document.addEventListener('DOMContentLoaded', function() {
     const dropdowns = document.querySelectorAll('.dropdown');
     dropdowns.forEach(dropdown => {
@@ -726,10 +766,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Periodiska stāvokļa saglabāšana
 setInterval(() => {
     stateManager.quickSave();
 }, 30000);
 
+// Inicializē kontaktu formu
 function initContactForm() {
     const contactForm = document.getElementById('contactForm');
     if (!contactForm) return;
@@ -743,6 +785,7 @@ function initContactForm() {
     });
 }
 
+// Apstrādā formas iesniegšanu
 function handleFormSubmit(e) {
     e.preventDefault();
     const form = e.target;
@@ -752,6 +795,7 @@ function handleFormSubmit(e) {
     }
 }
 
+// Validē visu formu
 function validateForm(form) {
     let isValid = true;
     const fields = form.querySelectorAll('input[required], select[required], textarea[required]');
@@ -765,6 +809,7 @@ function validateForm(form) {
     return isValid;
 }
 
+// Validē atsevišķu lauku
 function validateField(e) {
     const field = e.target;
     const value = field.value.trim();
@@ -800,6 +845,7 @@ function validateField(e) {
     return true;
 }
 
+// Notīra lauka kļūdas paziņojumu
 function clearFieldError(e) {
     const field = e.target;
     const errorElement = document.getElementById(field.id + 'Error');
@@ -808,6 +854,7 @@ function clearFieldError(e) {
     if (errorElement) errorElement.classList.remove('show');
 }
 
+// Rāda kļūdas paziņojumu laukam
 function showError(field, errorElement, message) {
     field.classList.add('error');
     if (errorElement) {
@@ -816,16 +863,19 @@ function showError(field, errorElement, message) {
     }
 }
 
+// Pārbauda e-pasta derīgumu
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
 
+// Pārbauda telefona numura derīgumu
 function isValidPhone(phone) {
     const phoneRegex = /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,4}[-\s.]?[0-9]{1,9}$/;
     return phoneRegex.test(phone.replace(/\s/g, ''));
 }
 
+// Iesniedz formu
 function submitForm(form) {
     const submitBtn = form.querySelector('.submit-btn');
     const btnText = submitBtn.querySelector('.btn-text');
@@ -858,6 +908,7 @@ function submitForm(form) {
     }, 2000);
 }
 
+// Pārraksta showPage funkciju kontaktu formas inicializācijai
 const originalShowPage = showPage;
 showPage = function(pageId, useLoading = true) {
     originalShowPage(pageId, useLoading);
@@ -869,6 +920,7 @@ showPage = function(pageId, useLoading = true) {
     }
 };
 
+// Dodas uz mājas lapu
 function goToHomePage() {
     if (currentPageId === 'servisa-centrs') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
